@@ -260,5 +260,6 @@ paket-files/
 __pycache__/
 *.pyc
 
-# Web.config files
-Web.*.config
+
+# Web.config file
+CranBerry/Web.config
