@@ -69,7 +69,7 @@
   <ItemGroup>
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\carousel.css" />
-    <Content Include="assets\css\color.css" />
+    <Content Include="assets\css\colors.css" />
     <Content Include="assets\css\fonts.css" />
     <Content Include="assets\css\style.css" />
     <Content Include="assets\img\CNSA_Life.jpg" />

@@ -27,3 +27,14 @@
 		*/
 		text-decoration: none;
 	}
+
+/* Default.aspx */
+.btn-go-berries {
+	border: 2px solid #707070;
+	padding: 10px 40px 10px 40px;
+	font-size: 23pt;
+}
+.btn-go-berries:hover {
+	text-decoration: none;
+	color: black;
+}
