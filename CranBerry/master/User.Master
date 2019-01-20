@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="CranBerry.master.User" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<!-- Title -->
+	<title>CranBerry</title>
+
+	<!-- Icon -->
+	<link rel="shortcut icon" href="/assets/img/favicon.png" />
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+	<!-- Custom Style -->
+	<link rel="stylesheet" href="/assets/css/style.css?ver=0.1">
+
+	<asp:ContentPlaceHolder ID="Header" runat="server">
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<asp:ContentPlaceHolder ID="Contents" runat="server">
+	</asp:ContentPlaceHolder>
+
+	<!-- JQuery -->
+	<script src="/assets/js/jquery-3.3.1.slim.min.js"></script>
+
+	<!-- Bootstrap JavaScript -->
+	<script src="/assets/js/bootstrap.min.js"></script>
+</body>
+</html>
