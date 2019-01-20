@@ -81,6 +81,14 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="admin\" />
+    <Folder Include="assets\css\" />
+    <Folder Include="assets\img\" />
+    <Folder Include="assets\js\" />
+    <Folder Include="images\" />
+    <Folder Include="master\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
