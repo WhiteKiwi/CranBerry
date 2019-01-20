@@ -16,11 +16,32 @@
 
 	<!-- Custom Style -->
 	<link rel="stylesheet" href="/assets/css/style.css?ver=0.1">
+	<link rel="stylesheet" href="/assets/css/color.css?ver=0.1">
+	<link rel="stylesheet" href="/assets/css/fonts.css?ver=0.1">
 
 	<asp:ContentPlaceHolder ID="Header" runat="server">
 	</asp:ContentPlaceHolder>
 </head>
 <body>
+	<!-- 상단 -->
+	<div class="cb-navbar cb-bg-red">
+		<img src="/assets/img/cranberry.png" width="70" height="70" class="cb-logo">
+		<span class="cb-navbar-brand f1">CRANBERRY</span>
+	</div>
+	<!-- 흰 선 -->
+	<div class="bg-white" style="height: 4px;"></div>
+	<!-- 페이지 목록 -->
+	<div class="cb-navbar cb-bg-red" style="height: 50px; line-height: 50px;">
+		<a href="/Notices.aspx" class="f3 cb-nav-item">Notice</a>
+		<a href="/Berries.aspx" class="f3 cb-nav-item">Berries</a>
+		<a href="/Calandar.aspx" class="f3 cb-nav-item">Calandar</a>
+		<a href="/QnA.aspx" class="f3 cb-nav-item">Q&A</a>
+	</div>
+	<!-- 흰 선 -->
+	<div class="bg-white" style="height: 4px;"></div>
+	<!-- 붉은 선 -->
+	<div class="cb-bg-red" style="height: 12px"></div>
+
 	<asp:ContentPlaceHolder ID="Contents" runat="server">
 	</asp:ContentPlaceHolder>
 

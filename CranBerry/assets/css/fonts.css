@@ -1,0 +1,37 @@
+﻿body {
+	font-family: Segoe UI;
+}
+
+/*
+	※기본
+	CRANBERRY: f1 - 25pt
+	제목: f2 - 20pt
+	내용: f4 - 13pt
+	Notice 등: f3 - 15pt
+	저작권 문구: f5 - 10pt
+	베리 글 제목: f1 - 25pt
+
+	※별도
+	메인페이지 제목: f1 - 25pt
+	NEW Q&A
+	각각 제목: f4 - 13pt, 날짜 내용: f5 - 10pt
+*/
+.f1 {
+	font-size: 25pt;
+}
+
+.f2 {
+	font-size: 20pt;
+}
+
+.f3 {
+	font-size: 15pt;
+}
+
+.f4 {
+	font-size: 13pt;
+}
+
+.f5 {
+	font-size: 10pt;
+}
