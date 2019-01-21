@@ -141,5 +141,155 @@
 		<br />
 	</div>
 
+	<!-- About us -->
+	<div class="cb-bg-red text-center text-white">
+		<br />
+		<br />
+		<br />
+		<h1 class="f0 bold">ABOUT US</h1>
+		<br />
+		<br />
+		<p>VaryBerry는 신입생들의 학교 적응을 돕기 위해 모인 재학생 단체입니다.</p>
+		<p>국어 시간, 신입생 길라잡이 포스터 제작에서 시작하여 벌써 큰사의 큰 페이지가 되었습니다.</p>
+		<p>오직, 신입생들을 위해 대가없이 노력하는 멋진 친구들을 기억해주세요!</p>
+		<br />
+		<br />
+	</div>
+	<!-- Member -->
+	<div class="all-varyberry">
+		<!-- Beta -->
+		<div class="team-varyberry" style="border-right: 0.5px solid #707070;">
+			<img src="/assets/img/Beta.png" />
+			<br />
+			<br />
+			<div>
+				<!-- 역할 -->
+				<div class="role f3">
+					Director<br />
+					Frontend Developer<br />
+					Designer<br />
+					Guide Leader<br />
+					Guide Writer<br />
+					<br />
+					<br />
+					<br />
+					Photographer<br />
+					로고 아이디어<br />
+					BlueBerry 지원<br />
+					개발 조언<br />
+					<br />
+					이름 아이디어<br />
+					단체 작성 도움<br />
+				</div>
+				<!-- 이름 -->
+				<div class="name f3">
+					4기 장지훈<br />
+					4기 김재훈<br />
+					3기 김도연<br />
+					3기 김영훈<br />
+					4기 임채림<br />
+					4기 공민선<br />
+					4기 강범석<br />
+					4기 이주원<br />
+					3기 전민규<br />
+					3기 조현준<br />
+					김지민 T<br />
+					1기 조성욱<br />
+					2기 박민재<br />
+					3기 박준서<br />
+					4기 석기범
+				</div>
+			</div>
+		</div>
+
+		<!-- 1st -->
+		<div class="team-varyberry">
+			<img src="/assets/img/first.png" />
+			<br />
+			<br />
+			<div>
+				<!-- 역할 -->
+				<div class="role f3">
+					Leader<br />
+					Frontend Developer<br />
+					Designer<br />
+					<br />
+					Photographer<br />
+					Manager<br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<!-- 이름 -->
+				<div class="name f3">
+					4기 장지훈<br />
+					4기 김재훈<br />
+					3기 김도연<br />
+					4기 최소정<br />
+					3기 전민규<br />
+					4기 임채림<br />
+					4기 홍영서<br />
+					4기 최다연<br />
+					4기 나혜연<br />
+					4기 함석운<br />
+				</div>
+			</div>
+		</div>
+
+		<!-- 2nd -->
+		<div class="team-varyberry">
+			<img src="/assets/img/second.png" />
+			<br />
+			<br />
+			<div>
+				<!-- 역할 -->
+				<div class="role f3">
+					Leader<br />
+					Developer<br />
+					Frontend Developer<br />
+					<br />
+					Backend Developer<br />
+					<br />
+					<br />
+					Designer<br />
+					Photographer<br />
+					Manager<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+					<br />
+				</div>
+				<!-- 이름 -->
+				<div class="name f3">
+					5기 김가을<br />
+					4기 장지훈<br />
+					5기 김지은<br />
+					5기 이은성<br />
+					5기 김병준<br />
+					5기 서정민<br />
+					5기 이준모<br />
+					5기 정지우<br />
+					5기 이시웅<br />
+					4기 임채림<br />
+					4기 홍영서<br />
+					4기 최다연<br />
+					4기 나혜연<br />
+					4기 함석운<br />
+					5기 조예슬<br />
+					5기 김민성<br />
+					5기 전혜원<br />
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+
 	<!-- Copyright -->
+	<div class="copyright f3">
+		2017 Copyright &copy; Team VaryBerry All Right Reserved
+	</div>
 </asp:Content>

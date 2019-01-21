@@ -263,3 +263,4 @@ __pycache__/
 
 # Web.config file
 CranBerry/Web.config
+CranBerry/Properties/PublishProfiles/CranBerry.pubxml
