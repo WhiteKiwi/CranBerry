@@ -1,4 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="CranBerry.master.User" %>
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="CranBerry.master.Admin" %>
 
 <!DOCTYPE html>
 <html>
@@ -24,18 +24,18 @@
 </head>
 <body>
 	<!-- 상단 -->
-	<div class="cb-navbar cb-bg-red">
-		<img src="/assets/img/cranberry.png" width="70" height="70" class="cb-logo">
-		<a href="/" class="cb-navbar-brand f1">CRANBERRY</a>
-	</div>
-	<!-- 흰 선 -->
-	<div class="bg-white" style="height: 4px;"></div>
-	<!-- 페이지 목록 -->
-	<div class="cb-navbar cb-bg-red" style="height: 50px; line-height: 50px;">
-		<a href="/Notices.aspx" class="f3 cb-nav-item">Notice</a>
-		<a href="/Berries.aspx" class="f3 cb-nav-item">Berries</a>
-		<a href="/Calandar.aspx" class="f3 cb-nav-item">Calandar</a>
-		<a href="/QnA.aspx" class="f3 cb-nav-item">Q&A</a>
+	<div class="cb-navbar cb-bg-red text-left">
+		<img src="/assets/img/cranberry.png" width="70" height="70" style="margin: -20px 10px 0 15px;">
+		<a href="/admin/" class="cb-navbar-brand f1">CRANBERRY</a>
+
+		<!-- Navbar 우측 링크들 -->
+		<div class="float-right" style="margin-right: 50px;">
+			<a href="/admin/Notices.aspx" class="cb-nav-item f3">Notice</a>
+			<a href="/admin/Berries.aspx" class="cb-nav-item f3">Berries</a>
+			<a href="/admin/Calandar.aspx" class="cb-nav-item f3">Calandar</a>
+			<a href="/admin/Questions.aspx" class="cb-nav-item f3">Q&A</a>
+			<a href="/admin/Accounts.aspx" class="cb-nav-item f3">Account</a>
+		</div>
 	</div>
 	<!-- 흰 선 -->
 	<div class="bg-white" style="height: 4px;"></div>
@@ -44,6 +44,11 @@
 
 	<asp:ContentPlaceHolder ID="Contents" runat="server">
 	</asp:ContentPlaceHolder>
+
+	<!-- Copyright -->
+	<footer class="fixed-bottom text-white text-center" style="width: 100%; margin-bottom: 0.5em;">
+		<h5 style="color: #C9C9C9;">2017 Copyright &copy; Team VaryBerry All Right Reserved</h5>
+	</footer>
 
 	<!-- JQuery -->
 	<script src="/assets/js/jquery-3.3.1.slim.min.js"></script>

@@ -8,7 +8,13 @@
 
 .cb-navbar-brand {
 	color: white;
+	font-weight: 500;
 }
+
+	.cb-navbar-brand:hover {
+		color: white;
+		text-decoration: none;
+	}
 
 .cb-logo {
 	position: absolute;
@@ -17,8 +23,9 @@
 }
 
 .cb-nav-item {
+	font-weight: 500;
 	color: white;
-	margin: 40px;
+	margin: 30px;
 }
 
 	.cb-nav-item:hover {
