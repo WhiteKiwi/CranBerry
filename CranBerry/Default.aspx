@@ -142,4 +142,7 @@
 	</div>
 
 	<!-- Copyright -->
+	<div class="copyright f3">
+		2017 Copyright &copy; Team VaryBerry All Right Reserved
+	</div>
 </asp:Content>
