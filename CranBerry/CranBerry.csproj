@@ -82,16 +82,19 @@
     <Content Include="assets\css\default.css" />
     <Content Include="assets\css\fonts.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\Beta.png" />
     <Content Include="assets\img\CNSA_Life.jpg" />
     <Content Include="assets\img\cranberry.png" />
     <Content Include="assets\img\Event.jpg" />
     <Content Include="assets\img\Facilities.jpg" />
     <Content Include="assets\img\favicon.png" />
+    <Content Include="assets\img\first.png" />
     <Content Include="assets\img\Organization.jpg" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\jquery-3.3.1.slim.min.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="Default.aspx" />
+    <Content Include="assets\img\second.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +136,7 @@
     <Content Include="master\User.Master" />
     <Content Include="master\Admin.Master" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\CranBerry.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

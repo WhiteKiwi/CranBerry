@@ -90,6 +90,62 @@
 .notice-main-link {
 	color: black !important;
 }
+
+/* about us */
+.all-varyberry {
+	background-color: #B40004;
+	height: 820px;
+	text-align: center;
+	padding-top: 60px;
+}
+
+	.all-varyberry > div:not(:nth-child(3)) {
+		border-right: 0.5px solid #707070;
+	}
+
+.team-varyberry {
+	width: 33.3%;
+	height: 700px;
+	float: left;
+}
+
+.role {
+	width: 60%;
+	float: left;
+	color: white;
+	text-align: left;
+	padding-left: 80px;
+}
+
+.name {
+	width: 40%;
+	float: left;
+	color: white;
+	text-align: left;
+}
+
+@media (max-width: 1350px) {
+	/* about us */
+	.all-varyberry {
+		height: 2220px;
+	}
+
+	.team-varyberry {
+		width: 100%;
+	}
+
+	.role {
+		width: 50%;
+		padding-left: 0;
+		text-align: center;
+	}
+
+	.name {
+		width: 50%;
+		text-align: center;
+	}
+}
+
 /* copyright */
 .copyright {
 	width: 100%;
