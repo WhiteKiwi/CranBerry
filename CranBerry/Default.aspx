@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/User.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CranBerry.Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
+	<link rel="stylesheet" href="/assets/css/default.css?ver=0.1">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
 	<!-- Carousel -->
@@ -76,9 +77,9 @@
 	</div>
 	<div id="qnaCarouselIndicators" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.05);">
 		<ol class="carousel-indicators">
-			<li data-target="#qnaCarouselIndicators" data-slide-to="0" class="active"></li>
-			<li data-target="#qnaCarouselIndicators" data-slide-to="1"></li>
-			<li data-target="#qnaCarouselIndicators" data-slide-to="2"></li>
+			<li data-target="#qnaCarouselIndicators" data-slide-to="0" class="active" style="background-color: #707070;"></li>
+			<li data-target="#qnaCarouselIndicators" data-slide-to="1" style="background-color: #707070;"></li>
+			<li data-target="#qnaCarouselIndicators" data-slide-to="2" style="background-color: #707070;"></li>
 		</ol>
 
 		<div class="carousel-inner">
@@ -91,21 +92,21 @@
 					<!-- 질문 -->
 					<div style="padding-top: 25px;">
 						<div class="f1 bold float-left" style="margin: 0 25px 0 25px;">Q.</div>
-						<div class="f3 qna-title"><a href="/Question.aspx?id=<%= questions[i*3 + j].Id %>"><%= questions[i*3 + j].Title %></a></div>
+						<div class="f3 qna-title"><a href="/Question.aspx?id=<%= questions[i * 3 + j].Id %>"><%= questions[i * 3 + j].Title %></a></div>
 					</div>
-					<div class="clearfix"></div>
+
 
 					<div style="padding: 20px;">
 						<!-- 가로선 -->
 						<div class="bg-secondary w-100" style="height: 1px;"></div>
 						<!-- 작성일 -->
-						<p class="f4" style="padding: 13px 10px 0 10px;">작성일: <%= questions[i*3 + j].QuestionAt.ToString("yyyy-MM-dd") %></p>
+						<p class="f4" style="padding: 13px 10px 0 10px;">작성일: <%= questions[i * 3 + j].QuestionAt.ToString("yyyy-MM-dd") %></p>
 						<!-- 가로선 -->
 						<div class="bg-secondary w-100" style="height: 1px;"></div>
 					</div>
 
 					<!-- 질문 내용 -->
-					<a href="/Question.aspx?id=<%= questions[i*3 + j].Id %>" class="qna-contents"><%= questions[i*3 + j].Contents %></a>
+					<a href="/Question.aspx?id=<%= questions[i * 3 + j].Id %>" class="qna-contents"><%= questions[i * 3 + j].Contents %></a>
 				</div>
 				<% } %>
 			</div>
@@ -122,5 +123,23 @@
 	</div>
 
 	<!-- Notices -->
+	<div class="notice-main">
+		<br />
+		<br />
+		<br />
+		<h1 class="f0 text-red bold">NOTICE</h1>
+		<br />
+		<% var notices = CranBerry.Managers.NoticeManager.GetRecentNotices();
+			foreach (var notice in notices) {
+		%>
+		<div>
+			<a href="/Notice.aspx?id=<%= notice.Id %>" class="f4 notice-main-link"><%= notice.Title + "&nbsp; &nbsp; &nbsp;" + notice.NoticeAt.ToString("yyyy-MM-dd") %></a>
+		</div>
+		<% } %>
+		<br />
+		<br />
+		<br />
+	</div>
+
 	<!-- Copyright -->
 </asp:Content>
