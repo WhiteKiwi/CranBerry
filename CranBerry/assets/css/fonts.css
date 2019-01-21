@@ -20,6 +20,10 @@
 	NEW Q&A
 	각각 제목: f4 - 13pt, 날짜 내용: f5 - 10pt
 */
+.f0 {
+	font-size: 30pt;
+}
+
 .f1 {
 	font-size: 25pt;
 }

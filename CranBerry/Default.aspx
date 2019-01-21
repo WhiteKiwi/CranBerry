@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/User.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CranBerry.Default" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
-	<link rel="stylesheet" href="/assets/css/carousel.css?ver=0.1">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
 	<!-- Carousel -->
@@ -49,14 +49,14 @@
 	<div class="cb-bg-red" style="height: 2px;"></div>
 	<!-- Go Berries -->
 	<div class="bg-white text-center" style="margin: 40px;">
-		<a href="/Berries" class="btn-go-berries bold text-black" >GO BERRIES</a>
+		<a href="/Berries" class="btn-go-berries bold text-black">GO BERRIES</a>
 	</div>
 	<!-- 붉은 선 -->
 	<div class="cb-bg-red" style="height: 2px;"></div>
 
 	<!-- About CranBerry -->
 	<div class="text-center m-5">
-		<h1 class="text-red bold" style="font-size: 30pt;">ABOUT CRANBERRY</h1>
+		<h1 class="f0 text-red bold">ABOUT CRANBERRY</h1>
 		<br />
 		<p class="f4" style="margin-bottom: 10px;">신입생에게 충남삼성고등학교는 낯설고 익숙하지 않는 장소입니다.</p>
 		<p class="f4" style="margin-bottom: 10px;">중학교와 다른 점이 너무나도 많은 본교에서 신입생이 홀로 빠르게 적응하기란 쉽지 않습니다.</p>
@@ -71,4 +71,56 @@
 	</div>
 
 	<!-- New Q&A -->
+	<div class="text-center" style="background-color: rgba(0, 0, 0, 0.05); padding: 55px 0 30px 0;">
+		<h1 class="f0 bold m-0">NEW Q&A</h1>
+	</div>
+	<div id="qnaCarouselIndicators" class="carousel slide" data-ride="carousel" style="background-color: rgba(0, 0, 0, 0.05);">
+		<ol class="carousel-indicators">
+			<li data-target="#qnaCarouselIndicators" data-slide-to="0" class="active"></li>
+			<li data-target="#qnaCarouselIndicators" data-slide-to="1"></li>
+			<li data-target="#qnaCarouselIndicators" data-slide-to="2"></li>
+		</ol>
+
+		<div class="carousel-inner">
+			<% for (int i = 0; i < 3; i++) { %>
+			<div class="carousel-item<% if (i == 0) { Response.Write(" active"); } %>" style="padding-bottom: 100px;">
+				<% 
+					var questions = CranBerry.Managers.QnAManager.GetRecentQuestions();
+					for (int j = 0; j < 3; j++) { %>
+				<div class="qna-card p-2">
+					<!-- 질문 -->
+					<div style="padding-top: 25px;">
+						<div class="f1 bold float-left" style="margin: 0 25px 0 25px;">Q.</div>
+						<div class="f3 qna-title"><a href="/Question.aspx?id=<%= questions[i*3 + j].Id %>"><%= questions[i*3 + j].Title %></a></div>
+					</div>
+					<div class="clearfix"></div>
+
+					<div style="padding: 20px;">
+						<!-- 가로선 -->
+						<div class="bg-secondary w-100" style="height: 1px;"></div>
+						<!-- 작성일 -->
+						<p class="f4" style="padding: 13px 10px 0 10px;">작성일: <%= questions[i*3 + j].QuestionAt.ToString("yyyy-MM-dd") %></p>
+						<!-- 가로선 -->
+						<div class="bg-secondary w-100" style="height: 1px;"></div>
+					</div>
+
+					<!-- 질문 내용 -->
+					<a href="/Question.aspx?id=<%= questions[i*3 + j].Id %>" class="qna-contents"><%= questions[i*3 + j].Contents %></a>
+				</div>
+				<% } %>
+			</div>
+			<% } %>
+		</div>
+		<a class="carousel-control-prev" href="#qnaCarouselIndicators" role="button" data-slide="prev">
+			<span class="qna-carousel-control-icon" aria-hidden="true"><</span>
+			<span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#qnaCarouselIndicators" role="button" data-slide="next">
+			<span class="qna-carousel-control-icon" aria-hidden="true">></span>
+			<span class="sr-only">Next</span>
+		</a>
+	</div>
+
+	<!-- Notices -->
+	<!-- Copyright -->
 </asp:Content>

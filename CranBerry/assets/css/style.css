@@ -29,12 +29,81 @@
 	}
 
 /* Default.aspx */
+/* Carousel-banner */
+#MainCarousel {
+	height: 200px !important;
+}
+
+@media (min-width: 1000px) {
+	#MainCarousel {
+		height: 300px !important;
+	}
+}
+
+@media (min-width: 1500px) {
+	#MainCarousel {
+		height: 400px !important;
+	}
+}
+
+.berry-carousel-img {
+	max-width: 100%;
+}
+
+/* GO_BERRIES-btn */
 .btn-go-berries {
 	border: 2px solid #707070;
 	padding: 10px 40px 10px 40px;
 	font-size: 23pt;
 }
+
 .btn-go-berries:hover {
 	text-decoration: none;
 	color: black;
 }
+
+/* New Q&A-carousel */
+.qna-carousel-control-icon {
+	color: black;
+	font-size: 50pt;
+}
+
+.qna-card {
+	background-color: white;
+	border: 1px solid #707070;
+	height: 450px;
+	width: calc(23.3% - 20px);
+	float: left;
+	margin-right: 30px;
+}
+
+.qna-card:nth-child(1) {
+	margin-left: 15%;
+}
+
+.qna-title {
+	padding-right: 25px;
+	font-weight: 600;
+}
+
+	.qna-title > a {
+		color: black !important;
+		text-decoration: none;
+	}
+
+.qna-contents {
+	color: black !important;
+	padding: 0 25px 0 25px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: 12; /* 라인수 */
+	-webkit-box-orient: vertical;
+	word-wrap: break-word;
+	line-height: 1.2em;
+	height: 14.4em; /* line-height 가 1.2em 이고 12라인을 자르기 때문에 height는 1.2em * 12 = 14.4em */
+}
+
+	.qna-contents:hover {
+		text-decoration: none;
+	}
