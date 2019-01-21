@@ -77,6 +77,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\Default.aspx" />
+    <Content Include="admin\Login.aspx" />
+    <Content Include="admin\QnaAnswer.aspx" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\colors.css" />
     <Content Include="assets\css\default.css" />
@@ -96,6 +98,9 @@
     <Content Include="Default.aspx" />
     <Content Include="assets\img\second.png" />
     <Content Include="Web.config" />
+    <Content Include="BerryOffer.aspx" />
+    <Content Include="NoticeWrite.aspx" />
+    <Content Include="QnAWrite.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\Default.aspx.cs">
@@ -104,6 +109,20 @@
     </Compile>
     <Compile Include="admin\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\QnaAnswer.aspx.cs">
+      <DependentUpon>QnaAnswer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\QnaAnswer.aspx.designer.cs">
+      <DependentUpon>QnaAnswer.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -131,6 +150,27 @@
     <Compile Include="Models\Notice.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BerryOffer.aspx.cs">
+      <DependentUpon>BerryOffer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BerryOffer.aspx.designer.cs">
+      <DependentUpon>BerryOffer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NoticeWrite.aspx.cs">
+      <DependentUpon>NoticeWrite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoticeWrite.aspx.designer.cs">
+      <DependentUpon>NoticeWrite.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QnAWrite.aspx.cs">
+      <DependentUpon>QnAWrite.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QnAWrite.aspx.designer.cs">
+      <DependentUpon>QnAWrite.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="master\User.Master" />
