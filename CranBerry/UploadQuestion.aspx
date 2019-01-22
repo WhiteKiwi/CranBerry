@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="BerryOffer.aspx.cs" Inherits="CranBerry.BerryOffer " %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadQuestion.aspx.cs" Inherits="CranBerry.QaAwrite" %>
 
 <!DOCTYPE html>
 
@@ -35,8 +35,9 @@ alt="크랜베리 로고" width="110"></td>
 <img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.15752-9/49745756_2347222058826851_6098154240859963392_n.png?_nc_cat=107&_nc_ht=scontent-icn1-1.xx&oh=b33505dd95e2590b32f1bbf3dac3bbac&oe=5CC2E9C1"
 alt="배너 사진" width="1920" height="650"></img>
 
-<!--BERRY 제안 제목-->
-<h1 style="color: #400101; margin-left: 160px; margin-top: 110px; font-size: 55px"><b>BERRY 제안</b></h1>
+
+<!--Q&A 등록 제목-->
+<h1 style="color: #400101; margin-left: 160px; margin-top: 110px; font-size: 55px"><b>Q&A 등록</b></h1>
 <hr style="border: 2px solid #BF0404; background-color: #BF0404; width: 1800px; margin-left: 55px">
 
 <!--제목 박스-->
@@ -45,12 +46,10 @@ alt="배너 사진" width="1920" height="650"></img>
 <td style="color: black; font-size: 35px; vertical-align: text-top"><b>제목</b>
 </td>
 <td style="width: 40px">
-</td> 
+</td>
 <td style="width: 1520px; height: 50px; background-color: white; border:1px solid #707070; margin-top: 60px">
     <asp:TextBox ID="txtTitle" runat="server" Width="1520px" Height="50px"></asp:TextBox>
-
 </td>
- 
 </tr>
 </table>
 
@@ -59,11 +58,11 @@ alt="배너 사진" width="1920" height="650"></img>
 <tr>
 <td style="color: black; font-size: 35px; vertical-align: text-top"><b>내용</b>
 </td>
-<td style="width: 40px">
+<td style="width:40px">
 </td>
 <td style="width: 1520px; height: 530px; background-color: white; border:1px solid #707070;
  margin-left: 170px; margin-top: 50px">
-    <asp:TextBox ID="txtContent" runat="server" Width="1520px" Height="530px"></asp:TextBox>
+    <asp:TextBox ID="txtContent" runat="server" width="1520px" Height="530px"></asp:TextBox>
  </td>
  </tr>
 </table>
@@ -83,7 +82,7 @@ alt="배너 사진" width="1920" height="650"></img>
 </td>
 <td style="margin-left: 1570px; margin- margin-top: 60px; margin-bottom: 20px; width: 120px; height: 70px; background-color: #400101;
 border-radius: 0.4em; font-size: 25px; color: white; text-align: center">글쓰기
-    <asp:Button ID="btnWrite" runat="server" width="120px" Height="70" Text="글쓰기" OnClick="btnWrite_Click"/>
+  <asp:Button ID="btnWrite" runat="server" Width="120px" Height="70px" Text="글쓰기" OnClick="btnWrite_Click"/>
 </td>
 </tr>
 </table>
@@ -94,6 +93,7 @@ border-radius: 0.4em; font-size: 25px; color: white; text-align: center">글쓰�
 <!--저작권 문구 바-->
 <div style="width: 1920px; height: 130px; background-color: #BF0404; margin-bottom: 37px">
 <p style="color: white; font-size: 27px; text-align: center; padding-top: 12px">2018 Copyright © Team VaryBerry All Right Reserved.</p></div>
+
 
         </div>
     </form>
