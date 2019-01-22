@@ -1,4 +1,3 @@
-﻿using CranBerry.Models;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -8,20 +7,20 @@ namespace CranBerry.Managers {
 		/// <summary>
 		/// Get recent QnAs
 		/// </summary>
-		public static List<Question> GetRecentQuestions() {
+		public static List<Models.Question> GetRecentQuestions() {
 			MySqlConnection conn = null;
 			try {
 				// Connect to DB;
 				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 				conn.Open();
 
-				List<Question> questions = new List<Question>();
+				List<Models.Question> questions = new List<Models.Question>();
 
 				string sql = "SELECT * FROM questions ORDER BY Id DESC LIMIT 9;";
 				MySqlCommand cmd = new MySqlCommand(sql, conn);
 				var rdr = cmd.ExecuteReader();
 				while (rdr.Read()) {
-					questions.Add(new Question {
+					questions.Add(new Models.Question {
 						Id = (int)rdr["Id"],
 						Title = (string)rdr["Title"],
 						Contents = (string)rdr["Contents"],
