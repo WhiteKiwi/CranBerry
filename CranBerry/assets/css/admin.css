@@ -21,3 +21,25 @@
 	width: 100px;
 	border-radius: 15px;
 }
+
+/* Accounts.aspx */
+.square {
+	width: 100px;
+	height: 100px;
+}
+
+.square-small {
+	width: 37px;
+	height: 37px;
+	line-height: 37px;
+	display: inline-block;
+	text-align: center;
+}
+
+.account-element {
+	height: 50px;
+}
+
+	.account-element > div, .account-element > input, .account-element > a {
+		margin: 10px;
+	}
