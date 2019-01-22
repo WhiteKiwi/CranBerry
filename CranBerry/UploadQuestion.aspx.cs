@@ -10,7 +10,7 @@ using System.Data;
 
 namespace CranBerry
 {
-    public partial class QaAwrite : System.Web.UI.Page
+    public partial class UploadQuestion : System.Web.UI.Page
     {
 
         MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["ByeongJun"].ConnectionString);

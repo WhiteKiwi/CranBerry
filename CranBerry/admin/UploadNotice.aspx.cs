@@ -10,7 +10,7 @@ using System.Data;
 
 namespace CranBerry
 {
-    public partial class NoticeWrite : System.Web.UI.Page
+    public partial class UploadNotice : System.Web.UI.Page
     {
         MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["ByeongJun"].ConnectionString);
 
