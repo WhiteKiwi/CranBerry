@@ -34,3 +34,29 @@
 		*/
 		text-decoration: none;
 	}
+
+/* Question.aspx */
+.answer-rectangle {
+	height: 110px;
+	width: 70px;
+	background-color: #EB5849;
+	position: absolute;
+	top: 0;
+	right: 5rem;
+	color: white;
+}
+
+.answer-rectangle > span {
+	position: absolute;
+	bottom: 0.3rem;
+	left: 1.15rem;
+}
+
+/* copyright */
+.copyright {
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-weight: bold;
+}
