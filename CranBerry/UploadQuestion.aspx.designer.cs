@@ -10,7 +10,7 @@
 namespace CranBerry {
     
     
-    public partial class QaAwrite {
+    public partial class UploadQuestion {
         
         /// <summary>
         /// form1 컨트롤입니다.

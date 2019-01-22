@@ -10,9 +10,8 @@ using System.Data;
 
 namespace CranBerry
 {
-    public partial class UploadQuestion : System.Web.UI.Page
+    public partial class UploadNotice : System.Web.UI.Page
     {
-
         MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 
 
@@ -37,11 +36,7 @@ namespace CranBerry
             cmd.ExecuteNonQuery();
             con.Close();
             Response.Redirect("Questions.aspx");
-
-
-
-
-
         }
+
     }
 }

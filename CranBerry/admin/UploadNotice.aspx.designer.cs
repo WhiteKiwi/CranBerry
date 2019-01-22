@@ -10,7 +10,7 @@
 namespace CranBerry {
     
     
-    public partial class QnaAnswerr {
+    public partial class UploadNotice {
         
         /// <summary>
         /// form1 컨트롤입니다.
@@ -22,48 +22,30 @@ namespace CranBerry {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// lblTitle1 컨트롤입니다.
+        /// txtTitle 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle1;
+        protected global::System.Web.UI.WebControls.TextBox txtTitle;
         
         /// <summary>
-        /// lblTitle2 컨트롤입니다.
+        /// txtContent 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTitle2;
+        protected global::System.Web.UI.WebControls.TextBox txtContent;
         
         /// <summary>
-        /// lblAnswer 컨트롤입니다.
+        /// btnSave 컨트롤입니다.
         /// </summary>
         /// <remarks>
         /// 자동 생성 필드입니다.
         /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAnswer;
-        
-        /// <summary>
-        /// txtAnswer 컨트롤입니다.
-        /// </summary>
-        /// <remarks>
-        /// 자동 생성 필드입니다.
-        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAnswer;
-        
-        /// <summary>
-        /// btnWrite 컨트롤입니다.
-        /// </summary>
-        /// <remarks>
-        /// 자동 생성 필드입니다.
-        /// 수정하려면 디자이너 파일에서 코드 숨김 파일로 필드 선언을 이동하세요.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnWrite;
+        protected global::System.Web.UI.WebControls.Button btnSave;
     }
 }
