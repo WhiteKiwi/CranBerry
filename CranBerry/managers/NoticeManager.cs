@@ -48,7 +48,7 @@ namespace CranBerry.Managers {
 			}
 		}
 	}
-    public static AddNotice(Notice notice)
+    public static AddNotice(Notice notice) //공지 추가
     {
         MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 
