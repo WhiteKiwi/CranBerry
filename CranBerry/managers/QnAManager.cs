@@ -36,5 +36,37 @@ namespace CranBerry.Managers {
 				conn.Close();
 			}
 		}
+
+		/// <summary>
+		/// Get QnA ny Id
+		/// </summary>
+		public static Models.Question GetQnA(int Id) {
+			MySqlConnection conn = null;
+			try {
+				// Connect to DB;
+				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+				conn.Open();
+
+				string sql = "SELECT * FROM questions WHERE Id=" + Id + ";";
+				MySqlCommand cmd = new MySqlCommand(sql, conn);
+				var rdr = cmd.ExecuteReader();
+				rdr.Read();
+				Models.Question question = new Models.Question {
+					Id = (int)rdr["Id"],
+					Title = (string)rdr["Title"],
+					Contents = (string)rdr["Contents"],
+					QuestionAt = (DateTime)rdr["Question_At"],
+					Answer = (string)rdr["Answer"]
+				};
+				rdr.Close();
+
+				return question;
+			} catch (Exception e) {
+				// TODO: 예외 처리
+				throw new Exception(e.Message);
+			} finally {
+				conn.Close();
+			}
+		}
 	}
 }
