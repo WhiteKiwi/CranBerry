@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Data;
 
-namespace CranBerry
+namespace CranBerry.admin
 {
     public partial class UploadNotice : System.Web.UI.Page
     {

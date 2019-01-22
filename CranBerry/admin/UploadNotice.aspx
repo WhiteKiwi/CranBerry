@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadNotice.aspx.cs" Inherits="CranBerry.UploadNotice" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadNotice.aspx.cs" Inherits="CranBerry.admin.UploadNotice" %>
 
 <!DOCTYPE html>
 
