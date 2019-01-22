@@ -49,7 +49,7 @@ namespace CranBerry.Managers {
 				conn.Close();
 			}
 		}
-        public static Answer(Answer answer)
+    public static Answer(Answer answer)
         {
 
             string Answer = " ";
@@ -85,7 +85,7 @@ namespace CranBerry.Managers {
         }
 	}
 
-        public static UploadQuestion(Question question) {
+    public static UploadQuestion(Question question) {
 
              MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);        
             if (txtTitle.Text == String.Empty) { 
