@@ -50,7 +50,7 @@
 	<div class="cb-bg-red" style="height: 2px;"></div>
 	<!-- Go Berries -->
 	<div class="bg-white text-center" style="margin: 40px;">
-		<a href="/Berries" class="btn-go-berries bold text-black">GO BERRIES</a>
+		<a href="/Berries.aspx" class="btn-go-berries bold text-black">GO BERRIES</a>
 	</div>
 	<!-- 붉은 선 -->
 	<div class="cb-bg-red" style="height: 2px;"></div>
