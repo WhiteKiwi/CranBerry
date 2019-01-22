@@ -133,6 +133,7 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="managers\NoticeManager.cs" />
+    <Compile Include="managers\AdminManager.cs" />
     <Compile Include="managers\QnAManager.cs" />
     <Compile Include="master\Admin.Master.cs">
       <DependentUpon>Admin.Master</DependentUpon>
@@ -148,6 +149,7 @@
     <Compile Include="master\User.Master.designer.cs">
       <DependentUpon>User.Master</DependentUpon>
     </Compile>
+    <Compile Include="Models\Admin.cs" />
     <Compile Include="Models\Notice.cs" />
     <Compile Include="Models\Question.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
