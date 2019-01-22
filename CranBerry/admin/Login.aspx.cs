@@ -8,11 +8,11 @@ using System.Web.UI;
 
 namespace CranBerry {
 	public partial class Login : System.Web.UI.Page {
-		MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["ByeongJun"].ConnectionString);
-
+		MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+        
 		protected void BtnLogin_Click(object sender, EventArgs e) {
 			if (UserID.Text == String.Empty) {
-				string scriptStr1 = "<script>alert('아이디을 입력해주세요.'); history.back() ; </script>";
+				string scriptStr1 = "<script>alert('아이디를 입력해주세요.'); history.back() ; </script>";
 				Page.RegisterClientScriptBlock("done", scriptStr1);
 			}
 			if (UserPW.Text == String.Empty) {

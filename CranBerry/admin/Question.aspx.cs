@@ -10,7 +10,7 @@ namespace CranBerry.admin {
 
 		protected void Page_Lode(object sender, EventArgs e) {
 			if (Request.QueryString["Seq"] == null) {
-				Response.Redirect("QaAList.aspx");
+				Response.Redirect("Questions.aspx");
 			} else {
 				if (!Page.IsPostBack) {
 					ReadData();

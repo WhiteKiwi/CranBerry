@@ -13,7 +13,7 @@ namespace CranBerry
     public partial class UploadQuestion : System.Web.UI.Page
     {
 
-        MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["ByeongJun"].ConnectionString);
+        MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 
 
 
@@ -36,7 +36,7 @@ namespace CranBerry
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
-            Response.Redirect("QaAList.aspx");
+            Response.Redirect("Questions.aspx");
 
 
 
