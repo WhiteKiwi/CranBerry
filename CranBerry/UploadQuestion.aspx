@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadQuestion.aspx.cs" Inherits="CranBerry.UploadQuestion" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadQuestion.aspx.cs" Inherits="CranBerry.QaAwrite" %>
 
 <!DOCTYPE html>
 
