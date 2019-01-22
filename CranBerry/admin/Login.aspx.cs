@@ -3,6 +3,7 @@ using System.Collections;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Security;
 using System.Web.UI;
@@ -14,26 +15,29 @@ using MySql.Data.MySqlClient;
 
 
 
-namespace CranBerry
+namespace June
 {
     public partial class Login : System.Web.UI.Page
     {
-        MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["ByeongJun"].ConnectionString);
+        MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 
 
 
         protected void BtnLogin_Click(object sender, EventArgs e)
         {
+
             if (txtId.Text == String.Empty)
             {
-                string scriptStr1 = "<script>alert('아이디을 입력해주세요.'); history.back() ; </script>";
-                Page.RegisterClientScriptBlock("done", scriptStr1);
+                ScriptManager.RegisterClientScriptBlock(BtnLogin, this.GetType(), "AlertMsg", "<script language='javascript'>alert('아이디를 입력해주세요.');</script>", false);
+
+
             }
             if (txtPassword.Text == String.Empty)
             {
-                string scriptStr1 = "<script>alert('비밀번호를 입력해주세요.'); history.back() ; </script>";
-                Page.RegisterClientScriptBlock("done", scriptStr1);
+                ScriptManager.RegisterClientScriptBlock(BtnLogin, this.GetType(), "AlertMsg", "<script language='javascript'>alert('비밀번호를 입력해주세요.');</script>", false);
+
             }
+
             con.Open();
             MySqlCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text;
@@ -51,8 +55,8 @@ namespace CranBerry
             }
 
             con.Close();
-            string scriptStr = "<script>alert('회원정보가 일치하지 않습니다.'); history.back() ; </script>";
-            Page.RegisterClientScriptBlock("done", scriptStr);
+            ScriptManager.RegisterClientScriptBlock(BtnLogin, this.GetType(), "AlertMsg", "<script language='javascript'>alert('회원정보가 일치하지 않습니다.');</script>", false);
+
 
 
 

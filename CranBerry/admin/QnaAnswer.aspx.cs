@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,79 +9,126 @@ using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Data;
 
-namespace CranBerry
+namespace June
 {
 
 
 
 
-    public partial class QnaAnswer : System.Web.UI.Page
+    public partial class AdminAnswer : System.Web.UI.Page
     {
+
         MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["ByeongJun"].ConnectionString);
-        protected void Page_Lode(object sender, EventArgs e)
+        protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["Seq"] == null)
+
+            if (!IsPostBack)
             {
-                Response.Redirect("QaAList.aspx");
+                ReadData();
+            }
+
+        }
+
+        private void ReadData()
+        {
+            int Id;
+
+            try
+            {
+                Id = Convert.ToInt32(Request.QueryString["Id"].ToString());
+            }
+            catch (Exception e)
+            {
+                Id = 1;
+            }
+
+            try
+            {
+
+                string mysql = " Select Id, Title, Content from question where Id=" + Id;
+                MySqlCommand cmd = new MySqlCommand(mysql, con);
+                con.Open();
+                MySqlDataReader dr = cmd.ExecuteReader();
+                if (dr.Read())
+                {
+
+                    lblTitle1.Text = dr["Title"].ToString();
+                    lblTitle2.Text = dr["Content"].ToString();
+
+                }
+                dr.Close();
+
+                string mysql1 = "select Answer from answer where Id=" + Id;
+                MySqlCommand cmd1 = new MySqlCommand(mysql1, con);
+                MySqlDataReader dr1 = cmd1.ExecuteReader();
+                if (dr1.Read())
+                {
+                    lblAnswer.Text = dr1["Answer"].ToString();
+                }
+
+                dr1.Close();
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+
+        }
+
+
+
+
+
+        public void btnWrite_Click(object sender, EventArgs e)
+        {
+
+
+            string Answer = " ";
+            int Id;
+
+            if (Request.QueryString["Id"] != null)
+            {
+                Id = Convert.ToInt32(Request.QueryString["Id"].ToString());
+
             }
             else
             {
-                if (!Page.IsPostBack)
-                {
-                    ReadData();
-                }
-
+                Id = 1;
             }
-        }
-        private void ReadData()
-        {
 
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand("question", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@Num", Request["Seq"]);
-            MySqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                this.lblTitle1.Text = dr["Title"].ToString();
-                this.lblTitle2.Text = dr["Content"].ToString();
-                this.lblAnswer.Text = dr["Answer"].ToString();
-            }
-            dr.Close();
-            con.Close();
-        }
-
-
-
-
-
-        protected void btnWrite_Click(object sender, EventArgs e)
-        {
-            string Answer = " ";
             if (txtAnswer.Text == String.Empty)
             {
-                string scriptStr = "<script>alert('답변을 입력해주세요.'); history.back() ; </script>";
-                Page.RegisterClientScriptBlock("done", scriptStr);
+                ScriptManager.RegisterClientScriptBlock(Btn, this.GetType(), "AlertMsg", "<script language='javascript'>alert('답변을 입력해주세요.');</script>", false);
             }
             else
             {
                 Answer = txtAnswer.Text;
-
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = string.Format("update question set Answer = '{0}' where Number= 2", txtAnswer.Text);
                 con.Open();
+                MySqlCommand cmd = new MySqlCommand("update answer Set Answer=@Answer, Id= @Id where Id=" + Id, con);
+                cmd.Parameters.AddWithValue("@Answer", txtAnswer.Text);
+                cmd.Parameters.AddWithValue("@Id", Id);
                 cmd.ExecuteNonQuery();
+                cmd.Dispose();
                 con.Close();
-                Response.Redirect(Request.RawUrl);
+                Response.Redirect("AdminAnswer.aspx?id=" + Request.QueryString["Id"]);
+
+
             }
 
 
 
 
 
-        }
 
+
+
+        }
     }
 }
 
