@@ -15,33 +15,33 @@ namespace CranBerry
 
         MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 
-
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            txtRand.Text=CranBerry.Managers.QnAManager.RandText();
+        }
 
         protected void btnWrite_Click(object sender, EventArgs e)
         {
             if (txtTitle.Text == String.Empty)
             {
-                string scriptStr1 = "<script>alert('제목을 입력해주세요.'); history.back() ; </script>";
-                Page.RegisterClientScriptBlock("done", scriptStr1);
+                ClientScript.RegisterStartupScript(this.GetType(), "enterTitle", "alert('제목을 입력해주세요.')", true);
             }
             if (txtContent.Text == String.Empty)
             {
-                string scriptStr1 = "<script>alert('내용을 입력해주세요.'); history.back() ; </script>";
-                Page.RegisterClientScriptBlock("done", scriptStr1);
+                ClientScript.RegisterStartupScript(this.GetType(), "enterContent", "alert('내용을 입력해주세요.')", true);
             }
 
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = con;
-            cmd.CommandText = string.Format("insert into question(Title,Content,PostDate,PostIP)values('{0}','{1}','{2}','{3}')", txtTitle.Text, txtContent.Text, DateTime.Now, Request.UserHostAddress);
-            con.Open();
-            cmd.ExecuteNonQuery();
-            con.Close();
-            Response.Redirect("Questions.aspx");
-
-
-
-
-
+            if ((txtTitle.Text.Length>0) && (txtContent.Text.Length>0))
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = string.Format("insert into question(Title,Content,PostDate,RandText,PostIP)values('{0}','{1}','{2}','{3}')", txtTitle.Text, txtContent.Text, DateTime.Now, txtRand.Text, Request.UserHostAddress);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                Response.Redirect("Questions.aspx");
+            }
+            
         }
     }
 }

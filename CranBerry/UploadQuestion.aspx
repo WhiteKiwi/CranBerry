@@ -71,6 +71,10 @@ alt="배너 사진" width="1920" height="650"></img>
 <div style="color: #707070; font-size: 30px; margin-left: 255px">0/10000byte</div>
 
 </div>
+<!--랜덤 문자열 임시 표시-->
+<h1 style="text-align: center">
+    <asp:TextBox ID="txtRand" runat="server"></asp:TextBox>
+</h1>
 
 <!--되돌리기/글쓰기 버튼-->
 <table style="margin-left: 1440px; margin-top: 60px; margin-bottom: 150px">

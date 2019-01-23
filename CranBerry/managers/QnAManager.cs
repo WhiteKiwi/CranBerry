@@ -38,7 +38,7 @@ namespace CranBerry.Managers {
 		}
 
 		/// <summary>
-		/// Get QnA ny Id
+		/// Get QnA by Id
 		/// </summary>
 		public static Models.Question GetQnA(int Id) {
 			MySqlConnection conn = null;
@@ -68,5 +68,22 @@ namespace CranBerry.Managers {
 				conn.Close();
 			}
 		}
-	}
+        /*
+         * 이준모 - 랜덤 문자열 생성
+         */
+        public static char[] rndchrset = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
+            'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
+            'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+        //사용될 문자들
+        
+        public static string RandText()
+        {
+            Random rnd = new Random();
+            int i;
+            string randstr = "";
+            for (i = 0; i < 7; i++) randstr += rndchrset[rnd.Next(0, 61)];
+            return randstr;
+        }
+        
+    }
 }

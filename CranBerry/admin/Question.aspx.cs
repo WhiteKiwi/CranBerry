@@ -8,7 +8,7 @@ namespace CranBerry.admin {
 	public partial class Question : System.Web.UI.Page {
 		MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 
-		protected void Page_Lode(object sender, EventArgs e) {
+		protected void Page_Load(object sender, EventArgs e) {
 			if (Request.QueryString["Seq"] == null) {
 				Response.Redirect("Questions.aspx");
 			} else {
@@ -36,9 +36,8 @@ namespace CranBerry.admin {
 		protected void btnWrite_Click(object sender, EventArgs e) {
 			string Answer = " ";
 			if (txtAnswer.Text == String.Empty) {
-				string scriptStr = "<script>alert('답변을 입력해주세요.'); history.back() ; </script>";
-				Page.RegisterClientScriptBlock("done", scriptStr);
-			} else {
+                ClientScript.RegisterStartupScript(this.GetType(), "enterAnswer", "alert('답변을 입력해주세요.')", true);
+            } else {
 				Answer = txtAnswer.Text;
 
 				MySqlCommand cmd = new MySqlCommand();
