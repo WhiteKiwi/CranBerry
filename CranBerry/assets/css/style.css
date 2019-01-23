@@ -29,10 +29,8 @@
 }
 
 	.cb-nav-item:hover {
-		/* 
-			TODO: mouse-hover color 추가
-		*/
 		text-decoration: none;
+		color: white;
 	}
 
 /* Question.aspx */

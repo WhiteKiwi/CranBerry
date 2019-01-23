@@ -82,6 +82,7 @@
     <Content Include="admin\Login.aspx" />
     <Content Include="admin\Question.aspx" />
     <Content Include="admin\UploadNotice.aspx" />
+    <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\colors.css" />
     <Content Include="assets\css\default.css" />
