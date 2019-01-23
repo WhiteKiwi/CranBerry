@@ -87,6 +87,7 @@
     <Content Include="assets\css\default.css" />
     <Content Include="assets\css\fonts.css" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\img\banner.png" />
     <Content Include="assets\img\Beta.png" />
     <Content Include="assets\img\CNSA_Life.jpg" />
     <Content Include="assets\img\cranberry.png" />
