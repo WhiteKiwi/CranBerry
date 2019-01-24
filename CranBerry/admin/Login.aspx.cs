@@ -18,8 +18,17 @@ namespace CranBerry.admin
         }
         protected void LoginButton_Click(object sender, EventArgs e)
         {
+            //아이디 입력 확인
+            if (UserID.Text == String.Empty)
+            {
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('아이디를 입력해주세요.')", true);
+            }
+            //비밀번호 입력 확인
+            if (UserPW.Text == String.Empty)
+            {
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('비밀번호를 입력해주세요.')", true);
+            }
             //계정 확인
-
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             con.Open();
             MySqlCommand cmd = new MySqlCommand("Select * from admins where Id = @Id and Password = @Password", con);
@@ -50,9 +59,10 @@ namespace CranBerry.admin
 
 
     }
-
-
 }
+
+
+
 
 
 
