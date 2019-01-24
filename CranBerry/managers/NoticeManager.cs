@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace CranBerry.Managers {
 	public static class NoticeManager {
@@ -37,5 +38,29 @@ namespace CranBerry.Managers {
 				conn.Close();
 			}
 		}
-	}
+        public static int AddNotice(Notice notice)
+        {
+            int result = 0;
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = string.Format("insert into notices(Title,Contents,Notice_At,Id)values('{0}','{1}','{2}','{3}')", notice.Title, notice.Contents, DateTime.Now, notice.Id);
+                con.Open();
+                result = cmd.ExecuteNonQuery();
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+           
+
+        }
+    }
 }
