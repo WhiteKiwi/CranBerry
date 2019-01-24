@@ -13,31 +13,38 @@ namespace CranBerry.admin
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            Button ButtonLogin = new Button();
-            ButtonLogin.ID = "btnClick";
 
 
         }
         protected void LoginButton_Click(object sender, EventArgs e)
         {
             //계정 확인
-            TextBox UserID = new TextBox();
-            TextBox UserPW = new TextBox();
 
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             con.Open();
-            MySqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "select*from login where ID = '" + UserID.Text + "' and Password='" + UserPW.Text + "'";
-            cmd.ExecuteNonQuery();
-            DataTable dt = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-            da.Fill(dt);
-            foreach (DataRow dr in dt.Rows)
+            MySqlCommand cmd = new MySqlCommand("Select * from admins where Id = @Id and Password = @Password", con);
+            cmd.Parameters.AddWithValue("@Id", UserID.Text.ToString());
+            cmd.Parameters.AddWithValue("@Password", UserPW.Text.ToString());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
             {
-                Session["UserID"] = dr["UserID"].ToString();
+                Session["Id"] = reader["Id"].ToString();
+                Session["Name"] = reader["Name"].ToString();
+                reader.Close();
+                cmd.Dispose();
+                con.Close();
                 Response.Redirect("Default.aspx");
             }
-            Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('회원정보가 일치하지않습니다.')", true);
+            else
+            {
+                reader.Close();
+                cmd.Dispose();
+                con.Close();
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('회원정보가 일치하지않습니다.')", true);
+            }
+
+
+
 
         }
 
