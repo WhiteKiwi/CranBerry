@@ -1,6 +1,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace CranBerry.Managers {
 	public static class QnAManager {
@@ -133,6 +134,33 @@ namespace CranBerry.Managers {
                 conn.Close();
             }
         }
+        //질문 수정
+         public static int ModifyQuestion(Question question)
+        {
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["ByeongJun"].ConnectionString);
+            try
+            {
+                
+                int result = 0;
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                //질문 업데이트
+                cmd.CommandText = string.Format("update question set question = '{0}' where Number= Id", "Contents");
+                con.Open();
+                result = cmd.ExecuteNonQuery();
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+            
+        }
+        
 
     }
 }
