@@ -84,6 +84,55 @@ namespace CranBerry.Managers {
             for (i = 0; i < 7; i++) randstr += rndchrset[rnd.Next(0, 61)];
             return randstr;
         }
-        
+
+        /*
+         * 서정민 - 페이지 질문 불러오기
+         */
+
+        public static List<Models.Question> GetQuestionsByPage(int page)
+        {
+            MySqlConnection conn = null;
+            try
+            {
+                // Connect to DB;
+                conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+                conn.Open();
+
+                List<Models.Question> questions = new List<Models.Question>();
+
+                // Get Questions Count
+                string sql = "SELECT count(*) FROM + questions;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                int questionCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                // Get Questions
+                sql = "SELECT Id, Title, Question_At FROM questions ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
+
+                var rdr = cmd.ExecuteReader();
+                rdr.Read();
+                while (rdr.Read())
+                {
+                    questions.Add(new Models.Question
+                    {
+                        Id = (int)rdr["Id"],
+                        Title = (string)rdr["Title"],
+                        Contents = (string)rdr["Contents"],
+                        QuestionAt = (DateTime)rdr["Question_At"]
+                    });
+                }
+
+                return questions;
+            }
+            catch (Exception e)
+            {
+                // TODO: 예외 처리
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+
     }
 }
