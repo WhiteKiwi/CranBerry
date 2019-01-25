@@ -3,6 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
+	<form runat="server">
 	<!-- Top Image -->
 	<img src="/assets/img/banner.png" style="width: 100%;" />
 	<!--제목, 검색 박스-->
@@ -103,4 +104,5 @@
 			</td>
 		</tr>
 	</table>
+		</form>
 </asp:Content>
