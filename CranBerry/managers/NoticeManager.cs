@@ -59,8 +59,55 @@ namespace CranBerry.Managers {
             {
                 con.Close();
             }
-           
-
         }
+
+        //공지 목록 가져오기
+        public static List<Notice> GetNoticesyPage(int page)
+            {
+                MySqlConnection conn = null;
+                try
+                {
+                    // Connect to DB;
+                    conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+                    conn.Open();
+
+                    List<Notices> notices = new List<notices>();
+
+                    // Get notices Count
+                    string sql = "SELECT count(*) FROM notices;";
+                    MySqlCommand cmd = new MySqlCommand(sql, conn);
+                    int noticeCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    // Get notices
+                    sql = "SELECT Id, Title, Question_At FROM questions ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
+                    cmd.CommandText = sql;
+
+                    var rdr = cmd.ExecuteReader();
+                    rdr.Read();
+                    while (rdr.Read())
+                    {
+                        questions.Add(new Models.Question
+                        {
+                            Id = (int)rdr["Id"],
+                            Title = (string)rdr["Title"],
+                            NoticeAt = (DateTime)rdr["Notice_At"]
+                        });
+                    }
+
+                    return notices;
+                }
+                catch (Exception e)
+                {
+                    // TODO: 예외 처리
+                    throw new Exception(e.Message);
+                }
+                finally
+                {
+                    conn.Close();
+                }
+            }
+
+
+        
     }
 }
