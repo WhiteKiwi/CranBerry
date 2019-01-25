@@ -71,7 +71,7 @@ namespace CranBerry.Managers {
                     conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
                     conn.Open();
 
-                    List<Notices> notices = new List<notices>();
+                    List<Notice> notices = new List<Notice>();
 
                     // Get notices Count
                     string sql = "SELECT count(*) FROM notices;";
@@ -79,14 +79,14 @@ namespace CranBerry.Managers {
                     int noticeCount = Convert.ToInt32(cmd.ExecuteScalar());
 
                     // Get notices
-                    sql = "SELECT Id, Title, Question_At FROM questions ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
+                    sql = "SELECT Id, Title, Question_At FROM notices ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
                     cmd.CommandText = sql;
 
                     var rdr = cmd.ExecuteReader();
                     rdr.Read();
                     while (rdr.Read())
                     {
-                        questions.Add(new Models.Question
+                        notices.Add(new Notice
                         {
                             Id = (int)rdr["Id"],
                             Title = (string)rdr["Title"],
