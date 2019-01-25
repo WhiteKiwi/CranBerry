@@ -3,36 +3,66 @@ using System;
 using System.Configuration;
 using System.Data;
 using System.Web.UI;
+using System.Web.UI.WebControls;
 
-namespace CranBerry.admin {
-	public partial class Login : System.Web.UI.Page {
-		MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+namespace CranBerry.admin
+{
+    public partial class Login : System.Web.UI.Page
+    {
 
-		protected void BtnLogin_Click(object sender, EventArgs e) {
-			if (UserID.Text == String.Empty) {
-				ScriptManager.RegisterClientScriptBlock(LoginButton, this.GetType(), "AlertMsg", "<script language='javascript'>alert('아이디를 입력해주세요.');</script>", false);
-			}
-			if (UserPW.Text == String.Empty) {
-				ScriptManager.RegisterClientScriptBlock(LoginButton, this.GetType(), "AlertMsg", "<script language='javascript'>alert('비밀번호를 입력해주세요.');</script>", false);
-			}
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-			con.Open();
-			MySqlCommand cmd = con.CreateCommand();
-			cmd.CommandType = CommandType.Text;
-			cmd.CommandText = "select*from login where ID = '" + UserID.Text + "'and Password='" + UserPW.Text + "'";
-			cmd.ExecuteNonQuery();
-			DataTable dt = new DataTable();
-			MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-			da.Fill(dt);
-			foreach (DataRow dr in dt.Rows) {
-				Session["ID"] = dr["ID"].ToString();
-				Response.Redirect("AdminQaA.aspx");
-			}
 
-			con.Close();
-			ScriptManager.RegisterClientScriptBlock(LoginButton, this.GetType(), "AlertMsg", "<script language='javascript'>alert('회원정보가 일치하지 않습니다.');</script>", false);
 
-		}
-	}
+        }
+        protected void LoginButton_Click(object sender, EventArgs e)
+        {
+            //아이디 입력 확인
+            if (UserID.Text == String.Empty)
+            {
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('아이디를 입력해주세요.')", true);
+            }
+            //비밀번호 입력 확인
+            if (UserPW.Text == String.Empty)
+            {
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('비밀번호를 입력해주세요.')", true);
+            }
+            //계정 확인
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("Select * from admins where Id = @Id and Password = @Password", con);
+            cmd.Parameters.AddWithValue("@Id", UserID.Text.ToString());
+            cmd.Parameters.AddWithValue("@Password", UserPW.Text.ToString());
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                Session["Id"] = reader["Id"].ToString();
+                Session["Name"] = reader["Name"].ToString();
+                reader.Close();
+                cmd.Dispose();
+                con.Close();
+                Response.Redirect("Default.aspx");
+            }
+            else
+            {
+                reader.Close();
+                cmd.Dispose();
+                con.Close();
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('회원정보가 일치하지않습니다.')", true);
+            }
+
+
+
+
+        }
+
+
+    }
 }
+
+
+
+
+
 
