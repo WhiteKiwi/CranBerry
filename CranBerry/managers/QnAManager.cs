@@ -101,12 +101,13 @@ namespace CranBerry.Managers {
                 List<Models.Question> questions = new List<Models.Question>();
 
                 // Get Questions Count
-                string sql = "SELECT count(*) FROM + questions;";
+                string sql = "SELECT count(*) FROM questions;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 int questionCount = Convert.ToInt32(cmd.ExecuteScalar());
 
                 // Get Questions
                 sql = "SELECT Id, Title, Question_At FROM questions ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
+                cmd.CommandText = sql;
 
                 var rdr = cmd.ExecuteReader();
                 rdr.Read();
@@ -116,7 +117,6 @@ namespace CranBerry.Managers {
                     {
                         Id = (int)rdr["Id"],
                         Title = (string)rdr["Title"],
-                        Contents = (string)rdr["Contents"],
                         QuestionAt = (DateTime)rdr["Question_At"]
                     });
                 }
