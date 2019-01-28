@@ -151,17 +151,16 @@ namespace CranBerry.Managers {
             }
         }
         //질문 수정
-        public static int ModifyQuestion(Question question)
+        public static int ModifyQuestion(Models.Question question)
         {
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["Cranberry"].ConnectionString);
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             try
             {
-
                 int result = 0;
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
                 //질문 업데이트
-                cmd.CommandText = string.Format("update question set question = '{0}' where Number= Id", "Contents");
+                cmd.CommandText = string.Format("update question set Contents='{0}' where Id='{1}'", question.Contents, question.Id);
                 con.Open();
                 result = cmd.ExecuteNonQuery();
                 return result;
@@ -177,7 +176,10 @@ namespace CranBerry.Managers {
 
         }
 
-        
-        
+
     }
-}
+
+
+        
+        
+   }
