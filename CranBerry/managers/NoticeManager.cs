@@ -46,7 +46,7 @@ namespace CranBerry.Managers {
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("insert into notices(Title,Contents,Notice_At,Id)values('{0}','{1}','{2}','{3}')", notice.Title, notice.Contents, DateTime.Now, notice.Id);
+                cmd.CommandText = string.Format("insert into notices(Title,Contents,Notice_At)values('{0}','{1}','{2}')", notice.Title, notice.Contents, DateTime.Now);
                 con.Open();
                 result = cmd.ExecuteNonQuery();
                 return result;
