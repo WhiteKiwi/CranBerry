@@ -79,7 +79,7 @@ namespace CranBerry.Managers {
                     int noticeCount = Convert.ToInt32(cmd.ExecuteScalar());
 
                     // Get notices
-                    sql = "SELECT Id, Title, Question_At FROM notices ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
+                    sql = "SELECT Id, Title, Notice_At FROM notices ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
                     cmd.CommandText = sql;
 
                     var rdr = cmd.ExecuteReader();
