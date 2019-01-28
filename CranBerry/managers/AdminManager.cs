@@ -78,6 +78,30 @@ namespace CranBerry.Managers {
             }
             catch (Exception e)
             {
+                throw new Exception(e.Message);               
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        //비밀번호 변경
+        public static int ChangePassword(Admin admin)
+        {
+            int result = 0;
+            MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = string.Format("update admin set Password = '{0}' where Id = '{1}'", admin.Password ,admin.ID);
+                con.Open();
+                result = cmd.ExecuteNonQuery();
+                return result;
+            }
+            catch (Exception e)
+            {
                 throw new Exception(e.Message);
             }
             finally
