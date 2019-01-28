@@ -4,71 +4,87 @@ using System.Collections.Generic;
 using System.Configuration;
 
 namespace CranBerry.Managers {
-	public static class QnAManager {
-		/// <summary>
-		/// Get recent QnAs
-		/// </summary>
-		public static List<Models.Question> GetRecentQuestions() {
-			MySqlConnection conn = null;
-			try {
-				// Connect to DB;
-				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
-				conn.Open();
+    public static class QnAManager
+    {
+        /// <summary>
+        /// Get recent QnAs
+        /// </summary>
+        public static List<Models.Question> GetRecentQuestions()
+        {
+            MySqlConnection conn = null;
+            try
+            {
+                // Connect to DB;
+                conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+                conn.Open();
 
-				List<Models.Question> questions = new List<Models.Question>();
+                List<Models.Question> questions = new List<Models.Question>();
 
-				string sql = "SELECT * FROM questions ORDER BY Id DESC LIMIT 9;";
-				MySqlCommand cmd = new MySqlCommand(sql, conn);
-				var rdr = cmd.ExecuteReader();
-				while (rdr.Read()) {
-					questions.Add(new Models.Question {
-						Id = (int)rdr["Id"],
-						Title = (string)rdr["Title"],
-						Contents = (string)rdr["Contents"],
-						QuestionAt = (DateTime)rdr["Question_At"]
-					});
-				}
+                string sql = "SELECT * FROM questions ORDER BY Id DESC LIMIT 9;";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                var rdr = cmd.ExecuteReader();
+                while (rdr.Read())
+                {
+                    questions.Add(new Models.Question
+                    {
+                        Id = (int)rdr["Id"],
+                        Title = (string)rdr["Title"],
+                        Contents = (string)rdr["Contents"],
+                        QuestionAt = (DateTime)rdr["Question_At"]
+                    });
+                }
 
-				return questions;
-			} catch (Exception e) {
-				// TODO: 예외 처리
-				throw new Exception(e.Message);
-			} finally {
-				conn.Close();
-			}
-		}
+                return questions;
+            }
+            catch (Exception e)
+            {
+                // TODO: 예외 처리
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
 
-		/// <summary>
-		/// Get QnA by Id
-		/// </summary>
-		public static Models.Question GetQnA(int Id) {
-			MySqlConnection conn = null;
-			try {
-				// Connect to DB;
-				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
-				conn.Open();
+        /// <summary>
+        /// Get QnA by Id
+        /// </summary>
+        public static Models.Question GetQnA(int Id)
+        {
+            MySqlConnection conn = null;
+            try
+            {
+                // Connect to DB;
+                conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+                conn.Open();
 
-				string sql = "SELECT * FROM questions WHERE Id=" + Id + ";";
-				MySqlCommand cmd = new MySqlCommand(sql, conn);
-				var rdr = cmd.ExecuteReader();
-				rdr.Read();
-				Models.Question question = new Models.Question {
-					Id = (int)rdr["Id"],
-					Title = (string)rdr["Title"],
-					Contents = (string)rdr["Contents"],
-					QuestionAt = (DateTime)rdr["Question_At"],
-					Answer = (string)rdr["Answer"]
-				};
-				rdr.Close();
+                string sql = "SELECT * FROM questions WHERE Id=" + Id + ";";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                var rdr = cmd.ExecuteReader();
+                rdr.Read();
+                Models.Question question = new Models.Question
+                {
+                    Id = (int)rdr["Id"],
+                    Title = (string)rdr["Title"],
+                    Contents = (string)rdr["Contents"],
+                    QuestionAt = (DateTime)rdr["Question_At"],
+                    Answer = (string)rdr["Answer"]
+                };
+                rdr.Close();
 
-				return question;
-			} catch (Exception e) {
-				// TODO: 예외 처리
-				throw new Exception(e.Message);
-			} finally {
-				conn.Close();
-			}
-		}
+                return question;
+            }
+            catch (Exception e)
+            {
+                // TODO: 예외 처리
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
         /*
          * 이준모 - 랜덤 문자열 생성
          */
@@ -76,7 +92,7 @@ namespace CranBerry.Managers {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
             'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
         //사용될 문자들
-        
+
         public static string RandText()
         {
             Random rnd = new Random();
@@ -135,12 +151,12 @@ namespace CranBerry.Managers {
             }
         }
         //질문 수정
-         public static int ModifyQuestion(Question question)
+        public static int ModifyQuestion(Question question)
         {
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["ByeongJun"].ConnectionString);
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["Cranberry"].ConnectionString);
             try
             {
-                
+
                 int result = 0;
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
@@ -158,9 +174,33 @@ namespace CranBerry.Managers {
             {
                 con.Close();
             }
-            
-        }
-        
 
+        }
+
+        //질문 추가
+        public static int AddQuestion(Question question)
+        {
+            int result = 0;
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = string.Format("insert into question(Title,Contents,Question_At)values('{0}','{1}','{2}')", question.Title, question.Contents, DateTime.Now);
+                con.Open();
+                result = cmd.ExecuteNonQuery();
+                return result;
+            }
+
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
     }
 }
