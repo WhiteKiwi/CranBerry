@@ -177,30 +177,7 @@ namespace CranBerry.Managers {
 
         }
 
-        //질문 추가
-        public static int AddQuestion(Question question)
-        {
-            int result = 0;
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = string.Format("insert into question(Title,Contents,Question_At)values('{0}','{1}','{2}')", question.Title, question.Contents, DateTime.Now);
-                con.Open();
-                result = cmd.ExecuteNonQuery();
-                return result;
-            }
-
-
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+        
+        
     }
 }
