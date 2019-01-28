@@ -45,7 +45,7 @@ namespace CranBerry.Managers {
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("insert into admins(Id, Name)values('{0}','{1}')", admin.ID, admin.Name);
+                cmd.CommandText = string.Format("insert into admins(Id, Name, Password)values('{0}','{1}', '{2}')", admin.ID, admin.Name, admin.Password);
 
                 con.Open();
                 result = cmd.ExecuteNonQuery();
@@ -62,5 +62,28 @@ namespace CranBerry.Managers {
             }
         }
 
+        //비밀번호 초기화
+        public static int resetPassword(Admin admin)
+        {
+            int result = 0;
+            MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = con;
+                cmd.CommandText = string.Format("update admin set Password = 'cranberry' where Id = '{0}'", admin.ID );
+                con.Open();
+                result = cmd.ExecuteNonQuery();
+                return result;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
+}
