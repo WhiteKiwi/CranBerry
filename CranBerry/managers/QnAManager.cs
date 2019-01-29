@@ -153,7 +153,7 @@ namespace CranBerry.Managers {
         //질문 수정
         public static int ModifyQuestion(Models.Question question)
         {
-            if (Answer == 0)
+            if (question.Answer != "0" )
                 return -1;
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             try
