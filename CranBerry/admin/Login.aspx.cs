@@ -42,7 +42,7 @@ namespace CranBerry.admin
                 reader.Close();
                 cmd.Dispose();
                 con.Close();
-                Response.Redirect("/admin/Default.aspx");
+                Response.Redirect("/admin/");
             }
             else
             {
