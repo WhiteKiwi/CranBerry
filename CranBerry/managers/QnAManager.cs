@@ -153,7 +153,7 @@ namespace CranBerry.Managers {
         //질문 수정
         public static int ModifyQuestion(Models.Question question)
         {
-            if (Answer == 0)
+            if (question.Answer != "0" )
                 return -1;
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             try
@@ -166,6 +166,7 @@ namespace CranBerry.Managers {
                 con.Open();
                 result = cmd.ExecuteNonQuery();
                 return result;
+                
             }
             catch (Exception e)
             {
@@ -177,9 +178,37 @@ namespace CranBerry.Managers {
             }
 
         }
+        public static int AddAnswer(Models.Question answer)
+        {
+            int result = 0;
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            try
+            {
+
+               
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("update answer Set Answer=@Answer, Id= @Id where Id=" +answer.Id, con);
+                cmd.Parameters.AddWithValue("@Answer", answer.Contents);
+                cmd.Parameters.AddWithValue("@Id", answer.Id);
+                result = cmd.ExecuteNonQuery();
+                return result;
+              
+                
+
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                cmd.Dispose();
+                con.Close();
+            }
 
 
-    }
+            }
+        }
 
 
         
