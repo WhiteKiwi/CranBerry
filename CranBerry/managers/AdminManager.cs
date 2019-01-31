@@ -4,10 +4,12 @@ using System;
 using System.Collections.Generic;
 
 namespace CranBerry.Managers {
+
 	public static class AdminManager {
         /// <summary>
         /// Get Admin List
         /// </summary>
+        const string SALT = "JhCI2?-!?5Df(???H3*??<ICBe_?>W>i?%z|:c??k~B#6:>a";
         public static List<Admin> GetAdmins() {
             MySqlConnection conn = null;
             try {
@@ -39,13 +41,14 @@ namespace CranBerry.Managers {
         //계정추가
         public static int AddAdmin(Admin admin)
             {
+              
                 int result = 0;
                 MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             try
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("insert into admins(Id, Name, Password)values('{0}','{1}', '{2}')", admin.ID, admin.Name, admin.Password);
+                cmd.CommandText = string.Format("insert into admins(Id, Name, Password)values('{0}','{1}', '{2}')", admin.ID, admin.Name, admin.Password+SALT);
 
                 con.Open();
                 result = cmd.ExecuteNonQuery();
@@ -95,7 +98,7 @@ namespace CranBerry.Managers {
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("update admin set Password = '{0}' where Id = '{1}'", admin.Password ,admin.ID);
+                cmd.CommandText = string.Format("update admin set Password = '{0}' where Id = '{1}'", admin.Password+SALT ,admin.ID);
                 con.Open();
                 result = cmd.ExecuteNonQuery();
                 return result;
@@ -108,6 +111,31 @@ namespace CranBerry.Managers {
             {
                 con.Close();
             }
+        }
+
+        //로그인
+        public static bool AdminVerification(string Id, string Password){
+            MySqlConnection conn = null;
+            try{
+                conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+                conn.Open();
+                string sql = "SELECT * FROM admin WHERE Id=" + Id + ";";
+                if(sql.Password == Password + SALT)
+                    return true;
+                return false;
+                }
+
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+
+
         }
     }
 }

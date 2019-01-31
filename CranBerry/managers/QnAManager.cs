@@ -151,43 +151,55 @@ namespace CranBerry.Managers {
             }
         }
         //질문 수정
-        public static int ModifyQuestion(Models.Question question)
+        public static int ModifyQuestion(Models.Question question, string RandText)
         {
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            MySqlCommand cmd = new MySqlCommand();
+
             if (question.Answer != "0" )
                 return -1;
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
-            try
+                    
             {
-                int result = 0;
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = con;
-                //질문 업데이트
-                cmd.CommandText = string.Format("update question set Contents='{0}' where Id='{1}'", question.Contents, question.Id);
-                con.Open();
-                result = cmd.ExecuteNonQuery();
-                return result;
-                
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
+                try
+                {
+                    int result = 0;
+                    
+                    cmd.Connection = con;
+                    cmd.CommandText = string.Format("SELECT RandText FROM questions WHERE Id = "+ question.Id);
+                    con.Open();
+                    if (RandText == (string)cmd.ExecuteScalar())
+                    {
+                        //질문 업데이트
+                        cmd.CommandText = string.Format("update question set Contents='{0}' where Id='{1}'", question.Contents, question.Id);
+                        result = cmd.ExecuteNonQuery();
+                        return result;
+                    }
+                    else return -1;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(e.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
 
+            }
         }
         public static int AddAnswer(Models.Question answer)
         {
             int result = 0;
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            MySqlCommand cmd = new MySqlCommand();
             try
             {
 
                
                 con.Open();
-                MySqlCommand cmd = new MySqlCommand("update answer Set Answer=@Answer, Id= @Id where Id=" +answer.Id, con);
+                cmd.Connection = con;
+                cmd.CommandText = string.Format("update answer Set Answer=@Answer, Id= @Id where Id=" + answer.Id);
+
                 cmd.Parameters.AddWithValue("@Answer", answer.Contents);
                 cmd.Parameters.AddWithValue("@Id", answer.Id);
                 result = cmd.ExecuteNonQuery();
@@ -202,12 +214,36 @@ namespace CranBerry.Managers {
             }
             finally
             {
-                
+                cmd.Dispose();
                 con.Close();
             }
 
 
             }
+
+        public static void DeleteQuestion(int id)
+        {
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = string.Format("DELETE FROM question WHERE Id=" + id);
+            }
+            catch(Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                
+                con.Close();
+            }
+
+
+        }
+
         }
 
 

@@ -33,9 +33,9 @@ namespace CranBerry.admin
             con.Open();
             MySqlCommand cmd = new MySqlCommand("Select * from admins where Id = @Id and Password = @Password", con);
             cmd.Parameters.AddWithValue("@Id", UserID.Text.ToString());
-            cmd.Parameters.AddWithValue("@Password", UserPW.Text.ToString());
+            cmd.Parameters.AddWithValue("@Password", UserPW.Text.ToString());  
             MySqlDataReader reader = cmd.ExecuteReader();
-            if (reader.Read())
+            if (CranBerry.Managers.AdminManager.AdminVerification(reader["Id"].ToString(), reader["Password"].ToString()))
             {
                 Session["Id"] = reader["Id"].ToString();
                 Session["Name"] = reader["Name"].ToString();
