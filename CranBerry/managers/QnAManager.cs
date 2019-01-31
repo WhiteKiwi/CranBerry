@@ -202,7 +202,7 @@ namespace CranBerry.Managers {
             }
             finally
             {
-                cmd.Dispose();
+                
                 con.Close();
             }
 
