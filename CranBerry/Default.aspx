@@ -158,7 +158,7 @@
 	<!-- Member -->
 	<div class="all-varyberry">
 		<!-- Beta -->
-		<div class="team-varyberry" style="border-right: 0.5px solid #707070;">
+		<div class="team-varyberry">
 			<img src="/assets/img/Beta.png" />
 			<br />
 			<br />
@@ -262,6 +262,7 @@
 					<br />
 					<br />
 					<br />
+					Berry 작성 도움<br />
 				</div>
 				<!-- 이름 -->
 				<div class="name f3">
@@ -282,6 +283,7 @@
 					5기 조예슬<br />
 					5기 김민성<br />
 					5기 전혜원<br />
+					4기 석기범<br />
 				</div>
 			</div>
 		</div>
