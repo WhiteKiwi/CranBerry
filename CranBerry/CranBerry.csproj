@@ -206,8 +206,8 @@
     <Content Include="Default.aspx" />
     <Content Include="assets\img\second.png" />
     <Content Include="Question.aspx" />
-    <Content Include="Web.config" />
     <Content Include="UploadQuestion.aspx" />
+    <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="admin\Accounts.aspx.cs">

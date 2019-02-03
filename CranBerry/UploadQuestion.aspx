@@ -1,105 +1,85 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="UploadQuestion.aspx.cs" Inherits="CranBerry.UploadQuestion" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/User.Master" AutoEventWireup="true" CodeBehind="UploadQuestion.aspx.cs" Inherits="CranBerry.UploadQuestion" %>
 
-<!DOCTYPE html>
+<asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
+	<!-- Top Image -->
+	<img src="/assets/img/banner.png" style="width: 100%;" />
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <!--CRANBERRY 툴바-->
-<div style="width: 1920px; height: 240px; background-color: #BF0404; float: top">
-<div style="width: 1920px; height: 15px"></div>
-<table>
-<tr>
-<td><span style="margin-left: 30px"></span></td>
-<td><img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.15752-9/50140794_1967936896624249_2193767319388291072_n.png?_nc_cat=108&_nc_ht=scontent-icn1-1.xx&oh=c9b2da2da16afac0bbf31040a0ec1cd4&oe=5CBF25DE"
-alt="크랜베리 로고" width="110"></td>
-<td><span style="color: white; font-size: 60px; margin-left: 660px">CRANBERRY</span></td>
-</tr>
-</table>
-<hr style="border: 2px solid white; background-color; margin-bottom: 15px">
-<span style="color: white; margin-left: 600px; font-size: 30px">Notice</span>
-<span style="color: white; margin-left: 80px; font-size: 30px">Berries</span>
-<span style="color: white; margin-left: 80px; font-size: 30px">Calander</span>
-<span style="color: white; margin-left: 80px; font-size: 30px">Q&A</span>
-<span style="color: white; margin-left: 80px; font-size: 30px">Info</span>
-<hr style="border: 2px solid white; background-color: white; margin-top: 15px">
-</div>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<!-- 페이지 Top -->
+	<h1 class="f0 bold text-darkred" style="margin-left: 130px;">Q&A 등록</h1>
+	<div class="w-100" style="padding: 10px 130px 30px 130px;">
+		<div class="cb-bg-red w-100" style="height: 3px;"></div>
+	</div>
 
-<div style="width: 1920px">
-<!--사진-->
-<img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.15752-9/49745756_2347222058826851_6098154240859963392_n.png?_nc_cat=107&_nc_ht=scontent-icn1-1.xx&oh=b33505dd95e2590b32f1bbf3dac3bbac&oe=5CC2E9C1"
-alt="배너 사진" width="1920" height="650"></img>
+	<!-- 안내사항 -->
+	<div style="margin: 0 130px 0 130px;">
+		<div class="jumbotron jumbotron-fluid border text-center" style="padding: 30px 30px 10px 30px; border-color: #95989A !important;">
+			<h4>Q&A 작성 안내</h4>
+			<br />
+			<div class="text-left">
+				<p>
+					<strong>1. 제목에 질문하고자 하는 내용이 표현되어야 합니다.</strong><br />
+					- 예를 들어 캐주얼 데이에 정복 조끼가 착용 가능한지 여부에 대해 질문해 주실 때 제목에는 "캐주얼 데이 조끼 착용 가능 여부" 처럼 작성해 주시기 바랍니다.
+				</p>
+				<p><strong>2. 질문의 의도가 교칙위반 이거나 BlueBerry의 목적에 맞지 않는 질문은 특별한 안내 없이 삭제 될 수 있습니다.</strong></p>
+				<p>
+					<strong>3. 문제집과 같은 개인차가 있는 질문은 명확한 답변이 어렵습니다.</strong><br />
+					- 따라서 추천보다는 선배들이 많이 사용한 문제집과 같은 객관적인 사실을 답변해드립니다.<br />
+					- 어디까지나 참고사항으로 여겨주시면 좋겠습니다.
+				</p>
+				<p>
+					<strong>4. 질문하기 전 질문하고자 하는 내용이 Berries에 작성되어 있는지 확인해주시기 바랍니다.</strong><br />
+					- 작성되어 있는 팁의 경우 답변의 우선순위가 낮아질 수 있습니다.
+				</p>
+				<p><strong>5. 20글자 이상 작성해주세요~</strong></p>
+			</div>
+		</div>
+	</div>
+	<br />
 
+	<!-- Contents -->
+	<form runat="server" style="margin: 0 130px 0 130px;">
+		<div class="row">
+			<div class="col-1" style="text-align: left;">
+				<h4>제목</h4>
+				<br />
+				<br />
+				<h4>내용</h4>
+			</div>
+			<div class="col-11">
+				<asp:TextBox ID="nTitle" runat="server" Width="100%" />
 
-<!--Q&A 등록 제목-->
-<h1 style="color: #400101; margin-left: 160px; margin-top: 110px; font-size: 55px"><b>Q&A 등록</b></h1>
-<hr style="border: 2px solid #BF0404; background-color: #BF0404; width: 1800px; margin-left: 55px">
+				<br />
+				<br />
+				<br />
 
-<!--제목 박스-->
-<table style="margin-left: 130px; margin-top: 60px">
-<tr>
-<td style="color: black; font-size: 35px; vertical-align: text-top"><b>제목</b>
-</td>
-<td style="width: 40px">
-</td>
-<td style="width: 1520px; height: 50px; background-color: white; border:1px solid #707070; margin-top: 60px">
-    <asp:TextBox ID="txtTitle" runat="server" Width="1520px" Height="50px"></asp:TextBox>
-</td>
-</tr>
-</table>
+				<!-- Contents -->
+				<asp:TextBox ID="Contents" runat="server" TextMode="MultiLine" Width="100%" Height="100%" placeholder="20글자 이상 작성해야 등록됩니다." />
 
-<!--내용 박스-->
-<table style="margin-left: 130px; margin-top: 45px">
-<tr>
-<td style="color: black; font-size: 35px; vertical-align: text-top"><b>내용</b>
-</td>
-<td style="width:40px">
-</td>
-<td style="width: 1520px; height: 530px; background-color: white; border:1px solid #707070;
- margin-left: 170px; margin-top: 50px">
-    <asp:TextBox ID="txtContent" runat="server" width="1520px" Height="530px"></asp:TextBox>
- </td>
- </tr>
-</table>
+				<br />
+				<br />
+				<asp:Button ID="QuestionButton" runat="server" CssClass="btn float-right cb-bg-darkred text-white" OnClick="QuestionUpload" Text="등록" />
+			</div>
+		</div>
+	</form>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 
-<!--바이트-->
-<div style="color: #707070; font-size: 30px; margin-left: 255px">0/10000byte</div>
-
-</div>
-<!--랜덤 문자열 임시 표시-->
-<h1 style="text-align: center">
-    <asp:TextBox ID="txtRand" runat="server"></asp:TextBox>
-</h1>
-
-<!--되돌리기/글쓰기 버튼-->
-<table style="margin-left: 1440px; margin-top: 60px; margin-bottom: 150px">
-<tr>
-<td style="margin-left: 1440px; margin-top: 60px; margin-bottom: 37px; width: 120px; height: 70px; background-color: #703E3E; border-radius: 0.4em; text-align: center">
-<img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.15752-9/49694550_2011936722437397_7232961076650835968_n.png?_nc_cat=109&_nc_ht=scontent-icn1-1.xx&oh=034251dcb9adcb974dd3341526dc06d6&oe=5CD10F30"
- alt="되돌리기 버튼" width="50" height="50"></td>
-<td style="width: 20px">
-</td>
-<td style="margin-left: 1570px; margin- margin-top: 60px; margin-bottom: 20px; width: 120px; height: 70px; background-color: #400101;
-border-radius: 0.4em; font-size: 25px; color: white; text-align: center">글쓰기
-  <asp:Button ID="btnWrite" runat="server" Width="120px" Height="70px" Text="글쓰기" OnClick="btnWrite_Click"/>
-</td>
-</tr>
-</table>
-
-<!--정체불명 빨간색 바-->
-<div style="margin-left: 80px; margin-bottom: 37px; width: 1740px; height: 20px; background-color: #BF0404"></div>
-
-<!--저작권 문구 바-->
-<div style="width: 1920px; height: 130px; background-color: #BF0404; margin-bottom: 37px">
-<p style="color: white; font-size: 27px; text-align: center; padding-top: 12px">2018 Copyright © Team VaryBerry All Right Reserved.</p></div>
-
-
-        </div>
-    </form>
-</body>
-</html>
+	<!-- Copyright -->
+	<div class="copyright f3 text-white cb-bg-red">
+		2017 Copyright &copy; Team VaryBerry All Right Reserved
+	</div>
+</asp:Content>
