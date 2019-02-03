@@ -133,8 +133,31 @@ namespace CranBerry.Managers {
                 con.Close();
             }
         }
+        public static int DeleteNotice(Notice notice) // 베리삭제
+        {
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                int result = 0;
+                cmd.Connection = con;
+                cmd.CommandText = string.Format("Delete From notices Where Id={0}", notice.Id);
+                con.Open();
+                result = cmd.ExecuteNonQuery();
+                return result;
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
 
-        
+
     }
 }
