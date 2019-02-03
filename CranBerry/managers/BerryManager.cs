@@ -33,8 +33,33 @@ namespace CranBerry.managers
                 con.Close();
             }
         }
-    }
+    
+    public static int ModifyBerry(Berry berry) //베리 수정
+    {
+        MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+        MySqlCommand cmd = new MySqlCommand();
+        try
+        {
+            int result = 0;
+            cmd.Connection = con;
+            cmd.CommandText = string.Format("SELECT berries FROM  WHERE Id = " + berry.Id);
+            con.Open();
+            //베리 업데이트
+            cmd.CommandText = string.Format("update berries set Contents='{0}', Title={1} where Id='{2}'", berry.Contents, berry.Title, berry.Id);
+            result = cmd.ExecuteNonQuery();
+            return result;
 
+        }
+        catch (Exception e)
+        {
+            throw new Exception(e.Message);
+        }
+        finally
+        {
+            con.Close();
+        }
+         }
+    }
 
 }
 
