@@ -106,6 +106,33 @@ namespace CranBerry.Managers {
                     conn.Close();
                 }
             }
+        public static int ModifyNotice(Notice notice)
+        {
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                int result = 0;
+
+                cmd.Connection = con;
+                cmd.CommandText = string.Format("SELECT notices FROM  WHERE Id = " + notice.Id);
+                con.Open();
+                
+                    //공지 업데이트
+                    cmd.CommandText = string.Format("update notices set Contents='{0}' where Id='{1}'", notice.Contents, notice.Id);
+                    result = cmd.ExecuteNonQuery();
+                    return result;
+                
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
 
         
