@@ -62,7 +62,7 @@
 	<br>
 	<br>
 	<div class="w-100">
-		<a href="/Questions.aspx" class="btn btn-square float-right cb-bg-darkred text-white" style="height: 38px; margin-right: 120px;" role="button">목록</a>
+		<a href="/QnA.aspx" class="btn btn-square float-right cb-bg-darkred text-white" style="height: 38px; margin-right: 120px;" role="button">목록</a>
 	</div>
 	<br>
 	<br>
