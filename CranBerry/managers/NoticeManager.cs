@@ -9,20 +9,20 @@ namespace CranBerry.Managers {
 		/// <summary>
 		/// Get recent Notices
 		/// </summary>
-		public static List<Notice> GetRecentNotices() {
+		public static List<Models.Notice> GetRecentNotices() {
 			MySqlConnection conn = null;
 			try {
 				// Connect to DB;
 				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 				conn.Open();
 
-				List<Notice> notices = new List<Notice>();
+				List<Models.Notice> notices = new List<Models.Notice>();
 
 				string sql = "SELECT * FROM notices ORDER BY Id DESC LIMIT 5;";
 				MySqlCommand cmd = new MySqlCommand(sql, conn);
 				var rdr = cmd.ExecuteReader();
 				while (rdr.Read()) {
-					notices.Add(new Notice {
+					notices.Add(new Models.Notice {
 						Id = (int)rdr["Id"],
 						Title = (string)rdr["Title"],
 						Contents = (string)rdr["Contents"],
@@ -38,126 +38,100 @@ namespace CranBerry.Managers {
 				conn.Close();
 			}
 		}
-        public static int AddNotice(Notice notice)
-        {
-            int result = 0;
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = con;
-                cmd.CommandText = string.Format("insert into notices(Title,Contents,Notice_At)values('{0}','{1}','{2}')", notice.Title, notice.Contents, DateTime.Now);
-                con.Open();
-                result = cmd.ExecuteNonQuery();
-                return result;
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+		public static int AddNotice(Models.Notice notice) {
+			int result = 0;
+			MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+			try {
+				MySqlCommand cmd = new MySqlCommand();
+				cmd.Connection = con;
+				cmd.CommandText = string.Format("insert into notices(Title,Contents,Notice_At)values('{0}','{1}','{2}')", notice.Title, notice.Contents, DateTime.Now);
+				con.Open();
+				result = cmd.ExecuteNonQuery();
+				return result;
+			} catch (Exception e) {
+				throw new Exception(e.Message);
+			} finally {
+				con.Close();
+			}
+		}
 
-        //공지 목록 가져오기
-        public static List<Notice> GetNoticesyPage(int page)
-            {
-                MySqlConnection conn = null;
-                try
-                {
-                    // Connect to DB;
-                    conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
-                    conn.Open();
+		//공지 목록 가져오기
+		public static List<Models.Notice> GetNoticesyPage(int page) {
+			MySqlConnection conn = null;
+			try {
+				// Connect to DB;
+				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+				conn.Open();
 
-                    List<Notice> notices = new List<Notice>();
+				List<Models.Notice> notices = new List<Models.Notice>();
 
-                    // Get notices Count
-                    string sql = "SELECT count(*) FROM notices;";
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    int noticeCount = Convert.ToInt32(cmd.ExecuteScalar());
+				// Get notices Count
+				string sql = "SELECT count(*) FROM notices;";
+				MySqlCommand cmd = new MySqlCommand(sql, conn);
+				int noticeCount = Convert.ToInt32(cmd.ExecuteScalar());
 
-                    // Get notices
-                    sql = "SELECT Id, Title, Notice_At FROM notices ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
-                    cmd.CommandText = sql;
+				// Get notices
+				sql = "SELECT Id, Title, Notice_At FROM notices ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
+				cmd.CommandText = sql;
 
-                    var rdr = cmd.ExecuteReader();
-                    rdr.Read();
-                    while (rdr.Read())
-                    {
-                        notices.Add(new Notice
-                        {
-                            Id = (int)rdr["Id"],
-                            Title = (string)rdr["Title"],
-                            NoticeAt = (DateTime)rdr["Notice_At"]
-                        });
-                    }
+				var rdr = cmd.ExecuteReader();
+				rdr.Read();
+				while (rdr.Read()) {
+					notices.Add(new Models.Notice {
+						Id = (int)rdr["Id"],
+						Title = (string)rdr["Title"],
+						NoticeAt = (DateTime)rdr["Notice_At"]
+					});
+				}
 
-                    return notices;
-                }
-                catch (Exception e)
-                {
-                    // TODO: 예외 처리
-                    throw new Exception(e.Message);
-                }
-                finally
-                {
-                    conn.Close();
-                }
-            }
-        public static int ModifyNotice(Notice notice)
-        {
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
-            MySqlCommand cmd = new MySqlCommand();
-            try
-            {
-                int result = 0;
+				return notices;
+			} catch (Exception e) {
+				// TODO: 예외 처리
+				throw new Exception(e.Message);
+			} finally {
+				conn.Close();
+			}
+		}
 
-                cmd.Connection = con;
-                cmd.CommandText = string.Format("SELECT notices FROM  WHERE Id = " + notice.Id);
-                con.Open();
-                
-                    //공지 업데이트
-                    cmd.CommandText = string.Format("update notices set Contents='{0}' where Id='{1}'", notice.Contents, notice.Id);
-                    result = cmd.ExecuteNonQuery();
-                    return result;
-                
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
-        public static int DeleteNotice(Notice notice) // 베리삭제
-        {
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
-            MySqlCommand cmd = new MySqlCommand();
-            try
-            {
-                int result = 0;
-                cmd.Connection = con;
-                cmd.CommandText = string.Format("Delete From notices Where Id={0}", notice.Id);
-                con.Open();
-                result = cmd.ExecuteNonQuery();
-                return result;
+		public static int ModifyNotice(Models.Notice notice) {
+			MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+			MySqlCommand cmd = new MySqlCommand();
+			try {
+				int result = 0;
 
-            }
-            catch (Exception e)
-            {
-                throw new Exception(e.Message);
-            }
-            finally
-            {
-                con.Close();
-            }
-        }
+				cmd.Connection = con;
+				cmd.CommandText = string.Format("SELECT notices FROM  WHERE Id = " + notice.Id);
+				con.Open();
 
+				//공지 업데이트
+				cmd.CommandText = string.Format("update notices set Contents='{0}' where Id='{1}'", notice.Contents, notice.Id);
+				result = cmd.ExecuteNonQuery();
+				return result;
 
+			} catch (Exception e) {
+				throw new Exception(e.Message);
+			} finally {
+				con.Close();
+			}
+		}
 
-    }
+		// 베리삭제
+		public static int DeleteNotice(Models.Notice notice) {
+			MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+			MySqlCommand cmd = new MySqlCommand();
+			try {
+				int result = 0;
+				cmd.Connection = con;
+				cmd.CommandText = string.Format("Delete From notices Where Id={0}", notice.Id);
+				con.Open();
+				result = cmd.ExecuteNonQuery();
+				return result;
+
+			} catch (Exception e) {
+				throw new Exception(e.Message);
+			} finally {
+				con.Close();
+			}
+		}
+	}
 }
