@@ -181,9 +181,18 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="admin\Accounts.aspx" />
+    <Content Include="admin\Calandar.aspx" />
     <Content Include="admin\Default.aspx" />
+    <Content Include="admin\EditBerry.aspx" />
+    <Content Include="admin\EditCalandar.aspx" />
+    <Content Include="admin\EditNotice.aspx" />
     <Content Include="admin\Login.aspx" />
+    <Content Include="admin\Notice.aspx" />
+    <Content Include="admin\Notices.aspx" />
+    <Content Include="admin\QnA.aspx" />
     <Content Include="admin\Question.aspx" />
+    <Content Include="admin\UploadBerry.aspx" />
+    <Content Include="admin\UploadCalandar.aspx" />
     <Content Include="admin\UploadNotice.aspx" />
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\bootstrap.min.css" />
@@ -203,6 +212,8 @@
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\jquery-3.3.1.slim.min.js" />
     <Content Include="assets\js\popper.min.js" />
+    <Content Include="Berries.aspx" />
+    <Content Include="Calandar.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="assets\img\second.png" />
     <Content Include="Notice.aspx" />
@@ -220,12 +231,40 @@
     <Compile Include="admin\Accounts.aspx.designer.cs">
       <DependentUpon>Accounts.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\Calandar.aspx.cs">
+      <DependentUpon>Calandar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Calandar.aspx.designer.cs">
+      <DependentUpon>Calandar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\EditBerry.aspx.cs">
+      <DependentUpon>EditBerry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\EditBerry.aspx.designer.cs">
+      <DependentUpon>EditBerry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\EditCalandar.aspx.cs">
+      <DependentUpon>EditCalandar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\EditCalandar.aspx.designer.cs">
+      <DependentUpon>EditCalandar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\EditNotice.aspx.cs">
+      <DependentUpon>EditNotice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\EditNotice.aspx.designer.cs">
+      <DependentUpon>EditNotice.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
@@ -234,6 +273,27 @@
     <Compile Include="admin\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\Notice.aspx.cs">
+      <DependentUpon>Notice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Notice.aspx.designer.cs">
+      <DependentUpon>Notice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Notices.aspx.cs">
+      <DependentUpon>Notices.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Notices.aspx.designer.cs">
+      <DependentUpon>Notices.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\QnA.aspx.cs">
+      <DependentUpon>QnA.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\QnA.aspx.designer.cs">
+      <DependentUpon>QnA.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\Question.aspx.cs">
       <DependentUpon>Question.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -241,12 +301,40 @@
     <Compile Include="admin\Question.aspx.designer.cs">
       <DependentUpon>Question.aspx</DependentUpon>
     </Compile>
+    <Compile Include="admin\UploadBerry.aspx.cs">
+      <DependentUpon>UploadBerry.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\UploadBerry.aspx.designer.cs">
+      <DependentUpon>UploadBerry.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\UploadCalandar.aspx.cs">
+      <DependentUpon>UploadCalandar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\UploadCalandar.aspx.designer.cs">
+      <DependentUpon>UploadCalandar.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\UploadNotice.aspx.cs">
       <DependentUpon>UploadNotice.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\UploadNotice.aspx.designer.cs">
       <DependentUpon>UploadNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Berries.aspx.cs">
+      <DependentUpon>Berries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Berries.aspx.designer.cs">
+      <DependentUpon>Berries.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Calandar.aspx.cs">
+      <DependentUpon>Calandar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Calandar.aspx.designer.cs">
+      <DependentUpon>Calandar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
