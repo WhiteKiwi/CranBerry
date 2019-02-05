@@ -55,6 +55,75 @@ namespace CranBerry.Managers {
 			}
 		}
 
+		/// <summary>
+		/// Get Notices by page
+		/// 목록 렌더링을 위해 제목과 글번호만 반환
+		/// </summary>
+		public static List<Models.Notice> GetNoticeByPage(int page) {
+			MySqlConnection conn = null;
+			try {
+				// Connect to DB;
+				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+				conn.Open();
+
+				List<Models.Notice> noticeList = new List<Models.Notice>();
+
+				// Get Notices Count
+				string sql = "SELECT count(*) FROM notices;";
+				MySqlCommand cmd = new MySqlCommand(sql, conn);
+				int noticeCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+				// Get Notices
+				sql = "SELECT Id, Title, Notice_At FROM notices ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
+				cmd.CommandText = sql;
+
+				var rdr = cmd.ExecuteReader();
+				while (rdr.Read()) {
+					noticeList.Add(new Models.Notice {
+						Id = (int)rdr["Id"],
+						Title = (string)rdr["Title"],
+						NoticeAt = (DateTime)rdr["Notice_At"]
+					});
+				}
+
+				return noticeList;
+			} catch (Exception e) {
+				// TODO: 예외 처리
+				throw new Exception(e.Message);
+			} finally {
+				conn.Close();
+			}
+		}
+
+		/// <summary>
+		/// Get Pages Count
+		/// </summary>
+		public static int GetPagesCount() {
+			MySqlConnection conn = null;
+			try {
+				// Connect to DB;
+				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+				conn.Open();
+
+				// Get Notices Count
+				string sql = "SELECT count(*) FROM notices;";
+				MySqlCommand cmd = new MySqlCommand(sql, conn);
+				int noticeCount = Convert.ToInt32(cmd.ExecuteScalar());
+
+				// 공지 갯수의 1의 자리가 0일 경우
+				if (noticeCount % 10 != 0) {
+					return noticeCount / 10 + 1;
+				} else {
+					return noticeCount / 10;
+				}
+			} catch (Exception e) {
+				// TODO: 예외 처리
+				throw new Exception(e.Message);
+			} finally {
+				conn.Close();
+			}
+		}
+
 		//공지 목록 가져오기
 		public static List<Models.Notice> GetNoticesyPage(int page) {
 			MySqlConnection conn = null;
