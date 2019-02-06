@@ -81,7 +81,7 @@
 			%>
 
             <div style="width: 100%; text-align: right;">
-				<a href="/AddQuestion.aspx" class="btn cb-bg-darkred text-white" role="button">질문 등록</a>
+				<a href="/UploadQuestion.aspx" class="btn cb-bg-darkred text-white" role="button">질문 등록</a>
 			</div>
 
 			<!-- Page Link -->
