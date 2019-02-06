@@ -6,6 +6,44 @@ using System.Configuration;
 namespace CranBerry.Managers {
 	public static class QnAManager {
 		/// <summary>
+		/// Upload Question
+		/// </summary>
+		public static int UploadQuestion(Models.Question question) {
+			// 제목 또는 내용이 비어 있을 경우 종료
+			if (String.IsNullOrEmpty(question.Title.Trim()) || String.IsNullOrEmpty(question.Contents.Trim()))
+				return -1;
+
+			MySqlConnection conn = null;
+			try {
+				// Connect to DB;
+				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+				conn.Open();
+
+				int result = 0;
+
+				// Connect to Database
+				string sql = "INSERT INTO questions(Title, Contents, Question_At, UserID, RandText) VALUES (?, ?, ?, ?, ?);";
+				MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+				// Add Question Info
+				cmd.Parameters.Add("Title", MySqlDbType.VarChar).Value = question.Title;
+				cmd.Parameters.Add("Contents", MySqlDbType.VarChar).Value = question.Contents.Replace("\r\n", "<br/>");
+				cmd.Parameters.Add("Question_At", MySqlDbType.DateTime).Value = DateTime.Now;
+				cmd.Parameters.Add("UserID", MySqlDbType.VarChar).Value = question.UserID;
+				cmd.Parameters.Add("RandText", MySqlDbType.VarChar).Value = "12345678";
+
+				result = cmd.ExecuteNonQuery();
+
+				return result;
+			} catch (Exception e) {
+				// TODO: 예외 처리
+				throw new Exception(e.Message);
+			} finally {
+				conn.Close();
+			}
+		}
+
+		/// <summary>
 		/// Get recent QnAs
 		/// </summary>
 		public static List<Models.Question> GetRecentQuestions() {
@@ -98,22 +136,17 @@ namespace CranBerry.Managers {
 
 				List<Models.Question> questions = new List<Models.Question>();
 
-				// Get Questions Count
-				string sql = "SELECT count(*) FROM questions;";
-				MySqlCommand cmd = new MySqlCommand(sql, conn);
-				int questionCount = Convert.ToInt32(cmd.ExecuteScalar());
-
 				// Get Questions
-				sql = "SELECT Id, Title, Question_At FROM questions ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
-				cmd.CommandText = sql;
-
+				string sql = "SELECT Id, Title, Question_At, Answer FROM questions ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
+				MySqlCommand cmd = new MySqlCommand(sql, conn);
+				
 				var rdr = cmd.ExecuteReader();
-				rdr.Read();
 				while (rdr.Read()) {
 					questions.Add(new Models.Question {
 						Id = (int)rdr["Id"],
 						Title = (string)rdr["Title"],
-						QuestionAt = (DateTime)rdr["Question_At"]
+						QuestionAt = (DateTime)rdr["Question_At"],
+						Answer = (string)rdr["Answer"]
 					});
 				}
 
@@ -159,18 +192,15 @@ namespace CranBerry.Managers {
 			MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 			MySqlCommand cmd = new MySqlCommand();
 			try {
-				con.Open();
 				cmd.Connection = con;
-				cmd.CommandText = string.Format("update answer Set Answer=@Answer, Id= @Id where Id=" + answer.Id);
+				con.Open();
+				cmd.CommandText = string.Format("update questions Set Answer=" + answer.Answer + " where Id=" + answer.Id);
 
-				cmd.Parameters.AddWithValue("@Answer", answer.Contents);
-				cmd.Parameters.AddWithValue("@Id", answer.Id);
 				result = cmd.ExecuteNonQuery();
 				return result;
 			} catch (Exception e) {
 				throw new Exception(e.Message);
 			} finally {
-				cmd.Dispose();
 				con.Close();
 			}
 		}

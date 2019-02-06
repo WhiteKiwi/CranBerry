@@ -65,7 +65,7 @@
 
 				<br />
 				<br />
-				<asp:Button ID="QuestionButton" runat="server" CssClass="btn float-right cb-bg-darkred text-white" OnClick="QuestionUpload" Text="등록" />
+				<asp:Button ID="QuestionButton" runat="server" CssClass="btn float-right cb-bg-darkred text-white" OnClick="QuestionButton_Click" Text="등록" />
 			</div>
 		</div>
 	</form>
