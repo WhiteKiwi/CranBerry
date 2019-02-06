@@ -194,7 +194,7 @@ namespace CranBerry.Managers {
 			try {
 				cmd.Connection = con;
 				con.Open();
-				cmd.CommandText = string.Format("update questions Set Answer=" + answer.Answer + " where Id=" + answer.Id);
+				cmd.CommandText = string.Format("update questions Set Answer='" + answer.Answer.Replace("\r\n", "<br/>") + "' where Id=" + answer.Id);
 
 				result = cmd.ExecuteNonQuery();
 				return result;
