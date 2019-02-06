@@ -120,7 +120,7 @@ namespace CranBerry.Managers {
                 conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
                 conn.Open();
                 string sql = "SELECT * FROM admin WHERE Id=" + Id + ";";
-                if(sql.Password == Password + SALT)
+                if(Password == Password + SALT)
                     return true;
                 return false;
                 }

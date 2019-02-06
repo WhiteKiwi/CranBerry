@@ -40,6 +40,7 @@
 				Response.Write(e.Message);
 			}
 		%>
+		<br />
 
 		<!-- Page Link -->
 		<div class="text-center">

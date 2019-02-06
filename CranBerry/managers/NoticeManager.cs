@@ -202,5 +202,37 @@ namespace CranBerry.Managers {
 				con.Close();
 			}
 		}
+
+		/// <summary>
+		/// Get Notice by Id
+		/// </summary>
+		public static Models.Notice GetNoticeByID(int id) {
+			MySqlConnection conn = null;
+			try {
+				// Connect to DB;
+				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+				conn.Open();
+
+				string sql = "SELECT * FROM notices WHERE Id='" + id + "';";
+				MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+				var rdr = cmd.ExecuteReader();
+				rdr.Read();
+
+				// TODO: Notice가 없을 경우
+
+				return new Models.Notice {
+					Id = (int)rdr["Id"],
+					Title = (string)rdr["Title"],
+					Contents = (string)rdr["Contents"],
+					NoticeAt = (DateTime)rdr["Notice_At"]
+				};
+			} catch (Exception e) {
+				// TODO: 예외 처리
+				throw new Exception(e.Message);
+			} finally {
+				conn.Close();
+			}
+		}
 	}
 }
