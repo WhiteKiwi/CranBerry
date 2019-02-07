@@ -5,8 +5,8 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-namespace CranBerry.admin {
-	public partial class Calandar : System.Web.UI.Page {
+namespace CranBerry {
+	public partial class Calendar : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
 
 		}

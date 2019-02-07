@@ -6,7 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace CranBerry.admin {
-	public partial class UploadCalandar : System.Web.UI.Page {
+	public partial class EditCalendar : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
 
 		}

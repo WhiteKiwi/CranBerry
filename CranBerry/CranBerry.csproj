@@ -182,10 +182,10 @@
   <ItemGroup>
     <Content Include="admin\Accounts.aspx" />
     <Content Include="admin\Answer.aspx" />
-    <Content Include="admin\Calandar.aspx" />
+    <Content Include="admin\Calendar.aspx" />
     <Content Include="admin\Default.aspx" />
     <Content Include="admin\EditBerry.aspx" />
-    <Content Include="admin\EditCalandar.aspx" />
+    <Content Include="admin\EditCalendar.aspx" />
     <Content Include="admin\EditNotice.aspx" />
     <Content Include="admin\Login.aspx" />
     <Content Include="admin\Notice.aspx" />
@@ -193,7 +193,7 @@
     <Content Include="admin\QnA.aspx" />
     <Content Include="admin\Question.aspx" />
     <Content Include="admin\UploadBerry.aspx" />
-    <Content Include="admin\UploadCalandar.aspx" />
+    <Content Include="admin\UploadCalendar.aspx" />
     <Content Include="admin\UploadNotice.aspx" />
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\bootstrap.min.css" />
@@ -214,7 +214,7 @@
     <Content Include="assets\js\jquery-3.3.1.slim.min.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="Berries.aspx" />
-    <Content Include="Calandar.aspx" />
+    <Content Include="Calendar.aspx" />
     <Content Include="Default.aspx" />
     <Content Include="assets\img\second.png" />
     <Content Include="Notice.aspx" />
@@ -239,12 +239,12 @@
     <Compile Include="admin\Answer.aspx.designer.cs">
       <DependentUpon>Answer.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\Calandar.aspx.cs">
-      <DependentUpon>Calandar.aspx</DependentUpon>
+    <Compile Include="admin\Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\Calandar.aspx.designer.cs">
-      <DependentUpon>Calandar.aspx</DependentUpon>
+    <Compile Include="admin\Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
@@ -260,12 +260,12 @@
     <Compile Include="admin\EditBerry.aspx.designer.cs">
       <DependentUpon>EditBerry.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\EditCalandar.aspx.cs">
-      <DependentUpon>EditCalandar.aspx</DependentUpon>
+    <Compile Include="admin\EditCalendar.aspx.cs">
+      <DependentUpon>EditCalendar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\EditCalandar.aspx.designer.cs">
-      <DependentUpon>EditCalandar.aspx</DependentUpon>
+    <Compile Include="admin\EditCalendar.aspx.designer.cs">
+      <DependentUpon>EditCalendar.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\EditNotice.aspx.cs">
       <DependentUpon>EditNotice.aspx</DependentUpon>
@@ -316,12 +316,12 @@
     <Compile Include="admin\UploadBerry.aspx.designer.cs">
       <DependentUpon>UploadBerry.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\UploadCalandar.aspx.cs">
-      <DependentUpon>UploadCalandar.aspx</DependentUpon>
+    <Compile Include="admin\UploadCalendar.aspx.cs">
+      <DependentUpon>UploadCalendar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="admin\UploadCalandar.aspx.designer.cs">
-      <DependentUpon>UploadCalandar.aspx</DependentUpon>
+    <Compile Include="admin\UploadCalendar.aspx.designer.cs">
+      <DependentUpon>UploadCalendar.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\UploadNotice.aspx.cs">
       <DependentUpon>UploadNotice.aspx</DependentUpon>
@@ -337,12 +337,12 @@
     <Compile Include="Berries.aspx.designer.cs">
       <DependentUpon>Berries.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Calandar.aspx.cs">
-      <DependentUpon>Calandar.aspx</DependentUpon>
+    <Compile Include="Calendar.aspx.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Calandar.aspx.designer.cs">
-      <DependentUpon>Calandar.aspx</DependentUpon>
+    <Compile Include="Calendar.aspx.designer.cs">
+      <DependentUpon>Calendar.aspx</DependentUpon>
     </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>

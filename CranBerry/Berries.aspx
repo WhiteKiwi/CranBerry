@@ -109,10 +109,8 @@
 		<br />
 		<br />
 		<br />
-		<footer style="margin-top: 1.5em; margin-bottom: 1.5em; color: #C9C9C9; position: absolute; bottom: 0px;">
-			<a href="/DevInfo.aspx" style="color: #C9C9C9;">
-				<h6>2017 Copyright © Team VaryBerry All Right Reserved.</h6>
-			</a>
+		<footer style="margin-top: 1.5em; margin-bottom: 1.5em; color: #C9C9C9; position: absolute; bottom: 0px; color: #C9C9C9;">
+			<h6>2017 Copyright © Team VaryBerry All Right Reserved.</h6>
 		</footer>
 	</div>
 </asp:Content>
