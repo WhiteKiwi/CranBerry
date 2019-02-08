@@ -20,12 +20,6 @@
 
 	<!-- Question Box -->
 	<div class="border border-secondary p-5" style="position: relative; margin: 0 130px 0 130px;">
-		<!-- 답변 완료 시 표시 -->
-		<div class="answer-rectangle bold">
-			<span>답변<br>
-				완료</span>
-		</div>
-
 		<%
 			int id;
 			try {
@@ -35,7 +29,15 @@
 			}
 
 			var question = CranBerry.Managers.QnAManager.GetQnA(id);
+			if (question.Answer != "0") {
 		%>
+
+		<!-- 답변 완료 시 표시 -->
+		<div class="answer-rectangle bold">
+			<span>답변<br>
+				완료</span>
+		</div>
+		<% } %>
 		<!-- 질문 제목 -->
 		<br>
 		<br>
