@@ -38,6 +38,7 @@ namespace CranBerry.Managers {
 				conn.Close();
 			}
 		}
+        // 공지 추가
 		public static int AddNotice(Models.Notice notice) {
 			int result = 0;
 			MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
@@ -161,7 +162,7 @@ namespace CranBerry.Managers {
 				conn.Close();
 			}
 		}
-
+        // 공지 수정
 		public static int ModifyNotice(Models.Notice notice) {
 			MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 			MySqlCommand cmd = new MySqlCommand();
@@ -184,37 +185,69 @@ namespace CranBerry.Managers {
 			}
 		}
 
-	
-		/// <summary>
-		/// Get Notice by Id
-		/// </summary>
-		public static Models.Notice GetNoticeByID(int id) {
-			MySqlConnection conn = null;
-			try {
-				// Connect to DB;
-				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
-				conn.Open();
 
-				string sql = "SELECT * FROM notices WHERE Id='" + id + "';";
-				MySqlCommand cmd = new MySqlCommand(sql, conn);
+        /// <summary>
+        /// Get Notice by Id
+        /// </summary>
+        public static Models.Notice GetNoticeByID(int id)
+        {
+            MySqlConnection conn = null;
+            try
+            {
+                // Connect to DB;
+                conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+                conn.Open();
 
-				var rdr = cmd.ExecuteReader();
-				rdr.Read();
+                string sql = "SELECT * FROM notices WHERE Id='" + id + "';";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-				// TODO: Notice가 없을 경우
+                var rdr = cmd.ExecuteReader();
+                rdr.Read();
 
-				return new Models.Notice {
-					Id = (int)rdr["Id"],
-					Title = (string)rdr["Title"],
-					Contents = (string)rdr["Contents"],
-					NoticeAt = (DateTime)rdr["Notice_At"]
-				};
-			} catch (Exception e) {
-				// TODO: 예외 처리
-				throw new Exception(e.Message);
-			} finally {
-				conn.Close();
-			}
-		}
+                // TODO: Notice가 없을 경우
+
+                return new Models.Notice
+                {
+                    Id = (int)rdr["Id"],
+                    Title = (string)rdr["Title"],
+                    Contents = (string)rdr["Contents"],
+                    NoticeAt = (DateTime)rdr["Notice_At"]
+                };
+            }
+            catch (Exception e)
+            {
+                // TODO: 예외 처리
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
+            public static int DeleteNotice(Models.Notice notice) // 공지 삭제
+            {
+                MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+                MySqlCommand cmd = new MySqlCommand();
+                try
+                {
+                    int result = 0;
+                    cmd.Connection = con;
+                    cmd.CommandText = string.Format("Delete From berries Where Id={0}", notice.Id);
+                    con.Open();
+                    result = cmd.ExecuteNonQuery();
+                    return result;
+
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(e.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            
+            }
+        }
 	}
 }
