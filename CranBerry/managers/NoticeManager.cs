@@ -232,7 +232,7 @@ namespace CranBerry.Managers {
                 {
                     int result = 0;
                     cmd.Connection = con;
-                    cmd.CommandText = string.Format("Delete From berries Where Id={0}", notice.Id);
+                    cmd.CommandText = string.Format("Delete From notice Where Id={0}", notice.Id);
                     con.Open();
                     result = cmd.ExecuteNonQuery();
                     return result;
@@ -250,4 +250,3 @@ namespace CranBerry.Managers {
             }
         }
 	}
-}
