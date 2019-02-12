@@ -184,6 +184,7 @@
     <Content Include="admin\Answer.aspx" />
     <Content Include="admin\Calendar.aspx" />
     <Content Include="admin\Default.aspx" />
+    <Content Include="admin\Edit.aspx" />
     <Content Include="admin\EditBerry.aspx" />
     <Content Include="admin\EditCalendar.aspx" />
     <Content Include="admin\EditNotice.aspx" />
@@ -397,6 +398,12 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="admin\EditBerry.aspx.cs">
       <DependentUpon>EditBerry.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

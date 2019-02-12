@@ -167,6 +167,27 @@ namespace CranBerry.Managers {
 				conn.Close();
 			}
 		}
+
+		/// <summary>
+		/// Edit Berry by Id
+		/// </summary>
+		public static void EditBerry(int id, string contents) {
+			MySqlConnection conn = null;
+			try {
+				// Connect to DB;
+				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+				conn.Open();
+
+				string sql = "UPDATE berries SET Contents='" + contents + "' WHERE Id='" + id + "';";
+				MySqlCommand cmd = new MySqlCommand(sql, conn);
+				cmd.ExecuteNonQuery();
+			} catch (Exception e) {
+				// TODO: 예외 처리
+				throw new Exception(e.Message);
+			} finally {
+				conn.Close();
+			}
+		}
 	}
 }
 
