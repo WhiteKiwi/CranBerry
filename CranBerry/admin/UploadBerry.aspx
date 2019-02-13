@@ -15,7 +15,7 @@
     <!-- 제목 박스 -->
     <div style="width: 80%; margin-left: 9%; margin-top: 60px">
      <div class="SmallTitle"><b>제목</b></div>
-        <asp:TextBox ID="BerryTitle" runat="server" class="Box" style=" height: 50px; margin-bottom : 2%;" /> </asp:TextBox>
+        <asp:TextBox ID="BerryTitle" runat="server" class="Box" style=" height: 50px; margin-bottom : 2%;" /></asp:TextBox>
 	</div>
 
     <!-- 내용 박스 -->
@@ -25,14 +25,14 @@
 	</div>
 
     <!-- 바이트 -->
-    <div style="color: #707070; font-size: 10pt; margin-left: 14%">0/10000byte</div>
+    <div style="color: #707070; font-size: 10pt; margin-left: 14%">0/10000byte</div> 
 
 
     <!-- 되돌리기/글쓰기 버튼 -->
 	<div style="width: 89%; height: 70px; text-align: center; margin-bottom: 350px">
 	 <div class="Button" style="margin-left: 1%">
-	  <p style="color: white; font-size: 13pt; margin-bottom: 5px">저장</div>
-</div>
+	  <asp:Button ID="UploadButton" runat="server" style="color: white; font-size: 13pt; margin-bottom: 5px" OnClick="UploadButton_Clicjk" Text="저장"  /></div>
+    </div>
     <!-- 저작권 문구 바 -->
     <div class="Copyright">
     <p class="CopyrightF">
