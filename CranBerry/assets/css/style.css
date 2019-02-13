@@ -29,8 +29,66 @@
 }
 
 	.cb-nav-item:hover {
-		/* 
-			TODO: mouse-hover color 추가
-		*/
 		text-decoration: none;
+		color: white;
 	}
+
+/* Question.aspx */
+.answer-rectangle {
+	height: 110px;
+	width: 70px;
+	background-color: #EB5849;
+	position: absolute;
+	top: 0;
+	right: 5rem;
+	color: white;
+}
+
+.answer-rectangle > span {
+	position: absolute;
+	bottom: 0.3rem;
+	left: 1.15rem;
+}
+
+/* copyright */
+.copyright {
+	width: 100%;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-weight: bold;
+}
+
+/*
+	old styles
+*/
+.hr-gray {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #ccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+.hr-red {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 2px solid #BF0404;
+	margin: 1em 0;
+	padding: 0;
+}
+
+.contents-list > a {
+	color: #343434;
+}
+
+.this-page {
+	border-radius: 50%;
+	background-color: #400101;
+}
+
+a {
+	color: #BF0404;
+}

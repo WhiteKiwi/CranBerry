@@ -18,6 +18,7 @@
 	<link rel="stylesheet" href="/assets/css/style.css?ver=0.1">
 	<link rel="stylesheet" href="/assets/css/colors.css?ver=0.1">
 	<link rel="stylesheet" href="/assets/css/fonts.css?ver=0.1">
+	<link rel="stylesheet" href="/assets/css/admin.css?ver=0.1">
 
 	<asp:ContentPlaceHolder ID="Header" runat="server">
 	</asp:ContentPlaceHolder>
@@ -32,7 +33,7 @@
 		<div class="float-right" style="margin-right: 50px;">
 			<a href="/admin/Notices.aspx" class="cb-nav-item f3">Notice</a>
 			<a href="/admin/Berries.aspx" class="cb-nav-item f3">Berries</a>
-			<a href="/admin/Calandar.aspx" class="cb-nav-item f3">Calandar</a>
+			<a href="/admin/Calendar.aspx" class="cb-nav-item f3">Calendar</a>
 			<a href="/admin/Questions.aspx" class="cb-nav-item f3">Q&A</a>
 			<a href="/admin/Accounts.aspx" class="cb-nav-item f3">Account</a>
 		</div>

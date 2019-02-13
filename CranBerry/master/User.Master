@@ -34,7 +34,7 @@
 	<div class="cb-navbar cb-bg-red" style="height: 50px; line-height: 50px;">
 		<a href="/Notices.aspx" class="f3 cb-nav-item">Notice</a>
 		<a href="/Berries.aspx" class="f3 cb-nav-item">Berries</a>
-		<a href="/Calandar.aspx" class="f3 cb-nav-item">Calandar</a>
+		<a href="/Calendar.aspx" class="f3 cb-nav-item">Calendar</a>
 		<a href="/QnA.aspx" class="f3 cb-nav-item">Q&A</a>
 	</div>
 	<!-- 흰 선 -->

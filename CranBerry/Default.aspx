@@ -50,7 +50,7 @@
 	<div class="cb-bg-red" style="height: 2px;"></div>
 	<!-- Go Berries -->
 	<div class="bg-white text-center" style="margin: 40px;">
-		<a href="/Berries" class="btn-go-berries bold text-black">GO BERRIES</a>
+		<a href="/Berries.aspx" class="btn-go-berries bold text-black">GO BERRIES</a>
 	</div>
 	<!-- 붉은 선 -->
 	<div class="cb-bg-red" style="height: 2px;"></div>
@@ -149,16 +149,16 @@
 		<h1 class="f0 bold">ABOUT US</h1>
 		<br />
 		<br />
-		<p>VaryBerry는 신입생들의 학교 적응을 돕기 위해 모인 재학생 단체입니다.</p>
-		<p>국어 시간, 신입생 길라잡이 포스터 제작에서 시작하여 벌써 큰사의 큰 페이지가 되었습니다.</p>
-		<p>오직, 신입생들을 위해 대가없이 노력하는 멋진 친구들을 기억해주세요!</p>
+		<p class="text-white">VaryBerry는 신입생들의 학교 적응을 돕기 위해 모인 재학생 단체입니다.</p>
+		<p class="text-white">국어 시간, 신입생 길라잡이 포스터 제작에서 시작하여 벌써 큰사의 큰 페이지가 되었습니다.</p>
+		<p class="text-white">오직, 신입생들을 위해 대가없이 노력하는 멋진 친구들을 기억해주세요!</p>
 		<br />
 		<br />
 	</div>
 	<!-- Member -->
 	<div class="all-varyberry">
 		<!-- Beta -->
-		<div class="team-varyberry" style="border-right: 0.5px solid #707070;">
+		<div class="team-varyberry">
 			<img src="/assets/img/Beta.png" />
 			<br />
 			<br />
@@ -262,6 +262,7 @@
 					<br />
 					<br />
 					<br />
+					Berry 작성 도움<br />
 				</div>
 				<!-- 이름 -->
 				<div class="name f3">
@@ -282,6 +283,7 @@
 					5기 조예슬<br />
 					5기 김민성<br />
 					5기 전혜원<br />
+					4기 석기범<br />
 				</div>
 			</div>
 		</div>

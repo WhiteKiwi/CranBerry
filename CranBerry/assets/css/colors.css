@@ -1,13 +1,21 @@
 ﻿/* background-color */
 .cb-bg-red {
-	background-color: #BF0404;
+	background-color: #BF0404 !important;
+}
+
+.cb-bg-darkred {
+	background-color: #400101 !important;
 }
 
 /* text-color */
 .text-black {
-	color: #000000;
+	color: #000000 !important;
 }
 
 .text-red {
-	color: #BF0404;
+	color: #BF0404 !important;
+}
+
+.text-darkred {
+	color: #400101 !important;
 }
