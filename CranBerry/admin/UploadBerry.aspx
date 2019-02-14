@@ -11,11 +11,20 @@
 	<!-- 본문 붉은 선 -->
 	<div class="RedHr"></div>
     
+    <!-- Berry 번호 박스 -->
+    <div class="SmallTitle"><b>BERRY 번호</b></div>
+    <asp:TextBox ID="BerryId" runat="server" class="Box" style=" height: 50px; margin-bottom : 2%;" />
+
+    <!-- Berry 분류 박스 -->
+	<div class="SmallTitle"><b>BERRY 분류</b></div>
+    <asp:TextBox ID="BerryClassification" runat="server" class="Box" style=" height: 50px; margin-bottom : 2%;" />
+
+
 
     <!-- 제목 박스 -->
     <div style="width: 80%; margin-left: 9%; margin-top: 60px">
      <div class="SmallTitle"><b>제목</b></div>
-        <asp:TextBox ID="BerryTitle" runat="server" class="Box" style=" height: 50px; margin-bottom : 2%;" /></asp:TextBox>
+        <asp:TextBox ID="BerryTitle" runat="server" class="Box" style=" height: 50px; margin-bottom : 2%;" />
 	</div>
 
     <!-- 내용 박스 -->
