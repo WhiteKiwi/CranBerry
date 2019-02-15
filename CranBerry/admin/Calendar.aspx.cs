@@ -4,14 +4,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Globalization;
+using System.Web.UI.WebControls;
 
 namespace CranBerry.admin {
 	public partial class Calendar : System.Web.UI.Page {
+        /*
     public void ddlInit()
     {
         for (int i = 2000; i <= 2050; i++)
         {
-            this.ddlYear.Items.Add(i.ToString());
+            this.                                   ddlYear.Items.Add(i.ToString());
         }
         this.ddlYear.Text = DateTime.Now.Year.ToString();
         for (int i = 1; i <= 12; i++)
@@ -20,7 +23,9 @@ namespace CranBerry.admin {
         }
         this.ddlMonth.Text = DateTime.Now.Month.ToString();
     }
-         protected void Page_Load(object sender, EventArgs e)
+       
+
+     protected void Page_Load(object sender, EventArgs e)
     {
         if (!IsPostBack)
         {
@@ -42,7 +47,7 @@ namespace CranBerry.admin {
             if (요일이름[i] == "토") tcell.ForeColor = System.Drawing.Color.Blue;
             hrow.Cells.Add(tcell);
         }
-        this.tblCalendar.Rows.Add(hrow);
+        this.  tblCalendar.Rows.Add(hrow);
         
         for (int i = 0,d=1,p=0,n=0; i < 6; i++)
         {
@@ -86,6 +91,8 @@ namespace CranBerry.admin {
             }
             this.tblCalendar.Rows.Add(row);
         }
+        }
+        */
 	}
 }
-    }
+    
