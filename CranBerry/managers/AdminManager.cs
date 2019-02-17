@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace CranBerry.Managers {
 
@@ -138,5 +139,30 @@ namespace CranBerry.Managers {
 
 
         }
+        //계정삭제
+        public static int DeleteAccount(string Id, string Password)
+        {
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            MySqlCommand cmd = new MySqlCommand();
+            try
+            {
+                int result = 0;
+                cmd.Connection = con;
+                cmd.CommandText = string.Format("Delete From berries Where Id={0}",Id);
+                con.Open();
+                result = cmd.ExecuteNonQuery();
+                return result;
+
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        }
+
     }
-}
