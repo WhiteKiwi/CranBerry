@@ -40,7 +40,7 @@ namespace CranBerry.Managers {
         }
 
         //계정추가
-        public static int AddAdmin(string id, string name)
+        public static int AddAdmin(string id, string name, string password)
             {
               
                 int result = 0;
@@ -49,7 +49,7 @@ namespace CranBerry.Managers {
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("insert into admins(Id, Name, Password)values('{0}','{1}')", id, name);
+                cmd.CommandText = string.Format("insert into admins(Id, Name, Password)values('{0}','{1}','{2}')", id, name, password);
 
                 con.Open();
                 result = cmd.ExecuteNonQuery();
