@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 namespace CranBerry.admin {
 	public partial class EditNotice : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
-
-		}
+           
+        }
 	}
 }
