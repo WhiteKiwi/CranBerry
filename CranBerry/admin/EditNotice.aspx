@@ -11,14 +11,14 @@
     <!-- 제목 박스 -->
     <div style="width: 80%; margin-left: 9%; margin-top: 60px">
      <div class="SmallTitle"><b>제목</b></div>
-     <asp:TextBox runat="server" ID="Title" CssClass="Box"  style=" height: 50px; margin-bottom : 2%" ><asp:Label ID="TitleLabel" runat="server" /></span></asp:TextBox> 
+     <asp:TextBox runat="server" ID="Title" CssClass="Box"  style=" height: 50px; width: 1520px; margin-bottom : 2%" ></asp:TextBox> 
         
 	</div>
 
     <!-- 내용 박스 -->
     <div style="width: 80%; margin-left: 9%; margin-top: 40px">
      <div class="SmallTitle"><b>내용</b></div>
-    <asp:TextBox runat="server" ID="Contents" CssClass="Box" style="height: 530px" ><asp:Label ID="ContentsLabel" runat="server" /></asp:TextBox> 
+    <asp:TextBox runat="server" ID="Contents" CssClass="Box" style="height: 530px; width:1520px" ></asp:TextBox> 
 	</div>
 
     <!-- 바이트 -->

@@ -12,8 +12,8 @@ namespace CranBerry.admin {
 
             var notice = Managers.NoticeManager.GetNoticeByID(int.Parse(noticeID));
 
-            TitleLabel.Text = notice.Title;
-            ContentsLabel.Text = notice.Contents;
+            Title.Text = notice.Title;
+            Contents.Text = notice.Contents;
         }
 
         protected void NoticeSaveButton_Click(object sender, EventArgs e)
@@ -21,7 +21,7 @@ namespace CranBerry.admin {
             Managers.NoticeManager.ModifyNotice(new Models.Notice
             {
                 Id = int.Parse(Request.QueryString["id"]),
-                Contents = ContentsLabel.Text
+                Contents = Contents.Text
 
             });
         }
