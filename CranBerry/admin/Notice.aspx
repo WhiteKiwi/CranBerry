@@ -4,8 +4,16 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
     <!-- Top Image -->
 	<img src="/assets/img/banner.png" style="width: 100%;" />
-
-	<!-- Notice -->
+   <%
+    int id;
+			try {
+				id = int.Parse(Request.QueryString["id"]);
+			} catch (Exception e) {
+				id = 1;
+			}
+    var notice = CranBerry.Managers.NoticeManager.GetNoticeByID(id);
+	%>
+           <!-- Notice -->
 	<div style="width: 100%; padding-top: 50px; padding-left: 100px; padding-right: 100px; text-align: left;">
 		<h3><strong>공지사항</strong></h3>
         <div class="Button" style="height:50px;">
@@ -14,7 +22,7 @@
 		<form runat="server">
 			<span class="float-left" style="margin-left: 17px; margin-right: 30px;">제목</span>
 			<span class="float-left" style="text-align: center;">
-				<asp:Label ID="nTitle" runat="server" /></span>
+				<asp:TextBox ID="nTitle" runat="server" /></span>
 			<span class="float-right" style="margin-left: 30px; margin-right: 37px;">
 				<asp:Label ID="NoticeAt" runat="server" /></span>
 			<span class="float-right" style="text-align: center;">공지일</span>
@@ -22,7 +30,7 @@
 		<br />
 		<hr class="hr-red" />
 		<div style="margin-left: 20px; margin-right: 20px;">
-			<asp:Label ID="Contents" runat="server" />
+			<asp:TextBox ID="Contents" runat="server" />
 		</div>
 		<br />
 	</div>
