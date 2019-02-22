@@ -20,13 +20,13 @@ namespace CranBerry.Managers {
 
 				string sql = "SELECT * FROM notices ORDER BY Id DESC LIMIT 5;";
 				MySqlCommand cmd = new MySqlCommand(sql, conn);
-				var rdr = cmd.ExecuteReader();
-				while (rdr.Read()) {
+				var dr = cmd.ExecuteReader();
+				while (dr.Read()) {
 					notices.Add(new Models.Notice {
-						Id = (int)rdr["Id"],
-						Title = (string)rdr["Title"],
-						Contents = (string)rdr["Contents"],
-						NoticeAt = (DateTime)rdr["Notice_At"]
+						Id = (int)dr["Id"],
+						Title = (string)dr["Title"],
+						Contents = (string)dr["Contents"],
+						NoticeAt = (DateTime)dr["Notice_At"]
 					});
 				}
 
@@ -78,12 +78,12 @@ namespace CranBerry.Managers {
 				sql = "SELECT Id, Title, Notice_At FROM notices ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
 				cmd.CommandText = sql;
 
-				var rdr = cmd.ExecuteReader();
-				while (rdr.Read()) {
+				var dr = cmd.ExecuteReader();
+				while (dr.Read()) {
 					noticeList.Add(new Models.Notice {
-						Id = (int)rdr["Id"],
-						Title = (string)rdr["Title"],
-						NoticeAt = (DateTime)rdr["Notice_At"]
+						Id = (int)dr["Id"],
+						Title = (string)dr["Title"],
+						NoticeAt = (DateTime)dr["Notice_At"]
 					});
 				}
 
@@ -144,13 +144,13 @@ namespace CranBerry.Managers {
 				sql = "SELECT Id, Title, Notice_At FROM notices ORDER BY Id DESC LIMIT 10 OFFSET " + ((page - 1) * 10) + ";";
 				cmd.CommandText = sql;
 
-				var rdr = cmd.ExecuteReader();
-				rdr.Read();
-				while (rdr.Read()) {
+				var dr = cmd.ExecuteReader();
+				dr.Read();
+				while (dr.Read()) {
 					notices.Add(new Models.Notice {
-						Id = (int)rdr["Id"],
-						Title = (string)rdr["Title"],
-						NoticeAt = (DateTime)rdr["Notice_At"]
+						Id = (int)dr["Id"],
+						Title = (string)dr["Title"],
+						NoticeAt = (DateTime)dr["Notice_At"]
 					});
 				}
 
@@ -198,21 +198,26 @@ namespace CranBerry.Managers {
                 conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
                 conn.Open();
 
-                string sql = "SELECT * FROM notices WHERE Id='" + id + "';";
+                string sql = "SELECT * FROM notices WHERE Id=" + id + ";";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-
-                var rdr = cmd.ExecuteReader();
-                rdr.Read();
-
-                // TODO: Notice가 없을 경우
-
-                return new Models.Notice
+                var dr = cmd.ExecuteReader();
+                dr.Read();
+                Models.Notice notice = new Models.Notice
                 {
-                    Id = (int)rdr["Id"],
-                    Title = (string)rdr["Title"],
-                    Contents = (string)rdr["Contents"],
-                    NoticeAt = (DateTime)rdr["Notice_At"]
+                    Id = (int)dr["Id"],
+                    Title = (string)dr["Title"],
+                    Contents = (string)dr["Contents"],
+                    NoticeAt = (DateTime)dr["Notice_At"]
+                  
                 };
+                dr.Close();
+
+
+
+
+
+                return notice;
+           
             }
             catch (Exception e)
             {

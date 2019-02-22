@@ -79,20 +79,20 @@ namespace CranBerry.Managers {
 				string sql = "SELECT * FROM berries WHERE Id='" + id + "';";
 				MySqlCommand cmd = new MySqlCommand(sql, conn);
 
-				var rdr = cmd.ExecuteReader();
-				rdr.Read();
+				var dr = cmd.ExecuteReader();
+				dr.Read();
 
 				// TODO: Berry가 없을 경우
 
 				Berry result = new Berry {
-					Id = (int)rdr["Id"],
-					Title = (string)rdr["Title"],
-					Contents = (string)rdr["Contents"]
+					Id = (int)dr["Id"],
+					Title = (string)dr["Title"],
+					Contents = (string)dr["Contents"]
 				};
 
 				// 조회수 증가
-				sql = "UPDATE berries SET Views='" + ((int)rdr["Views"] + 1) + "' WHERE Id='" + id + "';";
-				rdr.Close();
+				sql = "UPDATE berries SET Views='" + ((int)dr["Views"] + 1) + "' WHERE Id='" + id + "';";
+				dr.Close();
 				cmd.CommandText = sql;
 				cmd.ExecuteNonQuery();
 
@@ -151,11 +151,11 @@ namespace CranBerry.Managers {
 				}
 				string sql = "SELECT Id, Title FROM berries WHERE Classification='" + classificationIndex + "';";
 				MySqlCommand cmd = new MySqlCommand(sql, conn);
-				var rdr = cmd.ExecuteReader();
-				while (rdr.Read()) {
+				var dr = cmd.ExecuteReader();
+				while (dr.Read()) {
 					berryList.Add(new Berry {
-						Id = (int)rdr["Id"],
-						Title = (string)rdr["Title"]
+						Id = (int)dr["Id"],
+						Title = (string)dr["Title"]
 					});
 				}
 

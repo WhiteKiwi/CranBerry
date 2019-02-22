@@ -22,13 +22,14 @@ namespace CranBerry.Managers {
 
                 string sql = "SELECT * FROM admins;";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                var rdr = cmd.ExecuteReader();
-                while (rdr.Read()) {
+                var dr = cmd.ExecuteReader();
+                while (dr.Read()) {
                     admins.Add(new Admin {
-                        ID = (string)rdr["Id"],
-                        Name = (string)rdr["Name"]
+                        ID = (string)dr["Id"],
+                        Name = (string)dr["Name"]
                     });
                 }
+                dr.Read();
 
                 return admins;
             } catch (Exception e) {
