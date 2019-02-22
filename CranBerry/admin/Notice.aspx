@@ -8,6 +8,8 @@
 	<!-- Notice -->
 	<div style="width: 100%; padding-top: 50px; padding-left: 100px; padding-right: 100px; text-align: left;">
 		<h3><strong>공지사항</strong></h3>
+        <div class="Button" style="height:50px;">
+	  <a href="EditNotice.aspx?id=<%= notice.Id %>" style="color: #707070; font-size: 10pt">수정</a></div>
 		<hr class="hr-red" />
 		<form runat="server">
 			<span class="float-left" style="margin-left: 17px; margin-right: 30px;">제목</span>
