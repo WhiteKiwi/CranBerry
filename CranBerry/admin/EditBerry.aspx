@@ -3,6 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
 
+    <form id="form1" runat="server">
+
 <!DOCTYPE html>
 
 <html>
@@ -65,7 +67,17 @@ alt="배너 사진" width="1920" height="450"></img>
 </td>
 <td style="width: 1400px; height: 50px; background-color: white; border:1px solid #707070;
  margin-left: 170px; margin-top: 50px"><p style="font-size: 24px; color: #757575; margin-left: 25px">
- 행사</p></td>
+ 행사<asp:DropDownList ID="ClassificationList" runat="server" OnSelectedIndexChanged="ClassificationList_SelectedIndexChanged">
+            <asp:ListItem>Event</asp:ListItem>
+            <asp:ListItem>Facilities</asp:ListItem>
+            <asp:ListItem>CNSATerms</asp:ListItem>
+            <asp:ListItem>CNSALifeAndStudy</asp:ListItem>
+            <asp:ListItem>Dormitory</asp:ListItem>
+            <asp:ListItem>Club</asp:ListItem>
+            <asp:ListItem>Group</asp:ListItem>
+            <asp:ListItem>Contest</asp:ListItem>
+        </asp:DropDownList>
+    </p></td>
  </tr>
 </table>
 
@@ -78,7 +90,8 @@ alt="배너 사진" width="1920" height="450"></img>
 </td>
 <td style="width: 1400px; height: 50px; background-color: white; border:1px solid #707070;
  margin-left: 170px; margin-top: 50px"><p style="font-size: 24px; color: #757575; margin-left: 25px">
- 제목을 입력하세요</p></td>
+ 제목을 입력<asp:TextBox ID="txtTItle" runat="server"></asp:TextBox>
+        하세요</p></td>
  </tr>
 </table>
 
@@ -104,7 +117,8 @@ alt="배너 사진" width="1920" height="450"></img>
 </td>
 <td style="width: 1400px; height: 510px; background-color: white; border:1px solid #707070;
  margin-left: 170px; margin-top: 50px"><p style="font-size: 24px; color: #757575; margin-left: 25px">
- 내용을 입력하세요</p></td>
+ 내용을 입력하세요<asp:TextBox ID="txtContent" runat="server" Height="127px" Width="577px"></asp:TextBox>
+    </p></td>
  </tr>
 </table>
 
@@ -116,6 +130,7 @@ alt="배너 사진" width="1920" height="450"></img>
 <tr>
 <td style="margin-left: 1570px; margin- margin-top: 60px; margin-bottom: 20px; width: 120px; height: 70px; background-color: #400101;
 border-radius: 0.4em; font-size: 25px; color: white; text-align: center">저장
+    <asp:Button ID="BerrySaveButton" runat="server" Text="등록" Onclick="BerrySaveButton"/>
 </td>
 </tr>
 </table>
@@ -127,4 +142,5 @@ border-radius: 0.4em; font-size: 25px; color: white; text-align: center">저장
 
 </body>
 </html>
+    </form>
     </asp:Content>

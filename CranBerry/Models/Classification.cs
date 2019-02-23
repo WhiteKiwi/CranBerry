@@ -15,7 +15,7 @@
 		// 생활
 		CNSALifeAndStudy,
 
-		// 학습
+		// 인재관
 		Dormitory,
 
 		// 동아리
