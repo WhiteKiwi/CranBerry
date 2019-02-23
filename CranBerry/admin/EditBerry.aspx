@@ -5,57 +5,9 @@
 
     <form id="form1" runat="server">
 
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta charset="utf-8" />
-    <title>관리자페이지-BERRY추가</title>
-	<style> 
-p, h1, span, div{
-     font-family: Segoe UI;
-}
-</style>
-</head>
-<body>
-<!--CRANBERRY 툴바-->
-<div style="width: 1920px; height: 155px; background-color: #BF0404; float: top">
-<div style="width: 1920px; height: 10px"></div>
-<table>
-<tr>
-<td><span style="margin-left: 30px"></span></td>
-<td>
-<img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.15752-9/50140794_1967936896624249_2193767319388291072_n.png?_nc_cat=108&_nc_ht=scontent-icn1-1.xx&oh=c9b2da2da16afac0bbf31040a0ec1cd4&oe=5CBF25DE"
-alt="크랜베리 로고" width="110"></td>
-<td><span style="color: white; font-size: 60px; margin-left: 70px">CRANBERRY</span></td>
-<td><span style="color: white; margin-left: 580px; font-size: 30px">Notice</span></td>
-<td><span style="color: white; margin-left: 67px; font-size: 30px">Berries</span></td>
-<td><span style="color: white; margin-left: 67px; font-size: 30px">Calander</span></td>
-<td><span style="color: white; margin-left: 67px; font-size: 30px">Q&A</span></td>
-<td><span style="color: white; margin-left: 67px; font-size: 30px">Info</span></td>
-</tr>
-</table>
-<hr style="border: 2px solid white; background-color: white; margin-bottom: 15px">
-</div>
-<!--추가 툴바-->
-<div style="width: 1920px; height: 72px; background-color: #B5B5B5">
-<div style="width: 1920px; height: 20px"></div>
-<span style="color: white; margin-left: 308px; font-size: 25px">공지추가</span>
-<span style="color: white; margin-left: 80px; font-size: 25px">일정추가</span>
-<span style="color: white; margin-left: 80px; font-size: 25px">Berry추가</span>
-<span style="color: white; margin-left: 80px; font-size: 25px">Beryy제안관리</span>
-<span style="color: white; margin-left: 80px; font-size: 25px">동아리</span>
-<span style="color: white; margin-left: 80px; font-size: 25px">Berry조회수</span>
-<span style="color: white; margin-left: 80px; font-size: 25px">Ban</span>
-</div>
-
-<div style="width: 1920px">
-<!--사진-->
-<img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.15752-9/49745756_2347222058826851_6098154240859963392_n.png?_nc_cat=107&_nc_ht=scontent-icn1-1.xx&oh=b33505dd95e2590b32f1bbf3dac3bbac&oe=5CC2E9C1"
-alt="배너 사진" width="1920" height="450"></img>
 
 <!--Berry추가 제목-->
-<h1 style="color: #400101; margin-left: 160px; margin-top: 80px; font-size: 55px"><b>Berry추가</b></h1>
+<h1 style="color: #400101; margin-left: 160px; margin-top: 80px; font-size: 55px"><b>Berry수정</b></h1>
 <hr style="border: 2px solid #BF0404; background-color: #BF0404; width: 1800px; margin-left: 55px; margin-bottom: 30px">
 
 <!--분류선택 박스-->
@@ -90,8 +42,8 @@ alt="배너 사진" width="1920" height="450"></img>
 </td>
 <td style="width: 1400px; height: 50px; background-color: white; border:1px solid #707070;
  margin-left: 170px; margin-top: 50px"><p style="font-size: 24px; color: #757575; margin-left: 25px">
- 제목을 입력<asp:TextBox ID="txtTItle" runat="server"></asp:TextBox>
-        하세요</p></td>
+ <asp:TextBox ID="txtTItle" runat="server" ></asp:TextBox>
+       </p></td>
  </tr>
 </table>
 
@@ -117,7 +69,7 @@ alt="배너 사진" width="1920" height="450"></img>
 </td>
 <td style="width: 1400px; height: 510px; background-color: white; border:1px solid #707070;
  margin-left: 170px; margin-top: 50px"><p style="font-size: 24px; color: #757575; margin-left: 25px">
- 내용을 입력하세요<asp:TextBox ID="txtContent" runat="server" Height="127px" Width="577px"></asp:TextBox>
+<asp:TextBox ID="txtContent" runat="server" Height="127px" Width="577px" placeholeder=""></asp:TextBox>
     </p></td>
  </tr>
 </table>
