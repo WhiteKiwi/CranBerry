@@ -41,7 +41,7 @@ namespace CranBerry.Managers {
         }
 
         //계정추가
-        public static int AddAdmin(string id, string name)
+        public static int AddAdmin(Models.Admin admin)
             {
               
                 int result = 0;
@@ -50,7 +50,7 @@ namespace CranBerry.Managers {
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("insert into admins(Id, Name, Password)values('{0}','{1}')", id, name);
+                cmd.CommandText = string.Format("insert into admins(Id, Name, Password)values('{0}','{1}','{2}')", admin.ID, admin.Name,"cnsa");
 
                 con.Open();
                 result = cmd.ExecuteNonQuery();
@@ -92,7 +92,7 @@ namespace CranBerry.Managers {
         }
 
         //비밀번호 변경
-        public static int ChangePassword(string OldPassword, string NewPassword)
+        public static int ChangePassword(Models.Admin admin)
         {
             int result = 0;
             MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
@@ -100,9 +100,9 @@ namespace CranBerry.Managers {
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("SELECT * FROM admin WHERE Password=" + OldPassword + ";");
+                cmd.CommandText = string.Format("SELECT * FROM admin WHERE Password=" + admin.OldPasswrod + ";");
                 con.Open();
-                cmd.CommandText = string.Format("update admin set Password = '{0}' where Password = '{1}'", NewPassword+SALT , OldPassword);
+                cmd.CommandText = string.Format("update admin set Password = '{0}' where Password = '{1}'", admin.NewPassword+SALT , admin.OldPasswrod);
                 result = cmd.ExecuteNonQuery();
                 return result;
             }

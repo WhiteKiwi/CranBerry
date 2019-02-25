@@ -17,7 +17,7 @@
 					<asp:TextBox runat="server" ID="AdminName" CssClass="form-control" placeholder="기수 - 이름"></asp:TextBox>
 				</div>
 				<div>
-					<asp:Button runat="server" ID="AddAdminButton" CssClass="btn btn-lg btn-square square cb-bg-darkred text-white" OnClick="AddAdminButton_Click" Text="ADD"></asp:Button>
+					<asp:Button D="AddAdminButton" runat="server" CssClass="btn btn-lg btn-square square cb-bg-darkred text-white" OnClick="AddAdminButton_Click" Text="ADD"></asp:Button>
 				</div>
 			</div>
 
