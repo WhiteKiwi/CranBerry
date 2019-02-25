@@ -10,12 +10,16 @@ namespace CranBerry.admin {
 		protected void Page_Load(object sender, EventArgs e) {
 
 		}
+        
+        protected void AnswerButton_Click(object sender, EventArgs e)
+        {
+            Managers.QnAManager.AddAnswer(new Models.Question
+            {
+                Id = int.Parse(Request.QueryString["id"]),
 
-		protected void AnswerButton_Click(object sender, EventArgs e) {
-			Managers.QnAManager.AddAnswer(new Models.Question {
-				Id = int.Parse(QuestionID.Text),
-				Answer = AnswerContent.Text
-			});
-		}
-	}
+            Answer = Contents.Text
+            });
+            Response.Redirect(Request.RawUrl);
+        }
+    }
 }
