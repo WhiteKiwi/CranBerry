@@ -3,70 +3,61 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
-	<form runat="server">
 	<!-- Top Image -->
 	<img src="/assets/img/banner.png" style="width: 100%;" />
-	<!--제목, 검색 박스-->
-	<table style="margin-left: 850px; margin-top: 60px">
-		<tr>
-			<td style="width: 150px; height: 60px; background-color: white; border: 1px solid #757575; border-radius: 0.4em">
-				<p style="color: #757575; font-size: 25px; margin-left: 20px; text-align: center">제목</p>
-			</td>
-			<td style="width: 20px"></td>
-			<td style="width: 600px; height: 60px; background-color: white; border: 1px solid #757575; border-radius: 0.4em"></td>
-			<td style="width: 30px"></td>
-			<!--검색 버튼-->
-			<td style="margin-left: 1570px; margin-top: 60px; margin-bottom: 20px; width: 120px; height: 70px; background-color: #400101; border-radius: 0.4em; font-size: 25px; color: white; text-align: center">검색
-			</td>
-		</tr>
-	</table>
 
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<!-- 페이지 Top -->
+	<h1 class="f0 bold text-darkred" style="margin-left: 130px;">Q&A</h1>
+	<div class="w-100" style="padding: 10px 130px 30px 130px;">
+		<div class="cb-bg-red w-100" style="height: 3px;"></div>
+	</div>
 
+	<!-- Question Box -->
+	<div class="border border-secondary p-5" style="position: relative; margin: 0 130px 0 130px;">
+		<%
+			int id;
+			try {
+				id = int.Parse(Request.QueryString["id"]);
+			} catch (Exception e) {
+				id = 1;
+			}
 
+			var question = CranBerry.Managers.QnAManager.GetQnA(id);
+			if (question.Answer != "0") {
+		%>
 
-	<!--Q&A 제목-->
-	<h1 style="color: #400101; margin-left: 160px; font-size: 55px"><b>Q&A</b></h1>
-	<hr style="border: 2px solid #BF0404; background-color: #BF0404; width: 1800px; margin-left: 55px">
+		<!-- 답변 완료 시 표시 -->
+		<div class="answer-rectangle bold">
+			<span>답변<br>
+				완료</span>
+		</div>
+		<% } %>
+		<!-- 질문 제목 -->
+		<br>
+		<br>
+		<h1 class="text-darkred bold float-left" style="margin: -12px 7px 0 7px;">Q.</h1>
+		<h3 class="bold"><%= question.Title %></h3>
+		<h5 class="float-right bold" style="margin: -30px 130px 0 0;">등록일: <%= question.QuestionAt.ToString("yyyy-MM-dd") %></h5>
+		<div class="cb-bg-red w-100" style="height: 2px; margin-top: 15px;"></div>
+		<br>
 
-	<!--제일 큰 박스-->
-	<table style="width: 1550px; height: 886px; background-color: white; border: 1px solid #707070; margin-left: 170px; margin-top: 60px; margin-bottom: 60px">
-		<tr>
-			<td>
+		<!-- 질문 내용 -->
+		<div class="color-black"><%= question.Contents %></div>
+		<br>
+		<hr>
 
-				<!--여백-->
-				<div style="height: 100px"></div>
-
-				<!--Q&A 소제목-->
-				<span style="color: #400101; margin-left: 80px; margin-top: 20px; font-size: 65px"><b>Q.</b>
-					<asp:Label ID="lblTitle1" runat="server"></asp:Label>
-
-					<span style="color: black; margin-top: 20px; margin-left: 350px; font-size: 25px"><b>등록일시 : 2018-10-26 20:45</b>
-					</span>
-				</span>
-				<hr style="border: 1px solid #BF0404; background-color: #BF0404; width: 1500px; margin-top: 13px">
-
-				<!--작은 박스1-->
-				<table style="width: 1430px; height: 250px; background-color: white; border: 1px solid #707070; margin-left: 55px; margin-top: 60px">
-					<tr>
-						<td>
-							<span style="width: 1430px; height: 220px; margin-top: 30px"></span>
-							<asp:Label ID="lblTitle2" runat="server"></asp:Label>
-
-						</td>
-					</tr>
-				</table>
-
-
-				<!--답변내용 소제목-->
-				<table style="margin-left: 60px; margin-top: 30px">
-					<tr>
-						<td style="background-color: #D45858; width: 20px; height: 65px"></td>
-						<td><span style="font-family: Segoe UI; color: #400101; margin-left: 20px; font-size: 35px"><b>답변내용</b></span></td>
-					</tr>
-				</table>
-
-				<!--작은 박스2-->
-				<table style="width: 1430px; height: 220px; background-color: white; border: 1px solid #707070; margin-left: 55px; margin-top: 12px; margin-bottom: 90px">
+		<!-- 답변 존재 시 출력 -->
+		<div class="p-2">
+			<div style="background-color: #D45858; height: 47px; width: 15px; float: left;"></div>
+			<h3 class="color-darkred" style="margin-left: 30px; padding-top: 6px;"><b>답변 내용</b></h3>
+		</div>
+		<table style="width: 1430px; height: 220px; background-color: white; border: 1px solid #707070; margin-left: 55px; margin-top: 12px; margin-bottom: 90px">
 					<tr>
 						<td>
 							<span style="width: 1430px; height: 20px; margin-top: 30px"></span>
@@ -75,12 +66,10 @@
 						</td>
 					</tr>
 				</table>
-
-			</td>
-		</tr>
-	</table>
-
-	<!--답변 등록-->
+	</div>
+	<br>
+	<br>
+    	<!--답변 등록-->
 	<span style="font-family: Segoe UI; color: #400101; margin-left: 200px; font-size: 35px"><b>답변 등록</b></span>
 	<table style="width: 1550px; height: 220px; background-color: white; border: 1px solid #707070; margin-left: 170px; margin-top: 12px; margin-bottom: 90px">
 		<tr>
@@ -91,18 +80,16 @@
 			</td>
 		</tr>
 	</table>
+	<div class="w-100">
+		<a href="/QnA.aspx" class="btn btn-square float-right cb-bg-darkred text-white" style="height: 38px; margin-right: 120px;" role="button">목록</a>
+         <asp:Button ID="btnWrite" runat="server" Width="120px" Height="70px" OnClick="btnWrite_Click" CssClass="Button float-right" Text="저장"/>
+	</div>
+	<br>
+	<br>
+	<br>
 
-	<!--되돌리기/저장 버튼-->
-	<table style="margin-left: 1440px; margin-top: 60px; margin-bottom: 150px">
-		<tr>
-			<td style="margin-left: 1440px; margin-top: 60px; margin-bottom: 37px; width: 120px; height: 70px; background-color: #703E3E; border-radius: 0.4em; text-align: center">
-				<img src="https://scontent-icn1-1.xx.fbcdn.net/v/t1.15752-9/49694550_2011936722437397_7232961076650835968_n.png?_nc_cat=109&_nc_ht=scontent-icn1-1.xx&oh=034251dcb9adcb974dd3341526dc06d6&oe=5CD10F30"
-					alt="되돌리기 버튼" width="50" height="50"></td>
-			<td style="width: 20px"></td>
-			<td>
-				<asp:Button ID="btnWrite" runat="server" Width="120px" Height="70px" OnClick="btnWrite_Click" CssClass="Button" />
-			</td>
-		</tr>
-	</table>
-		</form>
+	<!-- Copyright -->
+	<div class="copyright f3 text-white cb-bg-red">
+		2017 Copyright &copy; Team VaryBerry All Right Reserved
+	</div>
 </asp:Content>

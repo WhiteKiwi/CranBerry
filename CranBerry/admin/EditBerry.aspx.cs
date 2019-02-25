@@ -10,6 +10,7 @@ namespace CranBerry.admin {
 	public partial class EditBerry : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
 
+
 		}
         protected void BerrySaveButton_Click(object sender, EventArgs e)
         {
@@ -45,7 +46,7 @@ namespace CranBerry.admin {
                     break;
             }
 
-            Managers.BerryManager.AddBerry(new Models.Berry
+            Managers.BerryManager.ModifyBerry(new Models.Berry
             {
 
                 Title = txtTItle.Text,
