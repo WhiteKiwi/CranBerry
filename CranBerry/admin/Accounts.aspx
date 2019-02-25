@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
-	<!-- Top Image -->
+    <!-- Top Image -->
 	<img src="/assets/img/banner.png" style="width: 100%;" />
 
 	<form runat="server">
