@@ -36,11 +36,13 @@
 		<a href="/Berries.aspx" class="f3 cb-nav-item">Berries</a>
 		<a href="/Calendar.aspx" class="f3 cb-nav-item">Calendar</a>
 		<a href="/QnA.aspx" class="f3 cb-nav-item">Q&A</a>
+
 	</div>
 	<!-- 흰 선 -->
 	<div class="bg-white" style="height: 4px;"></div>
 	<!-- 붉은 선 -->
 	<div class="cb-bg-red" style="height: 12px"></div>
+   
 
 	<asp:ContentPlaceHolder ID="Contents" runat="server">
 	</asp:ContentPlaceHolder>

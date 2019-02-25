@@ -36,12 +36,17 @@
 			<a href="/admin/Calendar.aspx" class="cb-nav-item f3">Calendar</a>
 			<a href="/admin/Questions.aspx" class="cb-nav-item f3">Q&A</a>
 			<a href="/admin/Accounts.aspx" class="cb-nav-item f3">Account</a>
+           <a href="/admin/UploadNotice.aspx" class="cb-nav-item f3">공지추가</a>
+    <a href="/admin/UploadCalendar.aspx" class="cb-nav-item f3">일정추가</a>
+    <a href="/admin/uploadBerry.aspx" class="cb-nav-item f3">Berry추가</a>
+
 		</div>
 	</div>
 	<!-- 흰 선 -->
 	<div class="bg-white" style="height: 4px;"></div>
 	<!-- 붉은 선 -->
 	<div class="cb-bg-red" style="height: 12px"></div>
+ 
 
 	<asp:ContentPlaceHolder ID="Contents" runat="server">
 	</asp:ContentPlaceHolder>
