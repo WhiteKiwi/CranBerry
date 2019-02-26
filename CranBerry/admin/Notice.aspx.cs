@@ -1,5 +1,6 @@
 ﻿using System;
 
+
 namespace CranBerry.admin
 {
     public partial class Notice : System.Web.UI.Page
@@ -13,13 +14,13 @@ namespace CranBerry.admin
             {
                 var notice = Managers.NoticeManager.GetNoticeByID(int.Parse(noticeID));
 
-                nTitle.Text = notice.Title;
+                Title.Text = notice.Title;
                 Contents.Text = notice.Contents;
                 NoticeAt.Text = notice.NoticeAt.ToString("yyyy-MM-dd");
             }
             else
             {
-                nTitle.Text = "404 Not Found.";
+                Title.Text = "404 Not Found.";
                 Contents.Text = "404 Not Found.";
                 NoticeAt.Text = "404 Not Found.";
             }
@@ -31,7 +32,7 @@ namespace CranBerry.admin
 
             Managers.NoticeManager.DeleteNotice(new Models.Notice
             {
-                id = int.Parse(noticeID)
+                Id = int.Parse(noticeID)
             });
         }
     }

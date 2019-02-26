@@ -25,16 +25,17 @@
 			<span class="float-left" style="margin-left: 17px; margin-right: 30px;">제목</span>
         
 			<span class="float-left" style="text-align: center;" </span>
-        <div><%= notice.Title %></div>
+        <div><asp:Label ID="Title" runat="server"></asp:Label></div>
 		<div style="border: 2px solid #BF0404; background-color: #BF0404; width: 1800px; margin-left: 55px; margin-top: 30px"></div>
 			<span class="float-right" style="margin-left: 30px; margin-right: 37px;">
 				
-			<div class="float-right" style="text-align: center;">공지일:<%=notice.NoticeAt %></div>
+			<div class="float-right" style="text-align: center;">공지일:<asp:Label ID="NoticeAt" runat="server" /></div>
+                
 		
 		<br />
 		<hr class="hr-red" />
 		<div style="margin-left: 20px; margin-right: 20px;" >
-            <div><%=notice.Contents %></div>
+            <div><asp:Label ID="Contents" runat="server"></asp:Label></div>
             <div style="border: 2px solid #707070; background-color: #707070; width: 1800px; margin-left: 55px"></div>
 			
 		</div>
