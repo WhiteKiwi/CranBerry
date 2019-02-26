@@ -16,10 +16,45 @@ namespace CranBerry.admin
 
         void UploadBtn_Click(object sender, EventArgs e)
         {
+            Models.Classification classification;
+            switch (ClassificationList.SelectedValue)
+            {
+                case "행사":
+                    classification = Models.Classification.Event;
+                    break;
+                case "학교시설":
+                    classification = Models.Classification.Facilities;
+                    break;
+                case "CNSA 용어":
+                    classification = Models.Classification.CNSATerms;
+                    break;
+                case "생활/학습":
+                    classification = Models.Classification.CNSALifeAndStudy;
+                    break;
+                case "인재관":
+                    classification = Models.Classification.Dormitory;
+                    break;
+                case "동아리":
+                    classification = Models.Classification.Club;
+                    break;
+                case "단체":
+                    classification = Models.Classification.Group;
+                    break;
+                case "대회":
+                    classification = Models.Classification.Contest;
+                    break;
+                default:
+                    classification = Models.Classification.Event;
+                    break;
+            }
+
             Managers.BerryManager.AddBerry(new Models.Berry
             {
-                Title = BerryTitle.Text,
-                Contents = BerryContent.Text
+
+                Title = txtTItle.Text,
+                Contents = txtContent.Text,
+                Classification = classification
+
             });
         }
     }

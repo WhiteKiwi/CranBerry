@@ -39,8 +39,8 @@
 
     <!-- 되돌리기/글쓰기 버튼 -->
 	<div style="width: 89%; height: 70px; text-align: center; margin-bottom: 350px">
-	 <div class="Button" style="margin-left: 1%">
-	  <asp:Button ID="UploadButton" runat="server" style="color: white; font-size: 13pt; margin-bottom: 5px" OnClick="UploadButton_Clicjk" Text="저장"  /></div>
+	 <div>
+	  <asp:Button ID="SaveButton" OnClick="SaveButton_Click" runat="server" style="float: right; width: 100px; font-size: 13pt; margin-bottom: 5px" Text="저장"/></div>
     </div>
     <!-- 저작권 문구 바 -->
     <div class="Copyright">
