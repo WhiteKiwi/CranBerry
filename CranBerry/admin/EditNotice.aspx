@@ -26,9 +26,9 @@
 
 
     <!-- 저장버튼 -->
-	<div style="width: 89%; height: 70px; text-align: center; margin-bottom: 350px">
-	 <asp:Button runat="server" ID="NoticeSaveButton" CssClass="Button" OnClick="NoticeSaveButton_Click" Text="저장" style="color: white; font-size: 13pt; margin-bottom: 5px; margin-left: 1%"></asp:Button>
-	  </div>
+
+	 <asp:Button runat="server" ID="NoticeSaveButton" CssClass="Button" OnClick="NoticeSaveButton_Click" Text="저장"  style="width: 89%; height: 70px; width:100px; float: right; text-align: center; margin-bottom: 350px"></asp:Button>
+	  
 
 
     <!-- 저작권 문구 바 -->
