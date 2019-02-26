@@ -28,18 +28,14 @@ namespace CranBerry.admin {
             {
                 String ScheduleStr = Schedule[day.Date.Month, day.Date.Day];
 
-                if (holidayStr != null)
+                if (ScheduleStr != null)
                 {
                     
-                    cell.Controls.Add(new LiteralControl(" " + holidayStr)); 
+                    cell.Controls.Add(new LiteralControl(" " + ScheduleStr)); 
                 }
             }
         }
-        protected void Calendar1_Selecti0nChanged(object sender, EventArgs e)
-        {
-            selectedLabel.Text = "선택한 일 : " +
-                Calendar1.SelectedDate.ToLongDateString();
-        }
+ 
     }
 }
     
