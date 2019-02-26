@@ -126,6 +126,9 @@
 						<asp:LinkButton runat="server" OnClick="RightButton_Click" Text=">" ForeColor="#400101" />
 					</b></strong>
 				</span>
+                <span>
+                    <a href="/UploadNotice.aspx" style="border:1px #000000 solid; color: #000000; >작성</a>
+                </span>
 			</form>
 		</div>
 	</div>
@@ -136,4 +139,7 @@
 	<div class="copyright f3 text-white cb-bg-red">
 		2017 Copyright &copy; Team VaryBerry All Right Reserved
 	</div>
+      
+    </div>
+ 
 </asp:Content>
