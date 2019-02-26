@@ -9,23 +9,30 @@
 
     
 	
-    <!-- 월 -->   
-	<p style="color: black; font-size: 30pt; margin-top: 110px;  margin-bottom: 60px; margin-left: 44%"><b>NOVEMBER 11</b></p>
+      <form id="form1" runat="server">
+          <center>
+     <asp:Calendar id="calendar1" runat="server" style="text-align:center; width: 1000px; height: 1000px;" SelectDayText="Hi">
 
-    <!-- 왼쪽 화살표 -->
-    <div style="width: 10%; float: left; margin-top: 400px; text-align: center; font-size: 25pt">&lt;</div>
-	
-	<!-- 오른쪽 화살표 -->
-	<div style="width: 10%; float: right; margin-top: 400px; text-align: center; font-size: 25pt">&gt;</div>
+           <OtherMonthDayStyle ForeColor="Gray">
+           </OtherMonthDayStyle>
+         <DayHeaderStyle Height="50px" ></DayHeaderStyle>
 
-    <div style="width: 80%; height:800px; border : 1px solid #707070; border-collapse: collapse; font-size: 20pt; font-weight:bold">
-         <asp:Table ID="tblCalendar" runat="server" BorderStyle="Solid" BorderColor="Black">
-            <asp:TableHeaderRow>
-                <asp:TableHeaderCell></asp:TableHeaderCell>
-            </asp:TableHeaderRow>
-            <asp:TableRow>
-                <asp:TableHeaderCell></asp:TableHeaderCell>
-            </asp:TableRow>
-        </asp:Table>
-        </div>
+           <TitleStyle BackColor="Blue"
+                       Height="50px"
+                       ForeColor="White">
+           </TitleStyle>
+
+           <DayStyle BackColor="#FFFFFF" >
+               
+           </DayStyle>
+
+           <SelectedDayStyle BackColor="LightGray"
+
+                             Font-Bold="True">
+           </SelectedDayStyle>
+
+      </asp:Calendar>
+         </center>
+   </form>
+
 </asp:Content>
