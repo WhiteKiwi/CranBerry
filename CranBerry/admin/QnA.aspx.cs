@@ -7,15 +7,17 @@ namespace CranBerry.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
         }
 
-        protected void Searching(object sender, EventArgs e)
+        protected void Searching_Click(object sender, EventArgs e)
         {
-            if (titleOrContents.SelectedValue == "제목")
-                Response.Redirect("/QnA.aspx?titleSearch=" + SearchText.Text);
+            if (TitleOrContents.SelectedValue == "제목")
+                Response.Redirect("/QnA.aspx?titleSearch=" + txtSearch.Text);
             else
-                Response.Redirect("/QnA.aspx?contentsSearch=" + SearchText.Text);
+                Response.Redirect("/QnA.aspx?contentsSearch=" + txtSearch.Text);
+
+
         }
 
         protected void LeftButton_Click(object sender, EventArgs e)
@@ -29,7 +31,7 @@ namespace CranBerry.admin
             {
                 page = 1;
             }
-
+            
             if (page > 1)
                 Response.Redirect("/QnA.aspx?page=" + (page - 1));
         }

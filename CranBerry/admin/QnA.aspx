@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/User.Master" AutoEventWireup="true" CodeBehind="QnA.aspx.cs" Inherits="CranBerry.QnA" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/User.Master" AutoEventWireup="true" CodeBehind="QnA.aspx.cs" Inherits="CranBerry.admin.QnA" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
@@ -6,21 +6,23 @@
 	<img src="/assets/img/banner.png" style="width: 100%;" />
 
 	<!-- Q&A -->
-	<form runat="server">
+	<form id="form1" runat="server">
 		<div style="width: 100%; padding-top: 50px; padding-left: 100px; padding-right: 100px; text-align: left;">
 			<div class="float-left">
 				<h2><strong>Q&A</strong></h2>
 			</div>
 			<div class="float-right" style="margin-left: 10px;">
-				<asp:Button runat="server" OnClick="Searching" CssClass="btn cb-bg-darkred text-white" Text="검색" />
+		
 			</div>
 			<div class="float-right" style="margin-left: 10px; width: 350px;">
-				<asp:TextBox ID="SearchText" runat="server" CssClass="form-control"></asp:TextBox>
+				 
 			</div>
+            <asp:TextBox ID="txtSearch" runat="server" CssClass="form-control"></asp:TextBox>
 			<div class="float-right">
-				<asp:DropDownList ID="titleOrContents" runat="server" CssClass="form-control" Style="width: 80px;">
-				</asp:DropDownList>
+				
 			</div>
+            <asp:DropDownList  ID="TitleOrContents" runat="server" CssClass="form-control" Style="width: 80px;">
+				</asp:DropDownList>
 			<br />
 			<br />
 			<!-- Table Head -->
