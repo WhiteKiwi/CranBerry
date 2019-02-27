@@ -43,8 +43,8 @@
 		<br>
 		<h1 class="text-darkred bold float-left" style="margin: -12px 7px 0 7px;">Q.</h1>
 		<h3 class="bold"><%= question.Title %></h3>
-		<h5 class="float-right bold" style="margin: -30px 130px 0 0;">등록일: <%= question.QuestionAt.ToString("yyyy-MM-dd") %></h5>
-		<div class="cb-bg-red w-100" style="height: 2px; margin-top: 15px;"></div>
+		<h5 class="float-right bold" style="margin: -6px 130px 0 0;">등록일: <%= question.QuestionAt.ToString("yyyy-MM-dd") %></h5>
+		<div class="cb-bg-red w-100" style="height: 2px; margin-top: 25px;"></div>
 		<br>
 
 		<!-- 질문 내용 -->
