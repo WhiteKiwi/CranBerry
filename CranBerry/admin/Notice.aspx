@@ -19,7 +19,7 @@
         <div class="Button" style="height:50px;">
 	  <a href="EditNotice.aspx?id=<%= notice.Id %>" style="color: #707070; font-size: 10pt">수정</a></div>
          <div class="Button" style="height:50px;">
-	  <asp:Button ID="DeleteButton" OnClick="DeleteButton_Click" style="color: #707070; font-size: 10pt" Text="삭제" /></div>
+	  <asp:Button ID="DeleteButton" OnClick="DeleteButton_Click" style="color: #707070; font-size: 10pt" runat="server" Text="삭제" /></div>
 		<hr class="hr-red" />
 		
 			<span class="float-left" style="margin-left: 17px; margin-right: 30px;">제목</span>

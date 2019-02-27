@@ -13,15 +13,14 @@
     <!-- 제목 박스 -->
     <div style="width: 80%; margin-left: 9%; margin-top: 60px">
      <div class="SmallTitle"><b>제목</b></div>
-    
-        <asp:TextBox runat="server" ID="TitleBox" CssClass="Box" style=" height: 50px; margin-bottom : 2%; width: 1000px;" />
+        <asp:TextBox ID="txtTitle" runat="server" CssClass="Box" style=" height: 50px; margin-bottom : 2%; width: 1000px;" />
 	</div>
 
     <!-- 내용 박스 -->
     <div style="width: 80%; margin-left: 9%; margin-top: 40px">
      <div class="SmallTitle"><b>내용</b></div>
     
-        <asp:TextBox runat="server" ID="ContentsBox" CssClass="Box" style="height: 530px; width: 1000px;" />
+        <asp:TextBox runat="server" ID="txtContents" CssClass="Box" style="height: 530px; width: 1000px;" />
 	</div>
 
     <!-- 바이트 -->
@@ -32,7 +31,7 @@
 	<div style="width: 89%; height: 70px; text-align: center; margin-bottom: 350px">
 	 <div class="Button" style="margin-left: 1%">
 	 
-          <asp:Button ID="SaveButton" OnClick="SaveButton_Click" runat="server" style="float: right; width: 100px; font-size: 13pt; margin-bottom: 5px" Text="저장"/></div>
+          <asp:Button ID="txtSave" OnClick="txtSave_Click" runat="server" style="float: right; width: 100px; font-size: 13pt; margin-bottom: 5px" Text="저장"/></div>
 	  </div>
 
 

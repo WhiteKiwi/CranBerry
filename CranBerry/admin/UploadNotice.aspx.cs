@@ -8,16 +8,18 @@ using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Data;
 
+
 namespace CranBerry.admin
 {
     public partial class UploadNotice : System.Web.UI.Page
     {
        protected void SaveButton_Click(object sender, EventArgs e)
         {
-            Managers.NoticeManager.ModifyNotice(new Models.Notice
+           
+            Managers.NoticeManager.AddNotice(new Models.Notice
             {
-                Title = TitleBox.Text,
-                Contents = ContentsBox.Text
+                Title = txtTitle.Text,
+                Contents = txtContent.Text
             });
         }
         

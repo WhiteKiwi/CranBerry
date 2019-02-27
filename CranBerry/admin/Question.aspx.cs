@@ -15,7 +15,7 @@ namespace CranBerry.admin {
         {
             Managers.QnAManager.AddAnswer(new Models.Question
             {
-                Id = int.Parse(Request.QueryString[id]),
+                Id = int.Parse(Request.QueryString["id"]),
                 Answer = txtAnswer.Text
             });
         }

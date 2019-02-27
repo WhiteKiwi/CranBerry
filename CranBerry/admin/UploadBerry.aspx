@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
+	<form id="form1" runat="server">
 	<!-- Top Image -->
 	<img src="/assets/img/banner.png" style="width: 100%;" />
 
@@ -17,7 +18,16 @@
 
     <!-- Berry 분류 박스 -->
 	<div class="SmallTitle"><b>BERRY 분류</b></div>
-    <asp:TextBox ID="BerryClassification" runat="server" class="Box" style=" height: 50px; margin-bottom : 2%;" />
+        <asp:DropDownList ID="ClassificationList" runat="server" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+            <asp:ListItem>Event</asp:ListItem>
+            <asp:ListItem>Facilities</asp:ListItem>
+            <asp:ListItem>CNSATerms</asp:ListItem>
+            <asp:ListItem>CNSALifeAndStudy</asp:ListItem>
+            <asp:ListItem>Dormitory</asp:ListItem>
+            <asp:ListItem>Club</asp:ListItem>
+            <asp:ListItem>Group</asp:ListItem>
+            <asp:ListItem>Contest </asp:ListItem>
+        </asp:DropDownList>
 
 
 
@@ -47,4 +57,5 @@
     <p class="CopyrightF">
 	2018 Copyright © Team VaryBerry All Right Reserved.</p>
 	</div>
+    </form>
 </asp:Content>

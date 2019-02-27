@@ -51,11 +51,13 @@ namespace CranBerry.admin
             Managers.BerryManager.AddBerry(new Models.Berry
             {
 
-                Title = txtTItle.Text,
-                Contents = txtContent.Text,
+                Title = BerryTitle.Text,
+                Contents = BerryContent.Text,
                 Classification = classification
 
             });
         }
+
+        
     }
 }
