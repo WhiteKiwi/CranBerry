@@ -33,8 +33,8 @@
 				<asp:TextBox runat="server" ID="UserID" CssClass="form-control" placeholder="ID"></asp:TextBox><br>
 				<asp:TextBox runat="server" ID="UserPW" CssClass="form-control" placeholder="PW"></asp:TextBox>
 			</span>
-			<span>
-				<asp:Button runat="server" ID="LoginButton" Text="로그인" CssClass="login-button cb-bg-red border-0 text-white f3 bold" />
+			<span>  
+				<asp:Button runat="server" OnClick="LoginButton_Click" ID="LoginButton" Text="로그인" CssClass="login-button cb-bg-red border-0 text-white f3 bold" />
 			</span>
 		</div>
 		<br />

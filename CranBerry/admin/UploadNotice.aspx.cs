@@ -15,11 +15,12 @@ namespace CranBerry.admin
     {
        protected void SaveButton_Click(object sender, EventArgs e)
         {
-           
+
             Managers.NoticeManager.AddNotice(new Models.Notice
             {
                 Title = txtTitle.Text,
-                Contents = txtContent.Text
+                Contents = txtContents.Text,
+               
             });
         }
         

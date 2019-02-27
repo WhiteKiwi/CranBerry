@@ -22,10 +22,12 @@
 				
 			</div>
             <asp:DropDownList  ID="TitleOrContents" runat="server" CssClass="form-control" Style="width: 80px;">
+                <asp:ListItem>제목</asp:ListItem>
+                <asp:ListItem>내용</asp:ListItem>
 				</asp:DropDownList>
 			<br />
 			<br />
-			<!-- Table Head -->
+			<!-- T  able Head -->
 			<hr class="hr-red" />
 			<div style="text-align: center; margin-top: -12px; margin-bottom: -12px;">
 				<span style="float: left; margin-left: 17px;">번호</span>
