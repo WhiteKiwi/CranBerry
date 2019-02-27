@@ -17,12 +17,12 @@ namespace CranBerry.admin {
                 if (Request.QueryString["select"] == "reset")
                 {
                     // 계정 비밀번호 초기화
-                    Managers.AdminManager.AddAdmin(AdminID.Text, AdminName.Text);
+                    Managers.AdminManager.ChangePassword(NewPassword.Text,OldPassword.Text);
                 }
                 else if (Request.QueryString["select"] == "delete")
                 {
                     // 계정 삭제
-                    Managers.AdminManager.ChangePassword(OldPassword.Text, NewPassword.Text);
+                    Managers.AdminManager.DeleteAccount(AdminID.Text, AdminName.Text);
                 }
             }
 
