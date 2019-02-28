@@ -17,7 +17,7 @@
   
 	<table style="width: 80%; height:800px; border : 1px solid #707070; border-collapse: collapse; margin-left: 200px; font-size: 20pt; font-weight:bold; 	">
 		
-		<tr style="text-align:center; height: 70px;">
+		<tr style="text-align:center; height: 70px; border:1px #000000 solid;">
 			<th style="color : red; width: 14%">SUNDAY </th>
 			<th style="width: 14%">MONDAY </th>
 			<th style="width: 14%">TUESDAY </th>
