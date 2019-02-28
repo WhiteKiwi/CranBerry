@@ -92,7 +92,7 @@
 			<div class="text-center">
 				<span>
 					<strong><b>
-						<asp:LinkButton runat="server" OnClick="LeftButton_Click" Text="<" ForeColor="#400101" />
+						<asp:LinkButton ID="LeftButton" runat="server" OnClick="LeftButton_Click" Text="<" ForeColor="#400101" />
 					</b></strong>
 				</span>
 				<%
@@ -190,7 +190,7 @@
 				%>
 				<span>
 					<strong><b>
-						<asp:LinkButton runat="server" OnClick="RightButton_Click" Text=">" ForeColor="#400101" />
+						<asp:LinkButton ID="RightButton" runat="server" OnClick="RightButton_Click" Text=">" ForeColor="#400101" />
 					</b></strong>
 				</span>
 			</div>
