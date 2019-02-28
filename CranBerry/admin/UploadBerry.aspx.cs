@@ -12,7 +12,7 @@ namespace CranBerry.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            Content.FilebrowserImageUploadUrl = "/admin/Upload.ashx";
         }
         protected void ClassificationList_SelectedIndexChanged(object sender, EventArgs e)
         {
