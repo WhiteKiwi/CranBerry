@@ -43,7 +43,7 @@ namespace CranBerry.admin
             obj = cmd.ExecuteScalar();
             MySqlDataReader reader= cmd.ExecuteReader();    
 
-            if (Convert.ToInt32(obj) != 0)
+            if (obj != null)
 
             {
                 while (reader.Read())

@@ -13,9 +13,9 @@ namespace CranBerry.admin
         protected void Searching_Click(object sender, EventArgs e)
         {
             if (TitleOrContents.SelectedValue == "제목")
-                Response.Redirect("/QnA.aspx?titleSearch=" + txtSearch.Text);
+                Response.Redirect("admin/QnA.aspx?titleSearch=" + txtSearch.Text);
             else
-                Response.Redirect("/QnA.aspx?contentsSearch=" + txtSearch.Text);
+                Response.Redirect("admin/QnA.aspx?contentsSearch=" + txtSearch.Text);
 
 
         }
@@ -33,7 +33,7 @@ namespace CranBerry.admin
             }
             
             if (page > 1)
-                Response.Redirect("/QnA.aspx?page=" + (page - 1));
+                Response.Redirect("admin/QnA.aspx?page=" + (page - 1));
         }
 
         protected void RightButton_Click(object sender, EventArgs e)
@@ -49,7 +49,7 @@ namespace CranBerry.admin
             }
 
             if (page < Managers.QnAManager.GetPagesCount())
-                Response.Redirect("/QnA.aspx?page=" + (page + 1));
+                Response.Redirect("admin/QnA.aspx?page=" + (page + 1));
         }
     }
 }
