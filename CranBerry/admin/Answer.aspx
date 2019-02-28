@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
-	<form runat="server">
+    <form runat="server">
         <head>
             <meta charset="utf-8" />
             <title>관리자페이지-Q&A답변</title>
