@@ -16,9 +16,40 @@ namespace CranBerry.Managers {
 
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 			try {
-				MySqlCommand cmd = new MySqlCommand();
+                int classificationIndex = 0;
+                switch (berry.Classification)
+                {
+                    case Classification.Event:
+                        classificationIndex = 0;
+                        break;
+                    case Classification.Facilities:
+                        classificationIndex = 1;
+                        break;
+                    case Classification.CNSATerms:
+                        classificationIndex = 2;
+                        break;
+                    case Classification.CNSALifeAndStudy:
+                        classificationIndex = 3;
+                        break;
+                    case Classification.Dormitory:
+                        classificationIndex = 4;
+                        break;
+                    case Classification.Club:
+                        classificationIndex = 5;
+                        break;
+                    case Classification.Group:
+                        classificationIndex = 6;
+                        break;
+                    case Classification.Contest:
+                        classificationIndex = 7;
+                        break;
+                    default:
+                        classificationIndex = 0;
+                        break;
+                }
+                MySqlCommand cmd = new MySqlCommand();
 				cmd.Connection = con;
-                cmd.CommandText = string.Format("insert into berries(Title,Contents,Classification)values('{0}','{1}','{2}')", berry.Title, berry.Contents, berry.Classification);
+                cmd.CommandText = string.Format("insert into berries(Title,Contents,Classification)values('{0}','{1}','{2}')", berry.Title, berry.Contents,classificationIndex);
 				con.Open();
 				result = cmd.ExecuteNonQuery();
 				return result;

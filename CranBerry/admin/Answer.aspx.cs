@@ -21,5 +21,10 @@ namespace CranBerry.admin {
             });
             Response.Redirect(Request.RawUrl);
         }
+
+        protected void List_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/Admin.Master" AutoEventWireup="true" CodeBehind="Question.aspx.cs" Inherits="CranBerry.admin.Question" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/Admin.Master" AutoEventWireup="true" CodeBehind="UploadNotice.aspx.cs" Inherits="CranBerry.admin.UploadNotice" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
@@ -31,9 +31,9 @@
 	<div style="width: 89%; height: 70px; text-align: center; margin-bottom: 350px">
 	 <div class="Button" style="margin-left: 1%">
 	 
-          <asp:Button ID="txtSave" OnClick="txtSave_Click" runat="server" style="float: right; width: 100px; font-size: 13pt; margin-bottom: 5px" Text="저장"/></div>
-	  </div>
-
+         <div>
+        <asp:Button ID="SaveButton" OnClick="SaveButton_Click" runat="server" Style="float: right; width: 100px; font-size: 13pt; margin-bottom: 5px" Text="저장" />
+ </div>
 
     <!-- 저작권 문구 바 -->
     <div class="Copyright">

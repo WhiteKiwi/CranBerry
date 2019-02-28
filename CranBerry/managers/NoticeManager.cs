@@ -43,10 +43,16 @@ namespace CranBerry.Managers {
 			int result = 0;
 			MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 			try {
-				MySqlCommand cmd = new MySqlCommand();
-				cmd.Connection = con;
-				cmd.CommandText = string.Format("insert into notices(Title,Contents,Notice_At)values('{0}','{1}','{2}')", notice.Title, notice.Contents, DateTime.Now);
-				con.Open();
+			
+                string sql = "INSERT INTO  notices(Title, Contents, Notice_At) VALUES (?, ?, ?);";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+
+             
+                cmd.Parameters.Add("Title", MySqlDbType.VarChar).Value = notice.Title;
+                cmd.Parameters.Add("Contents", MySqlDbType.VarChar).Value = notice.Contents;
+                cmd.Parameters.Add("Question_At", MySqlDbType.DateTime).Value = DateTime.Now;
+      
+                con.Open();
 				result = cmd.ExecuteNonQuery();
 				return result;
 			} catch (Exception e) {

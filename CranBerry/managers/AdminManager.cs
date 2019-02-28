@@ -74,10 +74,12 @@ namespace CranBerry.Managers {
             MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             try
             {
+               
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
                 cmd.CommandText = string.Format("update admin set Password = 'cranberry' where Id = '{0}'", admin.ID );
                 con.Open();
+              
                 result = cmd.ExecuteNonQuery();
                 return result;
             }
@@ -122,7 +124,7 @@ namespace CranBerry.Managers {
             try{
                 conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
                 conn.Open();
-                string sql = "SELECT * FROM admin WHERE Id=" + Id + ";";
+                string sql = "SELECT * FROM admin WHERE Id='" + Id + "'";
                 if(Password == Password + SALT)
                     return true;
                 return false;

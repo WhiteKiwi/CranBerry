@@ -4,6 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
 	<!-- Top Image -->
+    <form id="form1" runat="server">
 	<img src="/assets/img/banner.png" style="width: 100%;" />
 
 	<br />
@@ -43,11 +44,11 @@
 		<br>
 		<h1 class="text-darkred bold float-left" style="margin: -12px 7px 0 7px;">Q.</h1>
 		<h3 class="bold"><%= question.Title %></h3>
-		<h5 class="float-right bold" style="margin: -30px 130px 0 0;">등록일: <%= question.QuestionAt.ToString("yyyy-MM-dd") %></h5>
-		<div class="cb-bg-red w-100" style="height: 2px; margin-top: 15px;"></div>
+		<h5 class="float-right bold" style="margin: -10px 130px 6 0;">등록일: <%= question.QuestionAt.ToString("yyyy-MM-dd") %></h5>
+		<div class="cb-bg-red w-100" style="height: 2px; margin-top: 30px;"></div>
 		<br>
 
-		<!-- 질문 내용 -->
+		<!-- 질문 내용 -->  
 		<div class="color-black"><%= question.Contents %></div>
 		<br>
 		<hr>
@@ -75,9 +76,11 @@
 		<tr>
 			<td>
 				<span style="width: 1430px; height: 20px; margin-top: 30px"></span>
-				<asp:TextBox ID="txtAnswer" runat="server" Width="1430px" Height="202px"></asp:TextBox>
-
+				
+               
+                <asp:TextBox ID="txtAnswer" runat="server" Width="1533px" Height="202px"></asp:TextBox>
 			</td>
+          
 		</tr>
 	</table>
 	<div class="w-100">
@@ -92,4 +95,6 @@
 	<div class="copyright f3 text-white cb-bg-red">
 		2017 Copyright &copy; Team VaryBerry All Right Reserved
 	</div>
+        </form>
+
 </asp:Content>

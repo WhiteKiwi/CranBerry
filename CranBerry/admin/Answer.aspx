@@ -113,6 +113,7 @@
                             <td>
                                
                                 <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575" Width="1534px" Height="216px" >답변을 등록해주세요.</asp:TextBox>
+                            <asp:Button ID="List" runat="server" OnClick="List_Click" Text="Button" />
                             </td>
                         </tr>
                     </table>

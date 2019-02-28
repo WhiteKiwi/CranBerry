@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CranBerry.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,8 +14,13 @@ namespace CranBerry.admin
         {
 
         }
+        protected void ClassificationList_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
-        void UploadBtn_Click(object sender, EventArgs e)
+        }
+
+
+        protected void SaveButton_Click(object sender, EventArgs e)
         {
             Models.Classification classification;
             switch (ClassificationList.SelectedValue)
@@ -41,7 +47,7 @@ namespace CranBerry.admin
                     classification = Models.Classification.Group;
                     break;
                 case "대회":
-                    classification = Models.Classification.Contest;
+                     classification = Models.Classification.Contest;
                     break;
                 default:
                     classification = Models.Classification.Event;
@@ -57,6 +63,7 @@ namespace CranBerry.admin
 
             });
         }
+        
 
         
     }

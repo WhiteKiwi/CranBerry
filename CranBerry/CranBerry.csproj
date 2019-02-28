@@ -186,6 +186,7 @@
   <ItemGroup>
     <Content Include="admin\Accounts.aspx" />
     <Content Include="admin\Answer.aspx" />
+    <Content Include="admin\Berries.aspx" />
     <Content Include="admin\Calendar.aspx" />
     <Content Include="admin\Default.aspx" />
     <Content Include="admin\Edit.aspx" />
@@ -386,6 +387,13 @@
     </Compile>
     <Compile Include="admin\Answer.aspx.designer.cs">
       <DependentUpon>Answer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="admin\Berries.aspx.cs">
+      <DependentUpon>Berries.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin\Berries.aspx.designer.cs">
+      <DependentUpon>Berries.aspx</DependentUpon>
     </Compile>
     <Compile Include="admin\Calendar.aspx.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
