@@ -16,6 +16,7 @@ namespace CranBerry.Models
         public Classification Classification { get; set; }  // 분류
 
         public int Views { get; set; }  // 조회수
+        public int FileName { get; set; } // 사진 이름
     }
 
   

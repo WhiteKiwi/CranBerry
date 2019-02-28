@@ -49,6 +49,7 @@ namespace CranBerry.Managers {
                 }
                 MySqlCommand cmd = new MySqlCommand();
 				cmd.Connection = con;
+               
                 cmd.CommandText = string.Format("insert into berries(Title,Contents,Classification)values('{0}','{1}','{2}')", berry.Title, berry.Contents,classificationIndex);
 				con.Open();
 				result = cmd.ExecuteNonQuery();

@@ -15,9 +15,7 @@
     <!-- Berry 번호 박스 -->
     <div style="margin-left:140px" class="SmallTitle"><b>BERRY 번호</b></div>
     <asp:TextBox ID="BerryId" runat="server" class="Box" style="margin-left:140px; height: 50px; margin-bottom : 2%;" />
-        <
-    <%--<!-- Berry 분류 박스 -->--%>
-	<div style="margin-left: 140px" class="SmallTitle"><b>BERBERRY 분류</b></div>
+        &nbsp;<div style="margin-left: 140px" class="SmallTitle"><b>BERBERRY 분류</b></div>
         <asp:DropDownList ID="ClassificationList" runat="server" style="margin-left:140px" OnSelectedIndexChanged="ClassificationList_SelectedIndexChanged">
             <asp:ListItem Selected="True">선택</asp:ListItem>
             <asp:ListItem>행사</asp:ListItem>
@@ -29,8 +27,10 @@
             <asp:ListItem>단체</asp:ListItem>
             <asp:ListItem>대회</asp:ListItem>
         </asp:DropDownList>
-
-
+        <div style="margin-top:30px;margin-left:120px"><p>첨부파일</p><asp:FileUpload Id="AttachFile" runat="server" type="file" />&nbsp;&nbsp;&nbsp;&nbsp;
+            <br />
+            (최대 4M)</div>
+      
            
     <!-- 제목 박스 -->
     <div style="width: 80%; margin-left: 9%; margin-top: 60px">
