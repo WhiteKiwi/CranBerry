@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/Admin.Master" AutoEventWireup="true" CodeBehind="UploadBerry.aspx.cs" Inherits="CranBerry.admin.UploadBerry" %>
+<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
@@ -27,7 +28,7 @@
             <asp:ListItem>단체</asp:ListItem>
             <asp:ListItem>대회</asp:ListItem>
         </asp:DropDownList>
-        <div style="margin-top:30px;margin-left:120px"><p>첨부파일</p><asp:FileUpload Id="AttachFile" runat="server" type="file" />&nbsp;&nbsp;&nbsp;&nbsp;
+        <div style="margin-top:30px;margin-left:120px"><p>첨부파일</p><asp:FileUpload Id="AttachFile" runat="server" type="file" aria-describedby="inputGroupFileAddon"/><label for="Contents_ProjectPicture">Choose file</label>&nbsp;&nbsp;&nbsp;&nbsp;
             <br />
             (최대 4M)</div>
       
