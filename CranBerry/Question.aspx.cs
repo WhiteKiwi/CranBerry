@@ -6,7 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
 
-namespace CranBerry {
+namespace CranBerry
+{
     /*
          * 서정민 - 페이징
     */
@@ -37,7 +38,8 @@ namespace CranBerry {
                 else
                     totalPage = totalRecord / 10 + 1;
 
-                    return totalPage; }
+                return totalPage;
+            }
         }
 
         public int TotalPage {
@@ -67,10 +69,12 @@ namespace CranBerry {
 
     }
 
-    public partial class Question : System.Web.UI.Page {
-            protected void Page_Load(object sender, EventArgs e) {
+    public partial class Question : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
 
-            }
         }
-    
+    }
+
 }

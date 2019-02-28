@@ -2,7 +2,9 @@
 
 <!DOCTYPE html>
 <html>
+    <form>
 <head>
+   
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 	<!-- Title -->
@@ -39,7 +41,7 @@
            <a href="/admin/UploadNotice.aspx" class="cb-nav-item f3">공지추가</a>
     <a href="/admin/UploadCalendar.aspx" class="cb-nav-item f3">일정추가</a>
     <a href="/admin/UploadBerry.aspx" class="cb-nav-item f3">Berry추가</a>
-
+           <a href="/admin/LogOut.aspx" class="cb-nav-item f3">로그아웃</a>
 		</div>
 	</div>
 	<!-- 흰 선 -->
@@ -61,5 +63,7 @@
 
 	<!-- Bootstrap JavaScript -->
 	<script src="/assets/js/bootstrap.min.js"></script>
+   
 </body>
+        </form>
 </html>

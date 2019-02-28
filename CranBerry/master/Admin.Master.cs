@@ -13,5 +13,10 @@ namespace CranBerry.master
                 Response.Redirect("/admin/Login.aspx");
             }
         }
+        protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+            Session["AdminID"] = null;
+            Response.Redirect("/admin/Login.aspx");
+        }
     }
 }
