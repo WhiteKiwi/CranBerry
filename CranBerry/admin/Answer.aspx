@@ -36,15 +36,15 @@
 
                     <!--Q&A 제목-->
                     <h1 style="color: #400101; margin-left: 160px; font-size: 55px"><b>Q&A</b></h1>
-                    <hr style="border: 2px solid #BF0404; background-color: #BF0404; width: 1800px; margin-left: 55px">
+                    <hr style="border: 2px solid #BF0404; background-color: #BF0404; width: 1300px; margin-left: 55px">
 
                     <!--제일 큰 박스-->
             <div style="margin-left:170px">
                     <asp:Button ID="DeleteButton" runat="server" Text="삭제"  OnClick="DeleteButton_Click" /></div>
-                    <table style="width: 1550px; height: 886px; background-color: white; border: 1px solid #707070; margin-left: 170px; margin-top: 60px; margin-bottom: 60px">
+                    <table style="width: 500px; height: 709px; background-color: white; border: 1px solid #707070; margin-left: 170px; margin-top: 60px; margin-bottom: 60px">
                     
                         <tr>
-                            <td class="auto-style2">
+                            <td class="auto-style5">
 
                                 <!--여백-->
                                 <div style="height: 100px"></div>
@@ -57,10 +57,10 @@
                                         </span>
                                     </span>
                                 </span>
-                                <hr style="border: 1px solid #BF0404; background-color: #BF0404; width: 1500px; margin-top: 13px">
+                                <hr style="border: 1px solid #BF0404; background-color: #BF0404; width: 100%; margin-top: 13px">
 
                                 <!--작은 박스1-->
-                                <table style="width: 1200px; height: 250px; background-color: white; border: 1px solid #707070; margin-left: 55px; margin-top: 60px">
+                                <table style="width: 100%px; height: 250px; background-color: white; border: 1px solid #707070; margin-left: 55px; margin-top: 60px">
                                     <tr>
                                        
                                             <span style="width: 1000px; height: 220px; margin-top: 30px"><span>
@@ -76,7 +76,7 @@
 				완료</span>
 		</div>
                                                         <%} %>
-                                            <p style="margin-left: 60px; margin-top: 30px; font-size: 25px"><%= question.Contents %></p>
+                                            <p style="margin-left: 30px; margin-top: 30px; font-size: 25px"><%= question.Contents %></p>
                                         </td>
                                     </tr>
                                 </table>
@@ -95,10 +95,10 @@
                    
 
                                 <!--작은 박스2-->
-                                <table style="width: 1430px; height: 220px; background-color: white; border: 1px solid #707070; margin-left: 55px; margin-top: 12px; margin-bottom: 90px">
+                                <table style="width: 1000px; height: 220px; background-color: white; border: 1px solid #707070; margin-left: 55px; margin-top: 12px; margin-bottom: 90px">
                                     <tr>
                                         <td>
-                                            <span style="width: 1430px; height: 20px; margin-top: 30px"> <%= question.Answer == "0" ? "답변 대기중입니다. 잠시만 기다려주세요 :)" : question.Answer %><span>
+                                            <span style="width: 1000px; height: 20px; margin-top: 30px"> <%= question.Answer == "0" ? "답변 대기중입니다. 잠시만 기다려주세요 :)" : question.Answer %><span>
                                           
                                         </td>
                                     </tr>
@@ -109,12 +109,12 @@
                     </table>
 
                     <!--답변 등록-->
-                    <asp:Button ID="AnswerButton" CssClass="btn float-right cb-bg-darkred text-white" runat="server" OnClick="AnswerButton_Click" Style="font-family: Segoe UI; color: #400101; margin-right: 170px; font-size: 35px" Text="답변 등록"></asp:Button>
+                    <asp:Button ID="AnswerButton" CssClass="btn float-right cb-bg-darkred text-white" runat="server" OnClick="AnswerButton_Click" Style="font-family: Segoe UI; color: #400101; margin-right: 230px; font-size: 35px" Text="답변 등록"></asp:Button>
                     
                         <tr>
                             <td>
                                
-                                <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575" Width="1534px" Height="216px" >답변을 등록해주세요.</asp:TextBox>
+                                <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575" Width="1000px" Height="216px" >답변을 등록해주세요.</asp:TextBox>
                             
                             </td>
                         </tr>
