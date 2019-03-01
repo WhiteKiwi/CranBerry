@@ -53,7 +53,25 @@
 	</div>
 	<!-- 붉은 선 -->
 	<div class="cb-bg-red" style="height: 2px;"></div>
-
+        <!-- Notices -->
+	<div class="notice-main">
+		<br />
+		<br />
+		<br />
+		<h1 class="f0 text-red bold">NOTICE</h1>
+		<br />
+		<% var notices = CranBerry.Managers.NoticeManager.GetRecentNotices();
+			foreach (var notice in notices) {
+		%>
+		<div>
+			<a href="/Notice.aspx?id=<%= notice.Id %>" class="f4 notice-main-link"><%= notice.Title + "&nbsp; &nbsp; &nbsp;" + notice.NoticeAt.ToString("yyyy-MM-dd") %></a>
+		    <hr style="border:solid 1px; color:#ff0000; width:90%" />
+        </div>
+		<% } %>
+		<br />
+		<br />
+		<br />
+	</div>
 	<!-- About CranBerry -->
 	<div class="text-center m-5">
 		<h1 class="f0 text-red bold">ABOUT CRANBERRY</h1>
@@ -121,24 +139,7 @@
 		</a>
 	</div>
 
-	<!-- Notices -->
-	<div class="notice-main">
-		<br />
-		<br />
-		<br />
-		<h1 class="f0 text-red bold">NOTICE</h1>
-		<br />
-		<% var notices = CranBerry.Managers.NoticeManager.GetRecentNotices();
-			foreach (var notice in notices) {
-		%>
-		<div>
-			<a href="/Notice.aspx?id=<%= notice.Id %>" class="f4 notice-main-link"><%= notice.Title + "&nbsp; &nbsp; &nbsp;" + notice.NoticeAt.ToString("yyyy-MM-dd") %></a>
-		</div>
-		<% } %>
-		<br />
-		<br />
-		<br />
-	</div>
+	
 
 	<!-- About us -->
 	<div class="cb-bg-red text-center text-white">
