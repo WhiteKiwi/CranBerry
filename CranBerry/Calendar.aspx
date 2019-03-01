@@ -2,17 +2,14 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
-    <!-- CALANDER 제목 -->
+  &nbsp;&nbsp;&nbsp;  <!-- CALANDER 제목 -->
 	<h1 style="color: #400101; margin-left: 10%; margin-top: 110px; font-size: 40pt"><b>CALANDER</b></h1>
 	<!-- 본문 붉은 선 -->
 	<div style="background-color: #BF0404; width: 90%; height: 2px; margin-left: 5%"></div>
 
     
-	
-      <form id="form1" runat="server">
-   
   
-    <!-- 월 -->   
+     <!-- 월 -->   
 	<p style="color: black; font-size: 30pt; margin-top: 110px;  margin-bottom: 60px; text-align:center;"><b>MARCH 3월</b></p>
 
     
@@ -20,7 +17,7 @@
   
 	<table style="width: 80%; height:800px; border : 1px solid #707070; border-collapse: collapse; margin-left: 200px; font-size: 20pt; font-weight:bold; 	">
 		
-		<tr style="text-align:center; height: 70px;">
+		<tr style="text-align:center; height: 70px; border:1px #000000 solid;">
 			<th style="color : red; width: 14%">SUNDAY </th>
 			<th style="width: 14%">MONDAY </th>
 			<th style="width: 14%">TUESDAY </th>
@@ -224,5 +221,5 @@
 	<div class="copyright f3">
 		2017 Copyright &copy; Team VaryBerry All Right Reserved
 	</div>
-          </form>
+
 </asp:Content>

@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/Admin.Master" AutoEventWireup="true" CodeBehind="EditBerry.aspx.cs" Inherits="CranBerry.admin.EditBerry" %>
+<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
@@ -9,7 +10,15 @@
 <!--Berry추가 제목-->
 <h1 style="color: #400101; margin-left: 160px; margin-top: 80px; font-size: 55px"><b>Berry수정</b></h1>
 <hr style="border: 2px solid #BF0404; background-color: #BF0404; width: 1800px; margin-left: 55px; margin-bottom: 30px">
-
+           <%
+               int id=1;
+               try {
+                   id = int.Parse(Request.QueryString["Id"]);
+               } catch (Exception e) {
+                   id = 1;
+               }
+               var berry = CranBerry.Managers.BerryManager.GetBerryByID(id);
+	%>
 <!--분류선택 박스-->
 <table style="margin-left: 130px; margin-top: 60px">
 <tr>
@@ -48,12 +57,7 @@
 </table>
 
 <!--첨부파일 박스-->
-<table style="margin-left: 130px; margin-top: 45px">
-<tr>
-<td style="color: black; font-size: 35px; vertical-align: text-top"><b>첨부파일</b>
-</td>
-<td style="width: 120px">
-</td>
+
 <td style="width: 120px; height: 50px; background-color: white; border:1px solid #707070;
  margin-left: 170px; margin-top: 50px"><p style="font-size: 24px; color: #757575; margin-left: 25px">
  내 PC</p></td>
@@ -69,7 +73,8 @@
 </td>
 <td style="width: 1400px; height: 510px; background-color: white; border:1px solid #707070;
  margin-left: 170px; margin-top: 50px"><p style="font-size: 24px; color: #757575; margin-left: 25px">
-<asp:TextBox ID="txtContent" runat="server" Height="127px" Width="577px" placeholeder=""></asp:TextBox>
+     <CKEditor:CKEditorControl ID="txtContent" BasePath="/assets/CKEditor/" runat="server" Text="<%=berry.contents %>"></CKEditor:CKEditorControl>
+
     </p></td>
  </tr>
 </table>
@@ -82,7 +87,7 @@
 <tr>
 <td style="margin-left: 1570px; margin- margin-top: 60px; margin-bottom: 20px; width: 120px; height: 70px; background-color: #400101;
 border-radius: 0.4em; font-size: 25px; color: white; text-align: center">저장
-    <asp:Button ID="BerrySaveButton" runat="server" Text="등록" Onclick="BerrySaveButton"/>
+    <asp:Button ID="BerrySaveButton" runat="server" Text="등록" OnClick="BerrySaveButton_Click" />
 </td>
 </tr>
 </table>

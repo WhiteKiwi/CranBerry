@@ -75,7 +75,7 @@
 						Response.Write("<div style=\"text-align: center;\">");
 						Response.Write("<span style=\"float: left; margin-left: 20px;\">" + question.Id + "</span>");
 						string answer = question.Answer != "0" ? "<span style=\"font-size: 0.9rem;\">[답변완료]</span> " : "";
-						Response.Write("<span class=\"contents-list\"><a class=\"alert-link\" href=\"Answer.aspx?id=" + question.Id + "\">" + answer + question.Title + "</a></span>");
+						Response.Write("<span class=\"contents-list\"><a class=\"alert-link\" href=\"/admin/Answer.aspx?id=" + question.Id + "\">" + answer + question.Title + "</a></span>");
 						Response.Write("<span style=\"float: right; margin-right: 20px;\">" + question.QuestionAt.ToString("yyyy-MM-dd") + "</span>");
 						Response.Write("</div><hr class=\"hr-gray\" />");
 					}
@@ -84,9 +84,7 @@
 				}
 			%>
 
-            <div style="width: 100%; text-align: right;">
-				<a href="/UploadQuestion.aspx" class="btn cb-bg-darkred text-white" role="button">질문 등록</a>
-			</div>
+ 
 
 			<!-- Page Link -->
 			<div class="text-center">
@@ -140,7 +138,7 @@
                                     }
 
                                     Response.Write("<span" + pageStyle + " style=\"padding: 3px 9px; margin: 3px;\">");
-                                    Response.Write("<a" + textStyle + " href=\"/QnA.aspx?page=" + (i + ((page / 10) * 10)) + queryText + "\">" + (i + ((page / 10) * 10)) + "</a>");
+                                    Response.Write("<a" + textStyle + " href=\"/admin/QnA.aspx?page=" + (i + ((page / 10) * 10)) + queryText + "\">" + (i + ((page / 10) * 10)) + "</a>");
                                     Response.Write("</span>");
                                 }
                             } else {
@@ -154,7 +152,7 @@
                                     }
 
                                     Response.Write("<span" + pageStyle + " style=\"padding: 3px 9px; margin: 3px;\">");
-                                    Response.Write("<a" + textStyle + " href=\"/QnA.aspx?page=" + (i + page - 10) + queryText + "\">" + (i + page - 10) + "</a>");
+                                    Response.Write("<a" + textStyle + " href=\"/admin/QnA.aspx?page=" + (i + page - 10) + queryText + "\">" + (i + page - 10) + "</a>");
                                     Response.Write("</span>");
                                 }
                             }
@@ -168,7 +166,7 @@
                                 }
 
                                 Response.Write("<span" + pageStyle + " style=\"padding: 3px 9px; margin: 3px;\">");
-                                Response.Write("<a" + textStyle + " href=\"/QnA.aspx?page=" + (i + ((page / 10) * 10)) + queryText + "\">" + (i + ((page / 10) * 10)) + "</a>");
+                                Response.Write("<a" + textStyle + " href=\"/admin/QnA.aspx?page=" + (i + ((page / 10) * 10)) + queryText + "\">" + (i + ((page / 10) * 10)) + "</a>");
                                 Response.Write("</span>");
                             }
                         }
@@ -183,7 +181,7 @@
                             }
 
                             Response.Write("<span" + pageStyle + " style=\"padding: 3px 9px; margin: 3px;\">");
-                            Response.Write("<a" + textStyle + " href=\"/QnA.aspx?page=" + i + queryText + "\">" + i + "</a>");
+                            Response.Write("<a" + textStyle + " href=\"/admin/QnA.aspx?page=" + i + queryText + "\">" + i + "</a>");
                             Response.Write("</span>");
                         }
                     }

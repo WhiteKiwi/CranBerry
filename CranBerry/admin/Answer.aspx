@@ -114,7 +114,7 @@
                         <tr>
                             <td>
                                
-                                <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575" Width="1000px" Height="216px" >답변을 등록해주세요.</asp:TextBox>
+                                <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575" Width="1000px" Height="216px" placeholder="답변을 입력해주세요." ></asp:TextBox>
                             
                             </td>
                         </tr>

@@ -103,34 +103,36 @@ namespace CranBerry.Managers {
 		/// <summary>
 		/// Get Berry by Id
 		/// </summary>
-		public static Berry GetBerryByID(int id) {
+		public static Berry GetBerryByID(int Id) {
 			MySqlConnection conn = null;
 			try {
 				// Connect to DB;
 				conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 				conn.Open();
-
-				string sql = "SELECT * FROM berries WHERE Id='" + id + "';";
+      
+                string sql = "SELECT * FROM berries WHERE Id=" + Id + ";";
 				MySqlCommand cmd = new MySqlCommand(sql, conn);
 
 				var dr = cmd.ExecuteReader();
 				dr.Read();
 
-				// TODO: Berry가 없을 경우
+                // TODO: Berry가 없을 경우
 
-				Berry result = new Berry {
-					Id = (int)dr["Id"],
-					Title = (string)dr["Title"],
-					Contents = (string)dr["Contents"]
-				};
+                Models.Berry berry = new Models.Berry
+                {
+                    Id = (int)dr["Id"],
+                    Title = (string)dr["Title"],
+                    Contents = (string)dr["Contents"],
 
-				// 조회수 증가
-				sql = "UPDATE berries SET Views='" + ((int)dr["Views"] + 1) + "' WHERE Id='" + id + "';";
+                };
+
+                // 조회수 증가
+                sql = "UPDATE berries SET Views='" + ((int)dr["Views"] + 1) + "' WHERE Id='" + Id + "';";
 				dr.Close();
 				cmd.CommandText = sql;
 				cmd.ExecuteNonQuery();
 
-				return result;
+                return berry;
 			} catch (Exception e) {
 				// TODO: 예외 처리
 				throw new Exception(e.Message);
