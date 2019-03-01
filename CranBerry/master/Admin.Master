@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html>
-    <form>
+  
 <head>
    
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -32,14 +32,14 @@
 		<a href="/admin/" class="cb-navbar-brand f1">CRANBERRY</a>
 
 		<!-- Navbar 우측 링크들 -->
-		<div class="float-right" style="margin-right: 50px;">
+		<div class="float-right" style="margin-right: 200px;">
 			<a href="/admin/Notices.aspx" class="cb-nav-item f3">Notice</a>
 			<a href="/admin/Berries.aspx" class="cb-nav-item f3">Berries</a>
 			<a href="/admin/Calendar.aspx" class="cb-nav-item f3">Calendar</a>
 			<a href="/admin/QnA.aspx" class="cb-nav-item f3">Q&A</a>
 			<a href="/admin/Accounts.aspx" class="cb-nav-item f3">Account</a>
            <a href="/admin/UploadNotice.aspx" class="cb-nav-item f3">공지추가</a>
-    <a href="/admin/UploadBerry.aspx" class="cb-nav-item f3">Berry추가</a>
+           <a href="/admin/UploadBerry.aspx" class="cb-nav-item f3">Berry추가</a>
             <a href="/admin/LogOut.aspx" class="cb-nav-item f3">로그아웃</a>
 		</div>
 	</div>
@@ -64,5 +64,5 @@
 	<script src="/assets/js/bootstrap.min.js"></script>
    
 </body>
-        </form>
+    
 </html>

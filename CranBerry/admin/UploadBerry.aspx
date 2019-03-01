@@ -7,7 +7,7 @@
 	<!-- Top Image -->
 	<img src="/assets/img/banner.png" style="width: 100%;" />
 
-
+       	
 	<!-- BERRY추가 제목 -->    
 	<h1 style="margin-left:140px" class="PageTitle"><b>BERRY 추가</b></h1>
 	<!-- 본문 붉은 선 -->
@@ -28,9 +28,7 @@
             <asp:ListItem>단체</asp:ListItem>
             <asp:ListItem>대회</asp:ListItem>
         </asp:DropDownList>
-        <div style="margin-top:30px;margin-left:120px"><p>첨부파일</p><asp:FileUpload Id="AttachFile" runat="server" type="file" aria-describedby="inputGroupFileAddon"/><label for="Contents_ProjectPicture">Choose file</label>&nbsp;&nbsp;&nbsp;&nbsp;
-            <br />
-            (최대 4M)</div>
+      
       
            
     <!-- 제목 박스 -->
@@ -40,9 +38,12 @@
 	</div>
 
     <!-- 내용 박스 -->
-    <div style="width: 80%; margin-left: 9%; margin-top: 40px">
+    <div style="width: 80%; margin-left: 9%; marg   in-top: 40px">
      <div class="SmallTitle"><b>내용</b></div>
-     <asp:TextBox ID="BerryContent" runat="server" class="Box" Height="423px" Width="1354px"></asp:TextBox>
+
+<CKEditor:CKEditorControl ID="Content" BasePath="/assets/CKEditor/" runat="server"></CKEditor:CKEditorControl>
+     
+       
 	</div>
            
     <!-- 바이트 -->

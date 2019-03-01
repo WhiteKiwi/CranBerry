@@ -12,7 +12,7 @@ namespace CranBerry.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Content.FilebrowserImageUploadUrl = "/admin/Upload.ashx";
+           
         }
         protected void ClassificationList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -22,6 +22,7 @@ namespace CranBerry.admin
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
+            //string str = HttpUtility.HtmlEncode(Content.Text);
             Models.Classification classification;
             switch (ClassificationList.SelectedValue)
             {
@@ -54,20 +55,18 @@ namespace CranBerry.admin
                   
 
             }
-            if (AttachFile.HasFile)
-            {
-                AttachFile.PostedFile.SaveAs(Server.MapPath("/images/"));
 
 
-                Managers.BerryManager.AddBerry(new Models.Berry
+            
+            Managers.BerryManager.AddBerry(new Models.Berry
                 {
 
                     Title = BerryTitle.Text,
-                    Contents = BerryContent.Text,
+                    //Contents = Content.Tex
                     Classification = classification
 
                 });
-            }
+            
         }
         
 
