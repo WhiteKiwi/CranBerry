@@ -18,7 +18,7 @@
 	<div style="width: 100%; padding-top: 50px; padding-left: 100px; padding-right: 100px; text-align: left;">
 		<h3><strong>공지사항</strong></h3>
         <div class="Button" style="height:50px;">
-	  <a href="EditNotice.aspx?id=<%= notice.Id %>" style="color: #707070; font-size: 10pt">수정</a></div>
+	  <a href="/admin/EditNotice.aspx?id=<%= notice.Id %>" style="color: #707070; font-size: 10pt">수정</a></div>
          <div class="Button" style="height:50px;">
 	  <asp:Button ID="DeleteButton" OnClick="DeleteButton_Click" style="color: #707070; font-size: 10pt" runat="server" Text="삭제" /></div>
 		<hr class="hr-red" />
