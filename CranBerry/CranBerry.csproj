@@ -117,6 +117,8 @@
     <Content Include="admin\UploadBerry.aspx" />
     <Content Include="admin\UploadCalendar.aspx" />
     <Content Include="admin\UploadNotice.aspx" />
+    <Content Include="assets\CkEditor\dll\CkEditor.dll" />
+    <Content Include="assets\CkEditor\dll\CKEditor.NET.dll" />
     <Content Include="assets\css\admin.css" />
     <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="assets\css\colors.css" />
@@ -281,7 +283,6 @@
     <Content Include="assets\CkEditor\plugins\about\dialogs\about.js" />
     <Content Include="assets\CkEditor\plugins\about\dialogs\hidpi\logo_ckeditor.png" />
     <Content Include="assets\CkEditor\plugins\about\dialogs\logo_ckeditor.png" />
-    <Content Include="assets\CkEditor\plugins\clipboard\dialogs\paste.js" />
     <Content Include="assets\CkEditor\plugins\dialog\dialogDefinition.js" />
     <Content Include="assets\CkEditor\plugins\icons.png" />
     <Content Include="assets\CkEditor\plugins\icons_hidpi.png" />
@@ -1206,7 +1207,9 @@
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.6.3\analyzers\dotnet\cs\Microsoft.NetFramework.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.NetFramework.Analyzers.2.6.3\analyzers\dotnet\cs\Microsoft.NetFramework.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="assets\CkEditor\plugins\clipboard\dialogs\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
