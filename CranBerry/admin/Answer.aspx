@@ -72,7 +72,7 @@
 
 
   <div>
-                      <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575; width: 70%; height:100px; border:1px #000000 solid" placeholder ="답변을 등록해 주세요." >
+                      <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575; width: 70%; height:100px; border:1px #000000 solid" placeholder ="답변을 등록해 주세요." />
                         <!--답변 등록-->
       <br />
    
