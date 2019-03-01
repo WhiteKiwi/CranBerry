@@ -3,6 +3,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
     <!-- Top Image -->
+        <form id="form1" runat="server">
 	<img src="/assets/img/banner.png" style="width: 100%;" />
    <%
        int id=1;
@@ -25,17 +26,20 @@
 			<span class="float-left" style="margin-left: 17px; margin-right: 30px;">제목</span>
         
 			<span class="float-left" style="text-align: center;" </span>
-        <div><asp:Label ID="Title" runat="server"></asp:Label></div>
+        <div><%=notice.Title %></div>
 		<div style="border: 2px solid #BF0404; background-color: #BF0404; width: 1800px; margin-left: 55px; margin-top: 30px"></div>
 			<span class="float-right" style="margin-left: 30px; margin-right: 37px;">
 				
-			<div class="float-right" style="text-align: center;">공지일:<asp:Label ID="NoticeAt" runat="server" /></div>
+			<div class="float-right" style="text-align: center; margin-right:300px" >공지일:<%=notice.NoticeAt %></div>
                 
 		
 		<br />
+         <div style="text-align:left">내용 </div>
+
 		<hr class="hr-red" />
+               
 		<div style="margin-left: 20px; margin-right: 20px;" >
-            <div><asp:Label ID="Contents" runat="server"></asp:Label></div>
+            <div><%=notice.Contents %></div>
             <div style="border: 2px solid #707070; background-color: #707070; width: 1800px; margin-left: 55px"></div>
 			
 		</div>
@@ -56,4 +60,5 @@
 	</div>
         </span></span></span>
     </div>
+            </form>
 </asp:Content>

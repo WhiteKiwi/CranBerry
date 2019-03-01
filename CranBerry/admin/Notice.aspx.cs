@@ -7,33 +7,18 @@ namespace CranBerry.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            var noticeID = Request.QueryString["id"];
 
-            // noticeid가 존재할 경우
-            if (!String.IsNullOrEmpty(noticeID))
-            {
-                var notice = Managers.NoticeManager.GetNoticeByID(int.Parse(noticeID));
-
-                Title.Text = notice.Title;
-                Contents.Text = notice.Contents;
-                NoticeAt.Text = notice.NoticeAt.ToString("yyyy-MM-dd");
-            }
-            else
-            {
-                Title.Text = "404 Not Found.";
-                Contents.Text = "404 Not Found.";
-                NoticeAt.Text = "404 Not Found.";
-            }
         }
-
+       
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
-            var noticeID = Request.QueryString["id"];
+            var noticeID = Request.QueryString["Id"];
 
             Managers.NoticeManager.DeleteNotice(new Models.Notice
             {
                 Id = int.Parse(noticeID)
             });
+            Response.Redirect("/admin/Notices.aspx");
         }
     }
 }
