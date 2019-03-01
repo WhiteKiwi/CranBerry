@@ -66,6 +66,7 @@
 		%>
 		<div>
 			<a href="/Notice.aspx?id=<%= notice.Id %>" class="f4 notice-main-link"><%= notice.Title + "&nbsp; &nbsp; &nbsp;" + notice.NoticeAt.ToString("yyyy-MM-dd") %></a>
+            <hr style="border:solid 1px; color:#ff0000; width:90%" />
 		</div>
 		<% } %>
 		<br />
