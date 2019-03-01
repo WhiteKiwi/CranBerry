@@ -12,7 +12,7 @@ namespace CranBerry.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
+            Content.FilebrowserImageUploadUrl = "/admin/Upload.ashx";
         }
         protected void ClassificationList_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -22,7 +22,7 @@ namespace CranBerry.admin
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
-            //string str = HttpUtility.HtmlEncode(Content.Text);
+            
             Models.Classification classification;
             switch (ClassificationList.SelectedValue)
             {
@@ -62,8 +62,8 @@ namespace CranBerry.admin
                 {
 
                     Title = BerryTitle.Text,
-                    //Contents = Content.Tex
-                    Classification = classification
+                Contents = Content.Text,
+                Classification = classification
 
                 });
             
