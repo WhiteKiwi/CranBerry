@@ -35,7 +35,7 @@
 		
 			<a href="/admin/Notices.aspx" class="cb-nav-item f4">Notice</a>
 			<a href="/admin/Berries.aspx" class="cb-nav-item f4">Berries</a>
-			<a href="/admin/Calendar.aspx" class="cb-nav-item f4">Calendar</a>
+			<%--<a href="/admin/Calendar.aspx" class="cb-nav-item f4">Calendar</a>--%>
 			<a href="/admin/QnA.aspx" class="cb-nav-item f4">Q&A</a>
 			<%--<a href="/admin/Accounts.aspx" class="cb-nav-item f4">Account</a>--%>
            <a href="/admin/UploadNotice.aspx" class="cb-nav-item f4">공지추가</a>
