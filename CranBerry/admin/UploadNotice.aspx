@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/Admin.Master" AutoEventWireup="true" CodeBehind="UploadNotice.aspx.cs" Inherits="CranBerry.admin.UploadNotice" %>
-
+<%@ Register Assembly="CKEditor.NET" Namespace="CKEditor.NET" TagPrefix="CKEditor" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
@@ -20,7 +20,9 @@
     <div style="width: 80%; margin-left: 9%; margin-top: 40px">
      <div class="SmallTitle"><b>내용</b></div>
     
-        <asp:TextBox runat="server" ID="txtContents" CssClass="Box" style="height: 530px; width: 1000px;" />
+       <CKEditor:CKEditorControl ID="Content" BasePath="/assets/CKEditor/" runat="server"></CKEditor:CKEditorControl>
+     
+
 	</div>
 
     <!-- 바이트 -->

@@ -13,6 +13,10 @@ namespace CranBerry.admin
 {
     public partial class UploadNotice : System.Web.UI.Page
     {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            Content.FilebrowserImageUploadUrl = "/admin/Upload.ashx";
+        }
 
        protected void SaveButton_Click(object sender, EventArgs e)
         {
@@ -20,7 +24,7 @@ namespace CranBerry.admin
             Managers.NoticeManager.AddNotice(new Models.Notice
             {
                 Title = txtTitle.Text,
-                Contents = txtContents.Text,
+                Contents = Content.Text,
                
             });
         }
