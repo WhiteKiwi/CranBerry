@@ -32,7 +32,7 @@
 		<a href="/admin/" class="cb-navbar-brand f1">CRANBERRY</a>
 
 		<!-- Navbar 우측 링크들 -->
-		<div class="float-right" style="margin-right: 200px;">
+		<div class="float-right" style="margin-right: 30px;">
 			<a href="/admin/Notices.aspx" class="cb-nav-item f3">Notice</a>
 			<a href="/admin/Berries.aspx" class="cb-nav-item f3">Berries</a>
 			<a href="/admin/Calendar.aspx" class="cb-nav-item f3">Calendar</a>

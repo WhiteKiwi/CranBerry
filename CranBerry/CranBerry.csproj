@@ -113,7 +113,6 @@
     <Content Include="admin\Notice.aspx" />
     <Content Include="admin\Notices.aspx" />
     <Content Include="admin\QnA.aspx" />
-    <Content Include="admin\Question.aspx" />
     <Content Include="admin\UploadBerry.aspx" />
     <Content Include="admin\UploadCalendar.aspx" />
     <Content Include="admin\UploadNotice.aspx" />
@@ -371,65 +370,6 @@
     <Content Include="assets\CkEditor\plugins\wsc\dialogs\wsc.js" />
     <Content Include="assets\CkEditor\plugins\wsc\dialogs\wsc_ie.js" />
     <Content Include="assets\CkEditor\plugins\wsc\skins\moono-lisa\wsc.css" />
-    <Content Include="assets\CkEditor\samples\css\samples.css" />
-    <Content Include="assets\CkEditor\samples\img\github-top.png" />
-    <Content Include="assets\CkEditor\samples\img\header-bg.png" />
-    <Content Include="assets\CkEditor\samples\img\header-separator.png" />
-    <Content Include="assets\CkEditor\samples\img\logo.png" />
-    <Content Include="assets\CkEditor\samples\img\logo.svg" />
-    <Content Include="assets\CkEditor\samples\img\navigation-tip.png" />
-    <Content Include="assets\CkEditor\samples\index.html" />
-    <Content Include="assets\CkEditor\samples\js\sample.js" />
-    <Content Include="assets\CkEditor\samples\js\sf.js" />
-    <Content Include="assets\CkEditor\samples\old\ajax.html" />
-    <Content Include="assets\CkEditor\samples\old\api.html" />
-    <Content Include="assets\CkEditor\samples\old\appendto.html" />
-    <Content Include="assets\CkEditor\samples\old\assets\inlineall\logo.png" />
-    <Content Include="assets\CkEditor\samples\old\assets\outputxhtml\outputxhtml.css" />
-    <Content Include="assets\CkEditor\samples\old\assets\posteddata.php" />
-    <Content Include="assets\CkEditor\samples\old\assets\sample.jpg" />
-    <Content Include="assets\CkEditor\samples\old\assets\uilanguages\languages.js" />
-    <Content Include="assets\CkEditor\samples\old\datafiltering.html" />
-    <Content Include="assets\CkEditor\samples\old\dialog\assets\my_dialog.js" />
-    <Content Include="assets\CkEditor\samples\old\dialog\dialog.html" />
-    <Content Include="assets\CkEditor\samples\old\divreplace.html" />
-    <Content Include="assets\CkEditor\samples\old\enterkey\enterkey.html" />
-    <Content Include="assets\CkEditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.swf" />
-    <Content Include="assets\CkEditor\samples\old\htmlwriter\assets\outputforflash\swfobject.js" />
-    <Content Include="assets\CkEditor\samples\old\htmlwriter\outputforflash.html" />
-    <Content Include="assets\CkEditor\samples\old\htmlwriter\outputhtml.html" />
-    <Content Include="assets\CkEditor\samples\old\index.html" />
-    <Content Include="assets\CkEditor\samples\old\inlineall.html" />
-    <Content Include="assets\CkEditor\samples\old\inlinebycode.html" />
-    <Content Include="assets\CkEditor\samples\old\inlinetextarea.html" />
-    <Content Include="assets\CkEditor\samples\old\jquery.html" />
-    <Content Include="assets\CkEditor\samples\old\magicline\magicline.html" />
-    <Content Include="assets\CkEditor\samples\old\readonly.html" />
-    <Content Include="assets\CkEditor\samples\old\replacebyclass.html" />
-    <Content Include="assets\CkEditor\samples\old\replacebycode.html" />
-    <Content Include="assets\CkEditor\samples\old\sample.css" />
-    <Content Include="assets\CkEditor\samples\old\sample.js" />
-    <Content Include="assets\CkEditor\samples\old\sample_posteddata.php" />
-    <Content Include="assets\CkEditor\samples\old\tabindex.html" />
-    <Content Include="assets\CkEditor\samples\old\toolbar\toolbar.html" />
-    <Content Include="assets\CkEditor\samples\old\uicolor.html" />
-    <Content Include="assets\CkEditor\samples\old\uilanguages.html" />
-    <Content Include="assets\CkEditor\samples\old\wysiwygarea\fullpage.html" />
-    <Content Include="assets\CkEditor\samples\old\xhtmlstyle.html" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\css\fontello.css" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\font\fontello.svg" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\font\LICENSE.txt" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\index.html" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\js\abstracttoolbarmodifier.js" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\js\fulltoolbareditor.js" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\js\toolbarmodifier.js" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\js\toolbartextmodifier.js" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\lib\codemirror\codemirror.css" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\lib\codemirror\codemirror.js" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\lib\codemirror\javascript.js" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\lib\codemirror\neo.css" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\lib\codemirror\show-hint.css" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\lib\codemirror\show-hint.js" />
     <Content Include="assets\CkEditor\skins\moono-lisa\dialog.css" />
     <Content Include="assets\CkEditor\skins\moono-lisa\dialog_ie.css" />
     <Content Include="assets\CkEditor\skins\moono-lisa\dialog_ie8.css" />
@@ -1051,13 +991,6 @@
     <Compile Include="admin\QnA.aspx.designer.cs">
       <DependentUpon>QnA.aspx</DependentUpon>
     </Compile>
-    <Compile Include="admin\Question.aspx.cs">
-      <DependentUpon>Question.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="admin\Question.aspx.designer.cs">
-      <DependentUpon>Question.aspx</DependentUpon>
-    </Compile>
     <Compile Include="admin\Upload.ashx.cs">
       <DependentUpon>Upload.ashx</DependentUpon>
     </Compile>
@@ -1175,12 +1108,6 @@
     <Content Include="assets\CkEditor\plugins\wsc\LICENSE.md" />
     <Content Include="assets\CkEditor\plugins\wsc\README.md" />
     <Content Include="assets\CkEditor\README.md" />
-    <Content Include="assets\CkEditor\samples\old\htmlwriter\assets\outputforflash\outputforflash.fla" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\font\config.json" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\font\fontello.eot" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\font\fontello.ttf" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\font\fontello.woff" />
-    <Content Include="assets\CkEditor\samples\toolbarconfigurator\lib\codemirror\LICENSE" />
     <Content Include="assets\CkEditor\skins\moono-lisa\readme.md" />
     <None Include="packages.config">
       <SubType>Designer</SubType>

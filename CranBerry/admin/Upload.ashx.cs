@@ -20,7 +20,7 @@ namespace CranBerry.admin
 
             string file = System.IO.Path.GetFileName(uploads.FileName);
 
-            uploads.SaveAs(context.Server.MapPath("/images")  + file);
+            uploads.SaveAs(context.Server.MapPath("/images/")  + file);
 
             string url = "/images/" + file;
 

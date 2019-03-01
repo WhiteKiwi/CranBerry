@@ -39,6 +39,8 @@
                     <hr style="border: 2px solid #BF0404; background-color: #BF0404; width: 1800px; margin-left: 55px">
 
                     <!--제일 큰 박스-->
+            <div style="margin-left:170px">
+                    <asp:Button ID="DeleteButton" runat="server" Text="삭제"  OnClick="DeleteButton_Click" /></div>
                     <table style="width: 1550px; height: 886px; background-color: white; border: 1px solid #707070; margin-left: 170px; margin-top: 60px; margin-bottom: 60px">
                     
                         <tr>
@@ -113,7 +115,7 @@
                             <td>
                                
                                 <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575" Width="1534px" Height="216px" >답변을 등록해주세요.</asp:TextBox>
-                            <asp:Button ID="List" runat="server" OnClick="List_Click" Text="Button" />
+                            
                             </td>
                         </tr>
                     </table>

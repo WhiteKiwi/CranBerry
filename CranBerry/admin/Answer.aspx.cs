@@ -26,5 +26,16 @@ namespace CranBerry.admin {
         {
 
         }
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+         
+         var Id = Request.QueryString["Id"];
+            Managers.QnAManager.DeleteQuestion(new Models.Question
+            { 
+                Id = int.Parse(Id)
+            });
+            Response.Redirect("/admin/QnA.aspx");
+
+        }
     }
 }

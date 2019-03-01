@@ -205,17 +205,21 @@ namespace CranBerry.Managers {
 			}
 		}
 
-		public static void DeleteQuestion(int id) {
+		public static int DeleteQuestion(Models.Question question) {
 			MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 			MySqlCommand cmd = new MySqlCommand();
+            int result = 0;
 			try {
 				con.Open();
 				cmd.Connection = con;
-				cmd.CommandText = string.Format("DELETE FROM question WHERE Id=" + id);
+				cmd.CommandText = string.Format("DELETE FROM questions WHERE Id=" + question.Id);
+                cmd.CommandType = System.Data.CommandType.Text;
+                result = cmd.ExecuteNonQuery();
+                return result;
 			} catch (Exception e) {
 				throw new Exception(e.Message);
 			} finally {
-
+                
 				con.Close();
 			}
 		}
