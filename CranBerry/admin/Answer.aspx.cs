@@ -25,22 +25,30 @@ namespace CranBerry.admin {
 
         protected void AnswerButton_Click(object sender, EventArgs e)
         {
-            string name = Session["Name"].ToString();
-            Managers.QnAManager.AddAnswer(new Models.Question
+            if (Contents.Text.Length >= 10 && Contents.Text != " ")
             {
-                Id = int.Parse(Request.QueryString["id"]),
+                string name = Session["Name"].ToString();
+                Managers.QnAManager.AddAnswer(new Models.Question
+                {
+                    Id = int.Parse(Request.QueryString["id"]),
 
-                Answer = Contents.Text
-            });
-           
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
-            con.Open();
-            MySqlCommand cmd = new MySqlCommand("Update questions Set Name ='" + name + "' where Id = " + Request.QueryString["Id"], con);
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
-            con.Close();
-            Response.Redirect(Request.RawUrl);
+                    Answer = Contents.Text
+                });
+
+                MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+                con.Open();
+                MySqlCommand cmd = new MySqlCommand("Update questions Set Name ='" + name + "' where Id = " + Request.QueryString["Id"], con);
+                cmd.CommandType = CommandType.Text;
+                cmd.ExecuteNonQuery();
+                cmd.Dispose();
+                con.Close();
+                Response.Redirect(Request.RawUrl);
+            }
+            else
+            {
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('답변을 입력해 주세요.')", true);
+
+            }
         }
 
         protected void List_Click(object sender, EventArgs e)
