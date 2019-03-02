@@ -47,6 +47,7 @@ namespace CranBerry.admin {
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
+            Response.Redirect("/admin/Notice.aspx");
 
 
         }

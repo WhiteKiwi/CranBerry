@@ -12,7 +12,7 @@ namespace CranBerry.admin
         protected void ModifyButton_Click(object sender, EventArgs e)
         {
             int Id = int.Parse(Request.QueryString["Id"]);
-            Response.Redirect("/admin/EditNotice");
+            Response.Redirect("/admin/EditNotice.aspx?"+ "id=" + Id);
 
 
         }
