@@ -75,14 +75,13 @@
     
 
 
-  <div>
-                      <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575; width: 70%; height:100px; border:1px #000000 solid" placeholder ="답변을 등록해 주세요." AcceptReturn="True" TextMode="MultiLine" />
+               <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575; border:1px #000000 solid" placeholder ="답변을 등록해 주세요." AcceptReturn="True" TextMode="MultiLine" Width="60%" Height="106px" />
                         <!--답변 등록-->
-      <br />
+
    
-                    <asp:Button ID="AnswerButton" CssClass="btn cb-bg-darkred float-right text-white" runat="server" OnClick="AnswerButton_Click" Text="답변 등록" style="width:200px;  margin-right:250px; border-radius:15px;"></asp:Button>
+                    <asp:Button ID="AnswerButton" CssClass="btn cb-bg-darkred float-right text-white" runat="server" OnClick="AnswerButton_Click" Text="답변 등록" style="margin-right:230px; border-radius:15px; margin-bottom:100px;" Height="66px" Width="168px" ></asp:Button>
                        
-    </div>
-       
+        <br />
+          <br />
    </form>
 </asp:Content>
