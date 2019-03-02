@@ -49,6 +49,7 @@ namespace CranBerry.admin
                 while (reader.Read())
                 {
                     Session["AdminID"] = reader["Id"].ToString();
+                    Session["Name"] = reader["Name"].ToString();
                   
                     cmd.Dispose();
                     con.Close();

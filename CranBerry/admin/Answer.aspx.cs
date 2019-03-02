@@ -11,7 +11,7 @@ using System.Web.UI.WebControls;
 namespace CranBerry.admin {
 	public partial class Answer : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
-
+           
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             con.Open();
             MySqlCommand cmd = new MySqlCommand("Update questions Set Count = Count + 1 where Id = " + Request.QueryString["Id"], con);
@@ -22,15 +22,24 @@ namespace CranBerry.admin {
 
 
         }
-        
+
         protected void AnswerButton_Click(object sender, EventArgs e)
         {
+            string name = Session["Name"].ToString();
             Managers.QnAManager.AddAnswer(new Models.Question
             {
                 Id = int.Parse(Request.QueryString["id"]),
 
-            Answer = Contents.Text
+                Answer = Contents.Text
             });
+           
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("Update questions Set Name ='" + name + "' where Id = " + Request.QueryString["Id"], con);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
             Response.Redirect(Request.RawUrl);
         }
 
