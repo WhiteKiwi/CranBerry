@@ -29,8 +29,15 @@
 
 
     <!-- 저장버튼 -->
-
-	 <asp:Button runat="server" ID="NoticeButton" CssClass="Button" OnClick="NoticeButton_Click" Text="저장"  style="width: 89%; height: 70px; width:100px; float: right; text-align: center; margin-bottom: 350px"></asp:Button>
+         <script type="text/javascript">
+                    function DeleteItem() {
+            if (confirm("등록 하시겠습니다?")) {
+                return true;
+            }
+            return false;
+        }
+ </script>
+	 <asp:Button runat="server" onclientclick="return DeleteItem();" ID="NoticeButton" CssClass="Button" OnClick="NoticeButton_Click" Text="저장"  style="width: 89%; height: 70px; width:100px; float: right; text-align: center; margin-bottom: 350px"></asp:Button>
 	  
 
 

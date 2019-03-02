@@ -69,7 +69,15 @@
 
 				<br />
 				<br />
-				<asp:Button ID="QuestionButton" runat="server" CssClass="btn float-right cb-bg-darkred text-white" OnClick="QuestionButton_Click" Text="등록" />
+                 <script type="text/javascript">
+                    function DeleteItem() {
+            if (confirm("등록 하시겠습니다?")) {
+                return true;
+            }
+            return false;
+        }
+ </script>
+				<asp:Button ID="QuestionButton" OnClientClick="return DeleteItem();" runat="server" CssClass="btn float-right cb-bg-darkred text-white" OnClick="QuestionButton_Click" Text="등록" />
 			</div>
 		</div>
 	</div>

@@ -17,6 +17,7 @@
 			<span style="float: right; margin-right: 37px;">공지일</span>
 		</div>
 		<hr class="hr-red" />
+
 		<!-- Table Data -->
 		<%
 			try {

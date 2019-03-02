@@ -36,9 +36,16 @@
     <!-- 저장버튼 -->
 	<div style="width: 89%; height: 70px; text-align: center; margin-bottom: 350px">
 	 <div class="Button" style="margin-left: 1%">
-	 
+	 <script type="text/javascript">
+                    function DeleteItem() {
+            if (confirm("등록 하시겠습니다?")) {
+                return true;
+            }
+            return false;
+        }
+ </script>
          <div>
-        <asp:Button ID="SaveButton"  CssClass="btn cb-bg-darkred float-right text-white" OnClick="SaveButton_Click" runat="server" Style="float: right; width: 100px; font-size: 13pt; margin-bottom: 5px" Text="저장" />
+        <asp:Button ID="SaveButton"  onclientclick="return DeleteItem();" CssClass="btn cb-bg-darkred float-right text-white" OnClick="SaveButton_Click" runat="server" Style="float: right; width: 100px; font-size: 13pt; margin-bottom: 5px" Text="저장" />
  </div>
 
 

@@ -26,7 +26,7 @@
         
        <script type="text/javascript">
                     function DeleteItem() {
-            if (confirm("정말 삭제 하시겠습니다?")) {
+            if (confirm("삭제 하시겠습니다?")) {
                 return true;
             }
             return false;

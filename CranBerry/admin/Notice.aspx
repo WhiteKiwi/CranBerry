@@ -24,9 +24,16 @@
 	<!-- Notice -->
 	<div style="width: 100%; padding-top: 50px; padding-left: 100px; padding-right: 100px; text-align: left;">
 		<h3><strong>공지사항</strong></h3>
-     
+      <script type="text/javascript">
+                    function DeleteItem() {
+            if (confirm("삭제 하시겠습니다?")) {
+                return true;
+            }
+            return false;
+        }
+ </script>
         <asp:Button ID="ModifyButton" OnClick="ModifyButton_Click" runat="server" Text="수정" />
-         <asp:Button ID="DeleteButton" OnClick="DeleteButton_Click" Text="삭제" runat="server" CssClass="btn cb-bg-darkred float-right text-white" Style="margin-right:50px;"/>
+         <asp:Button ID="DeleteButton" onclientclick="return DeleteItem();" OnClick="DeleteButton_Click" Text="삭제" runat="server" CssClass="btn cb-bg-darkred float-right text-white" Style="margin-right:50px;"/>
         <br />
         <br />
 		<hr class="hr-red" /> 

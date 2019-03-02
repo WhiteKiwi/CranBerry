@@ -55,8 +55,16 @@
 
     <!-- 되돌리기/글쓰기 버튼 -->
 	<div style="width: 89%; height: 70px; text-align: center; margin-bottom: 350px">
+         <script type="text/javascript">
+                    function DeleteItem() {
+            if (confirm("등록 하시겠습니다?")) {
+                return true;
+            }
+            return false;
+        }
+ </script>
 	 <div>
-	  <asp:Button ID="SaveButton" OnClick="SaveButton_Click" runat="server" style="float: right; width: 100px; font-size: 13pt; margin-bottom: 5px" Text="저장"/></div>
+	  <asp:Button ID="SaveButton"   onclientclick="return DeleteItem();" OnClick="SaveButton_Click" runat="server" style="float: right; width: 100px; font-size: 13pt; margin-bottom: 5px" Text="저장"/></div>
     </div>
     <!-- 저작권 문구 바 -->
     <div class="Copyright">
