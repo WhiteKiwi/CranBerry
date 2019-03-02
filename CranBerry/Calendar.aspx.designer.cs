@@ -7,7 +7,7 @@
 // </자동 생성됨>
 //------------------------------------------------------------------------------
 
-namespace CranBerry.admin {
+namespace CranBerry {
     
     
     public partial class Calendar {
