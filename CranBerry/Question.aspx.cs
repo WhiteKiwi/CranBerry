@@ -5,6 +5,9 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
+using MySql.Data.MySqlClient;
+using System.Configuration;
+using System.Data;
 
 namespace CranBerry
 {
@@ -73,7 +76,14 @@ namespace CranBerry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+     
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("Update questions Set Count = Count + 1 where Id = " + Request.QueryString["Id"], con);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
         }
     }
 

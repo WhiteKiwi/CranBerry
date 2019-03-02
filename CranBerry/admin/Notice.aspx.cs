@@ -7,7 +7,13 @@ namespace CranBerry.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            con.Open();
+            MySqlCommand cmd = new MySqlCommand("Update notices Set Count = Count + 1 where Id = " + Request.QueryString["Id"], con);
+            cmd.CommandType = CommandType.Text;
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
         }
         protected void ModifyButton_Click(object sender, EventArgs e)
         {
