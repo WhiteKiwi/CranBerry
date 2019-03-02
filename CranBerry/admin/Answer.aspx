@@ -19,14 +19,23 @@
 	<br />
 	<!-- 페이지 Top -->
 	<h1 class="f0 bold text-darkred" style="margin-left: 130px;">Q&A</h1>
-     <asp:Button ID="DeleteButton" CssClass="btn cb-bg-darkred float-right text-white" runat="server" Text="삭제"  OnClick="DeleteButton_Click" style="width: 100px; float:right; margin-right:130px;"   /></div>
+     <asp:Button ID="DeleteButton" CssClass="btn cb-bg-darkred float-right text-white" runat="server" Text="삭제"  OnClick="DeleteButton_Click" style="width: 100px; float:right; margin-right:130px;" onclientclick="return DeleteItem();" /></div>
 	<div class="w-100" style="padding: 10px 130px 30px 130px;">
 		<div class="cb-bg-red w-100" style="height: 3px;"></div>
 	</div>
+        
+       <script type="text/javascript">
+                    function DeleteItem() {
+            if (confirm("정말 삭제 하시겠습니다?")) {
+                return true;
+            }
+            return false;
+        }
+ </script>
 
 	<!-- Question Box -->
 	<div class="border border-secondary p-5" style="position: relative; margin: 0 130px 0 130px;">
-		<%
+		<%  
 			int id;
 			try {
 				id = int.Parse(Request.QueryString["id"]);
