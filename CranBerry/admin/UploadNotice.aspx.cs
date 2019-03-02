@@ -28,6 +28,7 @@ namespace CranBerry.admin
                 Contents = Content.Text,
                
             });
+            Response.Redirect("/admin/Notices.aspx");
         }
         
 

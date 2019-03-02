@@ -49,7 +49,7 @@
 	<br />
 
 	<!-- Contents -->
-	<form runat="server" style="margin: 0 130px 0 130px;">
+	<div style="margin: 0 130px 0 130px;"/>
 		<div class="row">
 			<div class="col-1" style="text-align: left;">
 				<h4>제목</h4>
@@ -72,7 +72,7 @@
 				<asp:Button ID="QuestionButton" runat="server" CssClass="btn float-right cb-bg-darkred text-white" OnClick="QuestionButton_Click" Text="등록" />
 			</div>
 		</div>
-	</form>
+	</div>
 	<br />
 	<br />
 	<br />

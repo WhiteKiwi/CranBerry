@@ -4,7 +4,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
 	<!-- Top Image -->
-	<img src="/assets/img/banner.png" style="width: 100%;" />
+    <form runat="server">
+        <img src="/assets/img/banner.png" style="width: 100%;" />
 
 	<br />
 	<br />
@@ -74,4 +75,5 @@
 	<div class="copyright f3 text-white cb-bg-red">
 		2017 Copyright &copy; Team VaryBerry All Right Reserved
 	</div>
+        </form>
 </asp:Content>
