@@ -16,6 +16,7 @@ namespace CranBerry {
             cmd.Dispose();
             con.Close();
 
+            var noticeID = Request.QueryString["Id"];
             // noticeid가 존재할 경우
             if (!String.IsNullOrEmpty(noticeID)) {
 				var notice = Managers.NoticeManager.GetNoticeByID(int.Parse(noticeID));
