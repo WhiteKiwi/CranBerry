@@ -3,6 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
+    	<form id="form1" runat="server" defaultbutton="btnNull">
+                 <div style="display:none;">
+        <asp:Button ID="btnNull" runat="server" OnClientClick="return false" />
+    </div>
 	<!-- Top Image -->
 	<img src="/assets/img/banner.png" style="width: 100%;" />
 
@@ -82,4 +86,5 @@
 	<div class="copyright f3 text-white cb-bg-red">
 		2017 Copyright &copy; Team VaryBerry All Right Reserved
 	</div>
+            </form>
 </asp:Content>

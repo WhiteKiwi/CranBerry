@@ -3,7 +3,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
  
-    <form runat="server">
+    <form runat="server" defaultbutton="btnNull">
+        
+                 <div style="display:none;">
+        <asp:Button ID="btnNull" runat="server" OnClientClick="return false" />
+    </div>
 	<!-- Top Image -->
 	<img src="/assets/img/banner.png" style="width: 100%;" />
 
@@ -72,7 +76,7 @@
 
 
   <div>
-                      <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575; width: 70%; height:100px; border:1px #000000 solid" placeholder ="답변을 등록해 주세요." />
+                      <asp:TextBox ID="Contents" runat="server" Style="margin-left: 200px; margin-top: 0px; font-size: 25px; color: #757575; width: 70%; height:100px; border:1px #000000 solid" placeholder ="답변을 등록해 주세요." AcceptReturn="True" TextMode="MultiLine" />
                         <!--답변 등록-->
       <br />
    

@@ -15,6 +15,7 @@ namespace CranBerry.admin
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+          
             Content.FilebrowserImageUploadUrl = "/admin/Upload.ashx";
         }
 

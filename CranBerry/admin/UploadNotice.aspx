@@ -3,7 +3,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
-    <form id="form1" runat="server">
+    <form id="form1" runat="server" defaultbutton="btnNull">
+         <div style="display:none;">
+        <asp:Button ID="btnNull" runat="server" OnClientClick="return false" />
+    </div>
     <!-- 공지추가제목 -->    
         <div>
 	<h1 class="f0 bold text-darkred" style="margin-left: 130px; margin-top: 50px;"><b>공지 추가</b></h1>
