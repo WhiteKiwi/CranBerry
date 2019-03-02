@@ -217,7 +217,7 @@ namespace CranBerry.Managers {
                   
                 };
                 dr.Close();
-
+               
 
 
 
@@ -233,6 +233,7 @@ namespace CranBerry.Managers {
             finally
             {
                 conn.Close();
+                
             }
         }
             public static int DeleteNotice(Models.Notice notice) // 공지 삭제
