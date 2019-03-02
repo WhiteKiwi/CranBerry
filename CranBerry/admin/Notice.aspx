@@ -19,20 +19,20 @@
 
 
 	<!-- Top Image -->
-	<img src="/assets/img/banner.png" style="width: 100%;" />
+	<img src="/assets/img/banner.png" style="width: 100%; height:300px;" />
 
 	<!-- Notice -->
 	<div style="width: 100%; padding-top: 50px; padding-left: 100px; padding-right: 100px; text-align: left;">
 		<h3><strong>공지사항</strong></h3>
       <script type="text/javascript">
                     function DeleteItem() {
-            if (confirm("삭제 하시겠습니다?")) {
+            if (confirm("삭제 하시겠습니까?")) {
                 return true;
             }
             return false;
         }
  </script>
-        <asp:Button ID="ModifyButton" OnClick="ModifyButton_Click" runat="server" Text="수정" />
+        <asp:Button ID="ModifyButton" OnClick="ModifyButton_Click" runat="server" CssClass="btn cb-bg-darkred float-right text-white"  Style="margin-right:100px;" Text="수정" />
          <asp:Button ID="DeleteButton" onclientclick="return DeleteItem();" OnClick="DeleteButton_Click" Text="삭제" runat="server" CssClass="btn cb-bg-darkred float-right text-white" Style="margin-right:50px;"/>
         <br />
         <br />

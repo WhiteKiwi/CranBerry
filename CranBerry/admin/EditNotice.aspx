@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
     <form runat="server">
 <!-- 공지수정제목 -->    
-	<h1 class="PageTitle"><b>공지 수정</b></h1>
+	<h1 style="color: #400101; margin-left: 160px; margin-top: 80px; font-size: 55px"><b>공지 수정</b></h1>
 	<!-- 본문 붉은 선 -->
 	<div class="RedHr"></div>
     
@@ -37,14 +37,10 @@
             return false;
         }
  </script>
-	 <asp:Button runat="server" onclientclick="return DeleteItem();" ID="NoticeButton" CssClass="Button" OnClick="NoticeButton_Click" Text="저장"  style="width: 89%; height: 70px; width:100px; float: right; text-align: center; margin-bottom: 350px"></asp:Button>
+	 <asp:Button runat="server" onclientclick="return DeleteItem();" ID="NoticeButton"  CssClass="btn cb-bg-darkred float-right text-white" OnClick="NoticeButton_Click" Text="저장"  style=" margin-bottom: 350px; margin-right: 100px;"></asp:Button>
 	  
 
 
-    <!-- 저작권 문구 바 -->
-    <div class="Copyright">
-    <p class="CopyrightF">
-	2018 Copyright © Team VaryBerry All Right Reserved.</p>
-	</div>
+
         </form>
 </asp:Content>
