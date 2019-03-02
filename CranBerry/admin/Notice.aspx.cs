@@ -9,13 +9,13 @@ namespace CranBerry.admin
         {
 
         }
-       //protected void ModifyButton_Click(object sender, EventArgs e)
-       // {
-       //     int Id = int.Parse(Request.QueryString["Id"]);
-       //     Response.Redirect("/admin/EditNotice");
-           
+        protected void ModifyButton_Click(object sender, EventArgs e)
+        {
+            int Id = int.Parse(Request.QueryString["Id"]);
+            Response.Redirect("/admin/EditNotice");
 
-       // }
+
+        }
         protected void DeleteButton_Click(object sender, EventArgs e)
         {
             var noticeID = Request.QueryString["Id"];
