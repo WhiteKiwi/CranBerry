@@ -25,7 +25,7 @@ namespace CranBerry.admin {
                 }
 
                 if (page > 1)
-                    Response.Redirect("/Notices.aspx?page=" + (page - 1));
+                    Response.Redirect("/admin/Notices.aspx?page=" + (page - 1));
             }
 
             protected void RightButton_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace CranBerry.admin {
                 }
 
                 if (page < Managers.NoticeManager.GetPagesCount())
-                    Response.Redirect("/Notices.aspx?page=" + (page + 1));
+                    Response.Redirect("/admin/Notices.aspx?page=" + (page + 1));
             }
         }
     }
