@@ -41,8 +41,9 @@ namespace CranBerry.admin {
 
             cmd.ExecuteNonQuery();
             conn.Close();
+           
 
-            
+
         }
 
         protected void AnswerButton_Click(object sender, EventArgs e)

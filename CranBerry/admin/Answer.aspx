@@ -79,7 +79,6 @@
 		<br>
 	</div>
 	<br>
-	             <asp:Label ID="txt" runat="server" Text="Label"></asp:Label>
 	<br>
 	
 
