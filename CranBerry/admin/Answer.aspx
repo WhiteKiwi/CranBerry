@@ -19,7 +19,9 @@
 	<br />
 	<!-- 페이지 Top -->
 	<h1 class="f0 bold text-darkred" style="margin-left: 130px;">Q&A</h1>
-     <asp:Button ID="DeleteButton" CssClass="btn cb-bg-darkred float-right text-white" runat="server" Text="삭제"  OnClick="DeleteButton_Click" style="width: 100px; float:right; margin-right:130px;" onclientclick="return DeleteItem();" /></div>
+     <asp:Button ID="DeleteButton" CssClass="btn cb-bg-darkred float-right text-white" runat="server" Text="삭제"  OnClick="DeleteButton_Click" style="width: 100px; float:right; margin-right:130px;" onclientclick="return DeleteItem();" />
+                 <asp:Button ID="AddBan" runat="server" Text="Ban" OnClick="AddBan_Click" />
+                 
 	<div class="w-100" style="padding: 10px 130px 30px 130px;">
 		<div class="cb-bg-red w-100" style="height: 3px;"></div>
 	</div>
@@ -77,6 +79,7 @@
 		<br>
 	</div>
 	<br>
+	             <asp:Label ID="txt" runat="server" Text="Label"></asp:Label>
 	<br>
 	
 

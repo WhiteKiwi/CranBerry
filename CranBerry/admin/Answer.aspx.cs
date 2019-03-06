@@ -22,6 +22,28 @@ namespace CranBerry.admin {
 
 
         }
+        protected void AddBan_Click(object sender, EventArgs e)
+        {
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            conn.Open();
+            var Id = Request.QueryString["Id"];
+         
+            MySqlCommand cmd = new MySqlCommand("select * from questions where Id=" + Id, conn);
+            var dr = cmd.ExecuteReader();
+            string UserID = "";
+            while (dr.Read())
+            {
+                UserID= (string)dr["UserID"];
+            }
+            dr.Close();
+            cmd = new MySqlCommand("Insert Into ban_list (UserID) values (@UserID)", conn);
+            cmd.Parameters.Add("@UserID", MySqlDbType.VarChar).Value = UserID;
+
+            cmd.ExecuteNonQuery();
+            conn.Close();
+
+            
+        }
 
         protected void AnswerButton_Click(object sender, EventArgs e)
         {
