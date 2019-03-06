@@ -17,11 +17,11 @@
 				</div>
 				<span class="float-left" style="margin-right: 20px;">
 					<asp:TextBox ID="studentNumber" runat="server" />
-				</span>
-				<span class="float-left" style="margin-right: 20px;">
+				<asp:Button ID="Checkbtn" runat="server" Text="지원 불러오기" OnClick="Checkbtn_Click" />
 					<%--<asp:Button ID="CheckButton" runat="server" CssClass="btn btn-primary float-right" OnClick="ApplyCheck" Text="지원서 불러오기" />--%>
 				</span>
 				<br />
+			
 				<br />
 				<br />
 				<h5 style="float: left; margin-bottom: 15px;"> Q1. 크랜베리 개발자에 지원하게 된 동기는 무엇입니까?(최대 1200자)</h5>
@@ -34,10 +34,12 @@
 				<asp:TextBox ID="Answer3" runat="server" TextMode="MultiLine" Width="100%" Rows="20" />
 				<br />
 				<br />
-				<p>공지사항을 읽지 않으셨다면 불이익을 받지 않기 위해서 꼭 필독하시기 바랍니다! <br /> 튕김 현상이 일어날 수 있습니다. 복사해놓은 후 제출해주세요!</p>
+				<p>공지사항을 읽지 않으셨다면 불이익을 받지 않기 위해서 꼭 필독하시기 바랍니다! <br /> 처음 등록 하시면 "등록" 버튼을 / 지원 불러오기로 수정하는 거면 "수정완료"버튼을 눌러주세요. 튕김 현상이 일어날 수 있습니다. 복사해놓은 후 제출해주세요!</p>
 				<br />
 				<br />
-				<asp:Button ID="UploadButton" runat="server" CssClass="btn btn-primary float-right" OnClick="ApplyUpload" Text="등록" />
+				<asp:Button ID="UploadButton" runat="server" CssClass="btn btn-primary float-right" OnClick="ApplyUpload" Text="등록" style="margin-right:50px" Height="39px" Width="195px" /> 
+                
+				<asp:Button ID="Editbn" runat="server" Text="수정완료" OnClick="Editbtn" Height="39px" Width="195px" />
 				<br />
 				<br />
 				<br />
