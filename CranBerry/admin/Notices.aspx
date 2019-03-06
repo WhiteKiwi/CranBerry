@@ -74,7 +74,7 @@
 									}
 
 									Response.Write("<span" + pageStyle + " style=\"padding: 3px 9px; margin: 3px;\">");
-									Response.Write("<a" + textStyle + " href=\"/Notices.aspx?page=" + (i + ((page / 10) * 10)) + "\">" + (i + ((page / 10) * 10)) + "</a>");
+									Response.Write("<a" + textStyle + " href=\"/admin/Notices.aspx?page=" + (i + ((page / 10) * 10)) + "\">" + (i + ((page / 10) * 10)) + "</a>");
 									Response.Write("</span>");
 								}
 							} else {
@@ -88,7 +88,7 @@
 									}
 
 									Response.Write("<span" + pageStyle + " style=\"padding: 3px 9px; margin: 3px;\">");
-									Response.Write("<a" + textStyle + " href=\"/Notices.aspx?page=" + (i + page - 10) + "\">" + (i + page - 10) + "</a>");
+									Response.Write("<a" + textStyle + " href=\"/admin//Notices.aspx?page=" + (i + page - 10) + "\">" + (i + page - 10) + "</a>");
 									Response.Write("</span>");
 								}
 							}
@@ -102,7 +102,7 @@
 								}
 
 								Response.Write("<span" + pageStyle + " style=\"padding: 3px 9px; margin: 3px;\">");
-								Response.Write("<a" + textStyle + " href=\"/Notices.aspx?page=" + (i + ((page / 10) * 10)) + "\">" + (i + ((page / 10) * 10)) + "</a>");
+								Response.Write("<a" + textStyle + " href=\"/admin//Notices.aspx?page=" + (i + ((page / 10) * 10)) + "\">" + (i + ((page / 10) * 10)) + "</a>");
 								Response.Write("</span>");
 							}
 						}
@@ -117,7 +117,7 @@
 							}
 
 							Response.Write("<span" + pageStyle + " style=\"padding: 3px 9px; margin: 3px;\">");
-							Response.Write("<a" + textStyle + " href=\"/Notices.aspx?page=" + i + "\">" + i + "</a>");
+							Response.Write("<a" + textStyle + " href=\"/admin//Notices.aspx?page=" + i + "\">" + i + "</a>");
 							Response.Write("</span>");
 						}
 					}
@@ -127,22 +127,13 @@
 						<asp:LinkButton runat="server" OnClick="RightButton_Click" Text=">" ForeColor="#400101" />
 					</b></strong>
 				</span>
-                <span>
-                    <a href="/UploadNotice.aspx" style="border:1px #000000 solid; color: #000000; >작성</a>
-                </span>
+          
 			</form>
 		</div>
 	</div>
 	<br />
 	<br />
 
-	<!-- Copyright -->
-	<div class="copyright f3 text-white cb-bg-red">
-		2017 Copyright &copy; Team VaryBerry All Right Reserved
-	</div>
-      
-    </div>
- 
-</a></span>
+
  
 </asp:Content>

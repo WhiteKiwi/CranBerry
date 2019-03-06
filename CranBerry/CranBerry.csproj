@@ -116,6 +116,7 @@
     <Content Include="admin\UploadBerry.aspx" />
     <Content Include="admin\UploadCalendar.aspx" />
     <Content Include="admin\UploadNotice.aspx" />
+    <Content Include="Apply.aspx" />
     <Content Include="assets\CkEditor\dll\CkEditor.dll" />
     <Content Include="assets\CkEditor\dll\CKEditor.NET.dll" />
     <Content Include="assets\CkEditor\plugins\colordialog\dialogs\colordialog.css" />
@@ -1099,6 +1100,13 @@
     </Compile>
     <Compile Include="admin\UploadNotice.aspx.designer.cs">
       <DependentUpon>UploadNotice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Apply.aspx.cs">
+      <DependentUpon>Apply.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Apply.aspx.designer.cs">
+      <DependentUpon>Apply.aspx</DependentUpon>
     </Compile>
     <Compile Include="Berries.aspx.cs">
       <DependentUpon>Berries.aspx</DependentUpon>
