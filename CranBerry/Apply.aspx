@@ -24,13 +24,13 @@
 				<br />
 				<br />
 				<br />
-				<h5 style="float: left; margin-bottom: 15px;"> Q1. 교내 대회들 중 하나를 조사하여 Berry를 작성해보세요. (최대 1200자)</h5>
+				<h5 style="float: left; margin-bottom: 15px;"> Q1. 크랜베리 개발자에 지원하게 된 동기는 무엇입니까?(최대 1200자)</h5>
 				<asp:TextBox ID="Answer1" runat="server" TextMode="MultiLine" Width="100%" Rows="20" />
 				<br />
-				<h5 style="float: left; margin-bottom: 15px;"> Q2. VaryBerry에 지원하게 된 계기가 무엇입니까? (최대 300자)</h5>
+				<h5 style="float: left; margin-bottom: 15px;"> Q2. 자신을 한 문장으로 표현하세요.(최대 50자)</h5>
 				<asp:TextBox ID="Answer2" runat="server" TextMode="MultiLine" Width="100%" Rows="20" />
 				<br />
-				<h5 style="float: left; margin-bottom: 15px;"> Q3. 본인이 VaryBerry 팀원으로 적합한 이유가 무엇인가요? (최대 300자)</h5>
+				<h5 style="float: left; margin-bottom: 15px;"> Q3. 만약 신이 된다면 가장 먼저 하고 싶은 일은 무엇인가요? (500자 이상)</h5>
 				<asp:TextBox ID="Answer3" runat="server" TextMode="MultiLine" Width="100%" Rows="20" />
 				<br />
 				<br />
