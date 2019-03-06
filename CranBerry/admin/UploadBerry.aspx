@@ -57,7 +57,7 @@
 	<div style="width: 89%; height: 70px; text-align: center; margin-bottom: 350px">
          <script type="text/javascript">
                     function DeleteItem() {
-            if (confirm("등록 하시겠습니다?")) {
+            if (confirm("등록 하시겠습니까?")) {
                 return true;
             }
             return false;
