@@ -4,16 +4,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace CranBerry.managers
+namespace CranBerry.Models
 {
     public static class BanManager
-    {   
-     
- 
-        /// <summary>   
+    {
+        // Table Name
+        const string BANTABLE = "ban_list";
+
+        /// <summary>
         /// Ban Test
         /// </summary>
-        public static bool IsBan(string UserId)
+        public static bool IsBan(string userID)
         {
             MySqlConnection conn = null;
             try
@@ -23,12 +24,13 @@ namespace CranBerry.managers
                 conn.Open();
 
                 // Connect to Database
-                string sql = "SELECT * FROM  ban_list  ";
+                string sql = "SELECT * FROM " + BANTABLE + ";";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
-                MySqlDataReader rdr = cmd.ExecuteReader();
+
+                var rdr = cmd.ExecuteReader();
                 while (rdr.Read())
                 {
-                    if ((string)rdr["UserID"] == UserId)
+                    if ((string)rdr["UserID"] == userID)
                         return true;
                 }
 

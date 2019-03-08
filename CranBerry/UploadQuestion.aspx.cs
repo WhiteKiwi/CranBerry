@@ -1,16 +1,15 @@
-﻿using MySql.Data.MySqlClient;
+﻿using CranBerry.managers;
+using MySql.Data.MySqlClient;
 using System;
 using System.Configuration;
 
 namespace CranBerry {
 	public partial class UploadQuestion : System.Web.UI.Page {
+            
 		protected void Page_Load(object sender, EventArgs e) {
-            if (BanManager.IsBan(Request.Cookies["UserID"].Value))
-            {
-                Response.Redirect("/");
 
-                return;
-            }
+         
+      
 
         }
 

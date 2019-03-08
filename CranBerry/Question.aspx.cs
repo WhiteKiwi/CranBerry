@@ -8,6 +8,7 @@ using System.Text;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Data;
+using CranBerry.managers;
 
 namespace CranBerry
 {
@@ -76,18 +77,15 @@ namespace CranBerry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (BanManager.IsBan(Request.Cookies["UserID"].Value))
-            {
-                Response.Redirect("/");
+           
 
-                return;
-            }
+          
             MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             con.Open();
-            MySqlCommand cmd = new MySqlCommand("Update questions Set Count = Count + 1 where Id = " + Request.QueryString["Id"], con);
-            cmd.CommandType = CommandType.Text;
-            cmd.ExecuteNonQuery();
-            cmd.Dispose();
+            MySqlCommand cmdd = new MySqlCommand("Update questions Set Count = Count + 1 where Id = " + Request.QueryString["Id"], con);
+            cmdd.CommandType = CommandType.Text;
+            cmdd.ExecuteNonQuery();
+            cmdd.Dispose();
             con.Close();
         }
     }

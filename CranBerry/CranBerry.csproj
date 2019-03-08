@@ -1149,6 +1149,7 @@
       <DependentUpon>User.Master</DependentUpon>
     </Compile>
     <Compile Include="Models\Admin.cs" />
+    <Compile Include="Models\BanManager.cs" />
     <Compile Include="Models\Berry.cs" />
     <Compile Include="Models\Classification.cs" />
     <Compile Include="Models\Notice.cs" />

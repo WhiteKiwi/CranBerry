@@ -1,10 +1,11 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/master/User.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="CranBerry.Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="Header" runat="server">
-	<link rel="stylesheet" href="/assets/css/default.css?ver=0.1">
+    <link rel="stylesheet" href="/assets/css/default.css?ver=0.1">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Contents" runat="server">
-	<!-- Carousel -->
+	<form id="form1" runat="server">
+        <!-- Carousel -->
 	<div id="MainCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Carousel 하단 바 -->
 		<ol class="carousel-indicators">
@@ -60,6 +61,7 @@
 		<br />
 		<br />
 		<h1 class="f0 text-red bold">NOTICE</h1>
+		<asp:Label ID="txt" runat="server" Text="Label"></asp:Label>
 		<br />
 		<% var notices = CranBerry.Managers.NoticeManager.GetRecentNotices();
 			foreach (var notice in notices) {
@@ -295,4 +297,5 @@
 	<div class="copyright f3">
 		2017 Copyright &copy; Team VaryBerry All Right Reserved
 	</div>
+    </form>
 </asp:Content>

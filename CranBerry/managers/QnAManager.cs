@@ -122,6 +122,8 @@ namespace CranBerry.Managers {
 			for (i = 0; i < 7; i++) randstr += rndchrset[rnd.Next(0, 61)];
 			return randstr;
 		}
+        
+      
 
 		/*
          * 서정민 - 페이지 질문 불러오기
