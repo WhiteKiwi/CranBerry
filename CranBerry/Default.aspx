@@ -60,8 +60,7 @@
 		<br />
 		<br />
 		<br />
-		<h1 class="f0 text-red bold">NOTICE</h1>
-		<asp:Label ID="txt" runat="server" Text="Label"></asp:Label>
+		<h1 class="f0 text-red bold">NOTNOTICE</h1>
 		<br />
 		<% var notices = CranBerry.Managers.NoticeManager.GetRecentNotices();
 			foreach (var notice in notices) {
@@ -77,7 +76,7 @@
 	</div>
 	<!-- About CranBerry -->
 	<div class="text-center m-5">
-		<h1 class="f0 text-red bold">ABOUT CRANBERRY</h1>
+		<h1 class="f0 text-red bold">ABOUT CRANBERRY1>
 		<br />
 		<p class="f4" style="margin-bottom: 10px;">신입생에게 충남삼성고등학교는 낯설고 익숙하지 않는 장소입니다.</p>
 		<p class="f4" style="margin-bottom: 10px;">중학교와 다른 점이 너무나도 많은 본교에서 신입생이 홀로 빠르게 적응하기란 쉽지 않습니다.</p>
