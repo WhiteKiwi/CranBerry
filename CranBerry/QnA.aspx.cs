@@ -20,13 +20,13 @@ namespace CranBerry
               Response.Cookies["UserID"].Expires = DateTime.Now.AddYears(5);
                 var  Cookies = Request.Cookies["UserID"].Value;
             
-            string sql = "INSERT INTO User(UserId)VALUES (?)";
-            MySqlCommand cmd = new MySqlCommand(sql, conn);
-            cmd.Parameters.Add("UserId", MySqlDbType.VarChar).Value = Cookies;
+            //string sql = "INSERT INTO User(UserId)VALUES (?)";
+            //MySqlCommand cmd = new MySqlCommand(sql, conn);
+            //cmd.Parameters.Add("UserId", MySqlDbType.VarChar).Value = Cookies;
 
-            conn.Open();
-            cmd.ExecuteNonQuery();
-            conn.Close();
+            //conn.Open();
+            //cmd.ExecuteNonQuery();
+            //conn.Close();
 
 
             }
