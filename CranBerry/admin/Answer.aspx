@@ -20,7 +20,7 @@
 	<!-- 페이지 Top -->
 	<h1 class="f0 bold text-darkred" style="margin-left: 130px;">Q&A</h1>
      <asp:Button ID="DeleteButton" CssClass="btn cb-bg-darkred float-right text-white" runat="server" Text="삭제"  OnClick="DeleteButton_Click" style="width: 100px; float:right; margin-right:130px;" onclientclick="return DeleteItem();" />
-                 <asp:Button ID="AddBan" runat="server" Text="Ban" OnClick="AddBan_Click" CssClass="btn cb-bg-darkred float-right text-white" style="margin-right:50px" Height="48px" Width="65px" onclientclick="return BanItem();" />
+                 <asp:Button ID="AddBan" runat="server" Text="Ban" OnClick="AddBan_Click" CssClass="btn cb-bg-darkred float-right text-white" style="margin-right:50px" Height="36px" Width="73px" onclientclick="return BanItem();" />
          <script type="text/javascript">       
         function BanItem() {
             if (confirm("벤 하시겠습니까?")) {
