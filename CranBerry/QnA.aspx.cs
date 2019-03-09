@@ -1,24 +1,24 @@
-﻿using CranBerry.managers;
-using MySql.Data.MySqlClient;
+﻿using MySql.Data.MySqlClient;
 using System;
-using System.Web;
+using System.Data;
 
-namespace CranBerry {
-	public partial class QnA : System.Web.UI.Page {
+namespace CranBerry
+{
+    public partial class QnA : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
 
-            if (Response.Cookies["UserID"].Value == null)
+            if (Request.Cookies["UserID"].Value == null)
             {
+             
 
                 MySqlConnection conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
 
                 var rand = new Random(DateTime.Now.Millisecond);
-            //HttpCookie UserID = new HttpCookie("User");
+    
+            Response.Cookies["UserID"].Value = rand.Next().ToString() + " / " + rand.Next().ToString();
 
-            Response.Cookies["userid"].Value = rand.Next().ToString() + " / " + rand.Next().ToString();
-
-              Response.Cookies["userid"].Expires = DateTime.Now.AddYears(5);
-                var  Cookies = Response.Cookies["userid"].Value;
+              Response.Cookies["UserID"].Expires = DateTime.Now.AddYears(5);
+                var  Cookies = Request.Cookies["UserID"].Value;
             
             string sql = "INSERT INTO User(UserId)VALUES (?)";
             MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -32,18 +32,28 @@ namespace CranBerry {
             }
 
 
-            var User = Response.Cookies["userid"].Value;
+            var User = Request.Cookies["UserID"].Value;
             MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             con.Open();
+            object obj;
             // Connect to Database
-            string mysql = "SELECT * FROM  ban_list  ";
-            MySqlCommand cmmd = new MySqlCommand(mysql, con);
-            MySqlDataReader rdr = cmmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                if ((string)rdr["UserID"] == User) Response.Redirect("/");
+            MySqlCommand cmmd = new MySqlCommand("Select * from ban_list where UserID = @UserID", con);
 
+            cmmd.CommandType = CommandType.Text;
+            cmmd.Parameters.AddWithValue("@UserID", User);
+            obj = cmmd.ExecuteScalar();
+            MySqlDataReader rdr = cmmd.ExecuteReader();
+            if (obj != null)
+
+            {
+                while (rdr.Read())
+                {
+                    Response.Redirect("/");
+
+                }
             }
+            cmmd.Dispose();
+            con.Close();
 
             // 분류 목록 추가
             titleOrContents.Items.Add("제목");

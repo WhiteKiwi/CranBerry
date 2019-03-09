@@ -71,7 +71,7 @@
 				<br />
                  <script type="text/javascript">
                     function DeleteItem() {
-            if (confirm("등록 하시겠습니다?")) {
+            if (confirm("등록 하시겠습니까?")) {
                 return true;
             }
             return false;

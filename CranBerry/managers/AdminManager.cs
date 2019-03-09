@@ -50,7 +50,7 @@ namespace CranBerry.Managers {
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("insert into admins(Id, Name, Password)values('{0}','{1}','{2}')", admin.ID, admin.Name,"cnsa");
+                cmd.CommandText = string.Format("insert into admins (Id, Name, Password)values('{0}','{1}','{2}')", admin.ID, admin.Name,"cnsa");
 
                 con.Open();
                 result = cmd.ExecuteNonQuery();
@@ -77,7 +77,7 @@ namespace CranBerry.Managers {
                
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("update admin set Password = 'cranberry' where Id = '{0}'", admin.ID );
+                cmd.CommandText = string.Format("update admins set Password = 'cranberry' where Id = '{0}'", admin.ID );
                 con.Open();
               
                 result = cmd.ExecuteNonQuery();
@@ -102,9 +102,9 @@ namespace CranBerry.Managers {
             {
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("SELECT * FROM admin WHERE Password=" + admin.OldPasswrod + ";");
+                cmd.CommandText = string.Format("SELECT * FROM admins WHERE Password=" + admin.OldPasswrod + ";");
                 con.Open();
-                cmd.CommandText = string.Format("update admin set Password = '{0}' where Password = '{1}'", admin.NewPassword+SALT , admin.OldPasswrod);
+                cmd.CommandText = string.Format("update admins set Password = '{0}' where Password = '{1}'", admin.NewPassword+SALT , admin.OldPasswrod);
                 result = cmd.ExecuteNonQuery();
                 return result;
             }
@@ -124,7 +124,7 @@ namespace CranBerry.Managers {
             try{
                 conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
                 conn.Open();
-                string sql = "SELECT * FROM admin WHERE Id='" + Id + "'";
+                string sql = "SELECT * FROM admins WHERE Id='" + Id + "'";
                 if(Password == Password + SALT)
                     return true;
                 return false;
@@ -151,7 +151,7 @@ namespace CranBerry.Managers {
             {
                 int result = 0;
                 cmd.Connection = con;
-                cmd.CommandText = string.Format("Delete From berries Where Id={0}",Id);
+                cmd.CommandText = string.Format("Delete From admins Where Id={0}",Id);
                 con.Open();
                 result = cmd.ExecuteNonQuery();
                 return result;

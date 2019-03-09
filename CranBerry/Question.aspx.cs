@@ -8,7 +8,7 @@ using System.Text;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Data;
-using CranBerry.managers;
+
 
 namespace CranBerry
 {
@@ -77,16 +77,37 @@ namespace CranBerry
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-           
 
-          
-            MySqlConnection con = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            var User = Request.Cookies["UserID"].Value;
+            MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             con.Open();
-            MySqlCommand cmdd = new MySqlCommand("Update questions Set Count = Count + 1 where Id = " + Request.QueryString["Id"], con);
+            object obj;
+            // Connect to Database
+            MySqlCommand cmmd = new MySqlCommand("Select * from ban_list where UserID = @UserID", con);
+
+            cmmd.CommandType = CommandType.Text;
+            cmmd.Parameters.AddWithValue("@UserID", User);
+            obj = cmmd.ExecuteScalar();
+            MySqlDataReader rdr = cmmd.ExecuteReader();
+            if (obj != null)
+
+            {
+                while (rdr.Read())
+                {
+                    Response.Redirect("/");
+
+                }
+            }
+            cmmd.Dispose();
+            con.Close();
+
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
+            conn.Open();
+            MySqlCommand cmdd = new MySqlCommand("Update questions Set Count = Count + 1 where Id = " + Request.QueryString["Id"], conn);
             cmdd.CommandType = CommandType.Text;
             cmdd.ExecuteNonQuery();
             cmdd.Dispose();
-            con.Close();
+            conn.Close();
         }
     }
 

@@ -1130,7 +1130,6 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="managers\AdminManager.cs" />
-    <Compile Include="managers\BanManager.cs" />
     <Compile Include="managers\BerryManager.cs" />
     <Compile Include="managers\NoticeManager.cs" />
     <Compile Include="managers\QnAManager.cs" />
