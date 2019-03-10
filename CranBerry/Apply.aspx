@@ -30,7 +30,7 @@
 				<h5 style="float: left; margin-bottom: 15px;"> Q2. 자신을 한 문장으로 표현하세요.(최대 50자)</h5>
 				<asp:TextBox ID="Answer2" runat="server" TextMode="MultiLine" Width="100%" Rows="20" />
 				<br />
-				<h5 style="float: left; margin-bottom: 15px;"> Q3. 만약 신이 된다면 가장 먼저 하고 싶은 일은 무엇인가요? (500자 이상)</h5>
+				<h5 style="float: left; margin-bottom: 15px;"> Q3. 만약 신이 된다면 가장 먼저 하고 싶은 일은 무엇인가요? 그리고 자신에게 가장 소중한 것은 무엇인가요? (500자 이상) - 창의력</h5>
 				<asp:TextBox ID="Answer3" runat="server" TextMode="MultiLine" Width="100%" Rows="20" />
 				<br />
 				<br />
