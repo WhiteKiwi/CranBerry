@@ -7,7 +7,7 @@ namespace CranBerry
     public partial class QnA : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
 
-            if (Request.Cookies["UserID"].Value == null)
+            if (Request.Cookies["User"].Value == null)
             {
              
 
@@ -15,10 +15,10 @@ namespace CranBerry
 
                 var rand = new Random(DateTime.Now.Millisecond);
     
-            Response.Cookies["UserID"].Value = rand.Next().ToString() + " / " + rand.Next().ToString();
+            Response.Cookies["User"].Value = rand.Next().ToString() + " / " + rand.Next().ToString();
 
-              Response.Cookies["UserID"].Expires = DateTime.Now.AddYears(5);
-                var  Cookies = Request.Cookies["UserID"].Value;
+              Response.Cookies["User"].Expires = DateTime.Now.AddYears(5);
+                var  Cookies = Request.Cookies["User"].Value;
             
             //string sql = "INSERT INTO User(UserId)VALUES (?)";
             //MySqlCommand cmd = new MySqlCommand(sql, conn);
@@ -32,7 +32,7 @@ namespace CranBerry
             }
 
 
-            var User = Request.Cookies["UserID"].Value;
+            var User = Request.Cookies["User"].Value;
             MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             con.Open();
             object obj;
