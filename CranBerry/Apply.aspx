@@ -37,7 +37,7 @@
 				<p style="float: left; margin-bottom: 15px; font-size:20px; margin-left: 50px;">공지사항을 읽지 않으셨다면 불이익을 받지 않기 위해서 꼭 필독하시기 바랍니다! <br> 처음 등록 하시면 "등록" 버튼을 / 지원 불러오기로 수정하는 거면 "수정완료"버튼을 눌러주세요. 튕김 현상이 일어날 수 있습니다. 복사해놓은 후 제출해주세요!</p>
 				<br />
 				<br />
-				<asp:Button ID="UploadButton" runat="server" style="height:39px;width:195px; background-co  lor:#ff99ff; color:white; border-radius:15px; border-shadow:none; margin-right:40px;" CssClass="btn btn-primary float-right" OnClick="ApplyUpload" Text="등록"  /> 
+				<asp:Button ID="UploadButton" runat="server" style="height:39px;width:195px; background-color:#ff99ff; color:white; border-radius:15px; border-shadow:none; margin-right:40px;" CssClass="btn btn-primary float-right" OnClick="ApplyUpload" Text="등록"  /> 
                 
 				<asp:Button ID="Editbn" runat="server" style="height:39px;width:195px; background-color:#ff99ff; color:white; border-radius:15px; border-shadow:none; margin-right:40px;" Text="수정완료" OnClick="Editbtn" Height="39px" Width="195px" />
 				<br />
