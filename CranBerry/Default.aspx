@@ -60,7 +60,7 @@
 		<br />
 		<br />
 		<br />
-		<h1 class="f0 text-red bold">NOTNOTICE</h1>
+		<h1 class="f0 text-red bold">NOTICE</h1>
 		<br />
 		<% var notices = CranBerry.Managers.NoticeManager.GetRecentNotices();
 			foreach (var notice in notices) {
@@ -76,7 +76,7 @@
 	</div>
 	<!-- About CranBerry -->
 	<div class="text-center m-5">
-		<h1 class="f0 text-red bold">ABOUT CRANBERRY1>
+		<h1 class="f0 text-red bold"/>ABOUT CRANBERRY
 		<br />
 		<p class="f4" style="margin-bottom: 10px;">신입생에게 충남삼성고등학교는 낯설고 익숙하지 않는 장소입니다.</p>
 		<p class="f4" style="margin-bottom: 10px;">중학교와 다른 점이 너무나도 많은 본교에서 신입생이 홀로 빠르게 적응하기란 쉽지 않습니다.</p>
@@ -85,8 +85,8 @@
 		<p class="f4" style="margin-bottom: 10px;">먼저 CNSA를 경험한 선배들의 진심어린 조언을 본 페이지에 담아</p>
 		<p class="f4" style="margin-bottom: 10px;">신입생 여러분들이 조금이나마 더 편한 학교생활을 즐길 수 있도록 노력하겠습니다.</p>
 		<br />
-		<p class="f4" style="margin-bottom: 10px;">"CranBerry"는 2018년도를 기준으로 작되었습니다.</p>
-		<p class="f4" style="margin-bottom: 10px;">지속적으로 관리해 나갈 예정이지만 2019년도와 차이가 있을 수 있음을 알려드립니다.</p>
+		<p class="f4" style="margin-bottom: 10px;">"CranBerry"는 2018년도를 기준으로 제작되었습니다.</p>
+		<p class="f4" style="margin-bottom: 10px;">지속적으로 관리해 나갈 예정이지만 2018년도와 차이가 있을 수 있음을 알려드립니다.</p>
 		<p class="f4" style="margin-bottom: 10px;">신입생 여러분의 학교 적응에 VaryBerry가 많은 도움이 되었으면 좋겠습니다 :)</p>
 	</div>
 
