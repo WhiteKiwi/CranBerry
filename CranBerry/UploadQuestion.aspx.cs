@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using System;
 using System.Configuration;
 using System.Data;
+using System.Text.RegularExpressions;
 
 namespace CranBerry {
 	public partial class UploadQuestion : System.Web.UI.Page {
@@ -35,15 +36,24 @@ namespace CranBerry {
 
         }
 
-		protected void QuestionButton_Click(object sender, EventArgs e) {
+ 
+        
 
-			if (Contents.Text.Length >= 20) {
+
+
+        protected void QuestionButton_Click(object sender, EventArgs e) {
+
+            string result = Regex.Replace(Contents.Text, @"[<,>,@]", string.Empty);
+
+
+
+            if (Contents.Text.Length >= 20) {
 				QuestionButton.Enabled = false;
 
-				// 질문 등록
-				Managers.QnAManager.UploadQuestion(new Models.Question {
-					Title = nTitle.Text,
-					Contents = Contents.Text,
+                // 질문 등록
+                Managers.QnAManager.UploadQuestion(new Models.Question {
+                    Title = nTitle.Text,
+                    Contents = result,
 					UserID = Request.Cookies["UserID"].Value
 				});
 

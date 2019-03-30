@@ -69,6 +69,12 @@
 
 				<br />
 				<br />
+               
+
+
+
+
+                    %>
                  <script type="text/javascript">
                     function DeleteItem() {
             if (confirm("등록 하시겠습니까?")) {
@@ -76,7 +82,7 @@
             }
             return false;
         }
- </script>
+ </script>  
 				<asp:Button ID="QuestionButton" OnClientClick="return DeleteItem();" runat="server" CssClass="btn float-right cb-bg-darkred text-white" OnClick="QuestionButton_Click" Text="등록" />
 			</div>
 		</div>
