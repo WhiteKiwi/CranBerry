@@ -18,12 +18,14 @@ namespace CranBerry.master
 
             var rand = new Random(DateTime.Now.Millisecond);
 
-            if (Request.Cookies["UserID"].Value == null)
+            HttpCookie cookie = Request.Cookies["UserID"];
+            if (cookie == null)
             {
-                Response.Cookies["UserID"].Value = rand.Next().ToString() + " / " + rand.Next().ToString();
-                Response.Cookies["UserID"].Expires = DateTime.Now.AddYears(5);
+                cookie = new HttpCookie("UserID");
+                cookie.Value = rand.Next().ToString() + " / " + rand.Next().ToString();
+                cookie.Expires = DateTime.Now.AddYears(5);
+                Response.Cookies.Add(cookie);
             }
-
 
         }
     }
