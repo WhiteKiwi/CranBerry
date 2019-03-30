@@ -10,28 +10,6 @@ namespace CranBerry
             
             
 
-                var rand = new Random(DateTime.Now.Millisecond);
-
-            if (Response.Cookies["UserID"].Value == null)
-            {
-                Response.Cookies["UserID"].Value = rand.Next().ToString() + " / " + rand.Next().ToString();
-                Response.Cookies["UserID"].Expires = DateTime.Now.AddYears(5);
-            }
-              
-                var  Cookies = Request.Cookies["UserID"].Value;
-            
-            //string sql = "INSERT INTO User(UserId)VALUES (?)";
-            //MySqlCommand cmd = new MySqlCommand(sql, conn);
-            //cmd.Parameters.Add("UserId", MySqlDbType.VarChar).Value = Cookies;
-
-            //conn.Open();
-            //cmd.ExecuteNonQuery();
-            //conn.Close();
-
-
-            
-
-
             var User = Request.Cookies["UserID"].Value;
             MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             con.Open();
