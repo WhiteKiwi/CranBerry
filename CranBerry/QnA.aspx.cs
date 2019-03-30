@@ -11,10 +11,13 @@ namespace CranBerry
             
 
                 var rand = new Random(DateTime.Now.Millisecond);
-    
-            Response.Cookies["UserID"].Value = rand.Next().ToString() + " / " + rand.Next().ToString();
 
-              Response.Cookies["UserID"].Expires = DateTime.Now.AddYears(5);
+            if (Request.Cookies["UserID"].Value == null)
+            {
+                Response.Cookies["UserID"].Value = rand.Next().ToString() + " / " + rand.Next().ToString();
+                Response.Cookies["UserID"].Expires = DateTime.Now.AddYears(5);
+            }
+              
                 var  Cookies = Request.Cookies["UserID"].Value;
             
             //string sql = "INSERT INTO User(UserId)VALUES (?)";
@@ -45,7 +48,7 @@ namespace CranBerry
             {
                 while (rdr.Read())
                 {
-                   /* Response.Redirect("/")*/;
+                   Response.Redirect("/");
 
                 }
             }
