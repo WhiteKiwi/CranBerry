@@ -45,7 +45,7 @@ namespace CranBerry
             {
                 while (rdr.Read())
                 {
-                    //Response.Redirect("/");
+                    Response.Redirect("/");
 
                 }
             }
