@@ -39,11 +39,11 @@ namespace CranBerry {
                     cmd.CommandType = CommandType.Text;
                     cmdd.Dispose();
                     cmd.ExecuteNonQuery();
-                    
-
-               
 
 
+
+
+                reader.Close();
                 cmd.Dispose();
                 conn.Close();
             }
@@ -56,6 +56,7 @@ namespace CranBerry {
                 cmd.Parameters.Add("Date", MySqlDbType.DateTime).Value = Date;
 
                 cmd.ExecuteNonQuery();
+                reader.Close();
                 cmd.Dispose();
                 conn.Close();
             }
