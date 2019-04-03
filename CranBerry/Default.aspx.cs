@@ -28,8 +28,8 @@ namespace CranBerry {
             cmdd.Parameters.AddWithValue("@Date", Date);    
             obj = cmdd.ExecuteScalar();
             MySqlDataReader reader = cmdd.ExecuteReader();
+            cmdd.Dispose();
 
-        
             if (obj != null){
                 MySqlCommand cmd = new MySqlCommand("Update User Set Visit = Visit + 1 where Date=str_to_date(@Date,'%Y-%m-%d')", conn);
                 cmd.Parameters.AddWithValue("@Date", Date);
@@ -37,7 +37,7 @@ namespace CranBerry {
            
                    
                     cmd.CommandType = CommandType.Text;
-                    cmdd.Dispose();
+                   
                     cmd.ExecuteNonQuery();
 
 
@@ -49,7 +49,7 @@ namespace CranBerry {
             }
             else
             {
-                cmdd.Dispose(); 
+                
                 string sql = "Insert Into User (Visit, Date) VAlues (?,?);";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.Add("Visit", MySqlDbType.Int32).Value = 1;
