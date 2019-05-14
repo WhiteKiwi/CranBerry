@@ -9,6 +9,7 @@ namespace CranBerry
 
             
             
+            
 
             var User = Request.Cookies["UserID"].Value;
             MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
@@ -16,7 +17,7 @@ namespace CranBerry
             object obj;
             // Connect to Database
             MySqlCommand cmmd = new MySqlCommand("Select * from ban_list where UserID = @UserID", con);
-
+            Response.Redirect("/");
             cmmd.CommandType = CommandType.Text;
             cmmd.Parameters.AddWithValue("@UserID", User);
             obj = cmmd.ExecuteScalar();
