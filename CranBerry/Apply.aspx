@@ -12,8 +12,8 @@
         <div>
             <form runat="server" style="height: 100%; text-align: center;">
 			
-				<div style="background-image: url('banner.png');height: 509px;width: 1587px;margin-left: 150px;">
-		<div style="background-color: rgba(0,0,0,0.6);height: 509px;width: 1587px;color: white;font-family: nanumbarunpenr;font-size: 25px;">
+				<div style="background-image: url('assets/img/banner.png');height: 509px;width: 1587px;margin-left: 150px;">
+		<div style="background-color: rgba(0,0,0,0.60);height: 509px;width: 1587px;color: white;font-family: nanumbarunpenr;font-size: 25px;">
 			<span>
 				<p style="font-size: 40px;text-align:left;margin-left: 200px;"> CranBerry 6기 관리진 모집</p>
 				<br />
