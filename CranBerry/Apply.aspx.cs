@@ -42,19 +42,19 @@ namespace CranBerry
         // 지원 
         protected void Editbtn(object sender, EventArgs e)
         {
-            if (Encoding.UTF8.GetByteCount(Answer1.Text.Trim().ToCharArray()) > 2500)
+            if (Encoding.UTF8.GetByteCount(Answer1.Text.Trim().ToCharArray()) < 200)
             {
-                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('1번이 너무 깁니다.')", true);
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('1번이 너무 짧습니다.')", true);
 
                 return;
             }
-            else if (Encoding.UTF8.GetByteCount(Answer2.Text.Trim().ToCharArray()) > 150)
+            else if (Encoding.UTF8.GetByteCount(Answer2.Text.Trim().ToCharArray()) < 200)
             {
-                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('2번이 너무 깁니다.')", true);
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('2번이 너무 짧습니다.')", true);
 
                 return;
             }
-            else if (Encoding.UTF8.GetByteCount(Answer3.Text.Trim().ToCharArray()) < 1000)
+            else if (Encoding.UTF8.GetByteCount(Answer3.Text.Trim().ToCharArray()) < 200)
             {
                 Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('3번이 너무 짧습니다.')", true);
 
@@ -85,19 +85,19 @@ namespace CranBerry
         protected void ApplyUpload(object sender, EventArgs e)
         {
             
-            if (Encoding.UTF8.GetByteCount(Answer1.Text.Trim().ToCharArray()) > 2500)
+            if (Encoding.UTF8.GetByteCount(Answer1.Text.Trim().ToCharArray()) < 200)
             {
-                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('1번이 너무 깁니다.')", true);
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('1번이 너무 짧습니다.')", true);
 
                 return;
             }
-            else if (Encoding.UTF8.GetByteCount(Answer2.Text.Trim().ToCharArray()) >150)
+            else if (Encoding.UTF8.GetByteCount(Answer2.Text.Trim().ToCharArray()) < 200)
             {
-                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('2번이 너무 깁니다.')", true);
+                Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('2번이 너무 짧습니다.')", true);
 
                 return;
             }
-            else if (Encoding.UTF8.GetByteCount(Answer3.Text.Trim().ToCharArray()) < 1000)
+            else if (Encoding.UTF8.GetByteCount(Answer3.Text.Trim().ToCharArray()) < 200)
             {
                 Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('3번이 너무 짧습니다.')", true);
 
