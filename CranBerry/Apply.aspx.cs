@@ -13,14 +13,32 @@ namespace CranBerry
 {
     public partial class Apply : System.Web.UI.Page
     {
-       
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["Cranberry"].ConnectionString);
+            string a, b;
+            a = "dadad";
+            b = "dadadwd";
+
+            conn.Open();
+            MySqlCommand cmd = new MySqlCommand("Insert Into Check (user,title) values (@user, @title)", conn); 
+            cmd.Parameters.AddWithValue("@user", a);
+            cmd.Parameters.AddWithValue("@title", a);  
+
+            cmd.ExecuteNonQuery();
+
+
+
+            conn.Close();
+
+
+
         }
 
         // 지원 내용 불러오기
-        protected void Checkbtn_Click(object sneder, EventArgs e)
+        protected void Checkbtn(object sneder, EventArgs e)
         {
             MySqlConnection conn = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             conn.Open();
@@ -82,7 +100,7 @@ namespace CranBerry
                 Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('등록 되었습니다.')", true);
             
         }
-        protected void ApplyUpload(object sender, EventArgs e)
+        protected void Applybtn(object sender, EventArgs e)
         {
             
             if (Encoding.UTF8.GetByteCount(Answer1.Text.Trim().ToCharArray()) < 200)
@@ -126,10 +144,7 @@ namespace CranBerry
     
                 Page.ClientScript.RegisterClientScriptBlock(typeof(Page), "Alert", "alert('등록 되었습니다.')", true);
             }
-       
-       
 
 
-        
     }
 }
