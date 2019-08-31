@@ -36,17 +36,17 @@
 			
 				<br />
 				<br />
-					<h1 style="text-align:left;margin-left:200px; font-family: 'NanumSquare'">Q1. 해시태그 3개를 이용하여 자신을 소개해주세요.</h1>
+					<h1 style="text-align:left;margin-left:200px; font-family: 'NanumSquare'">Q1. 해시태그 3개를 이용하여 자신을 소개해주세요. - 200자 이상</h1>
                 <div>
 				<asp:TextBox ID="Answer1" runat="server" TextMode="MultiLine"  style="border:3px solid #BF0404 ;height: 300px;width: 80%;margin-bottom: 70px;border-radius:20px;" Rows="20" />
 				</div>
 
-				<h1 style="text-align:left;margin-left:200px; font-family: 'NanumSquare'">Q2. VaryBerry 6기 관리진에 지원한 동기를 말해주세요.</h1>
+				<h1 style="text-align:left;margin-left:200px; font-family: 'NanumSquare'">Q2. VaryBerry 6기 관리진에 지원한 동기를 말해주세요. - 200자 이상</h1>
                 <div>
 				<asp:TextBox ID="Answer2" runat="server" TextMode="MultiLine"  style="border:3px solid #BF0404 ;height: 300px;width: 80%;margin-bottom: 70px;border-radius:20px;" Rows="20" />
 				</div>
                 
-                <h1 style="text-align:left;margin-left:200px; font-family: 'NanumSquare'">Q3. 자유주제로 Berry를 작성해주세요.(참고: http://cnsaberry.com/Berries.aspx )</h1>
+                <h1 style="text-align:left;margin-left:200px; font-family: 'NanumSquare'">Q3. 자유주제로 Berry를 작성해주세요.(참고: http://cnsaberry.com/Berries.aspx ) - 200자 이상</h1>
                 <div>
 				<asp:TextBox ID="Answer3" runat="server" TextMode="MultiLine"  style="border:3px solid #BF0404 ;height: 300px;width: 80%;margin-bottom: 70px;border-radius:20px;" Rows="20" />
 				</div>
