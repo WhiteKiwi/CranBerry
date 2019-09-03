@@ -17,22 +17,7 @@ namespace CranBerry
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            MySqlConnection conn = new MySqlConnection(ConfigurationManager.ConnectionStrings["Cranberry"].ConnectionString);
-            string a, b;
-            a = "dadad";
-            b = "dadadwd";
-
-            conn.Open();
-            MySqlCommand cmd = new MySqlCommand("Insert Into Check (user,title) values (@user, @title)", conn); 
-            cmd.Parameters.AddWithValue("@user", a);
-            cmd.Parameters.AddWithValue("@title", a);  
-
-            cmd.ExecuteNonQuery();
-
-
-
-            conn.Close();
-
+           
 
 
         }
