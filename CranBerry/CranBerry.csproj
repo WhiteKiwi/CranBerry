@@ -214,7 +214,6 @@
     <Content Include="assets\img\favicon.png" />
     <Content Include="assets\img\first.png" />
     <Content Include="assets\img\Organization.jpg" />
-    <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\jquery-3.3.1.slim.min.js" />
     <Content Include="assets\js\popper.min.js" />
     <Content Include="Berries.aspx" />
@@ -997,7 +996,6 @@
     </Compile>
     <Compile Include="admin\Calendar.aspx.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="admin\Calendar.aspx.designer.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>

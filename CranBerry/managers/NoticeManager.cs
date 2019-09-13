@@ -186,7 +186,7 @@ namespace CranBerry.Managers {
 
 			} catch (Exception e) {
 				throw new Exception(e.Message);
-			} finally {
+			} finally { 
 				con.Close();
 			}
 		}

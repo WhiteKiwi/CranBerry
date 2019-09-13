@@ -57,7 +57,7 @@ namespace CranBerry {
 					UserID = Request.Cookies["UserID"].Value
 				});
 
-				Response.Redirect("/QnA.aspx");
+				Response.Redirect("/QnA .aspx");
 			}
 		}
 	}

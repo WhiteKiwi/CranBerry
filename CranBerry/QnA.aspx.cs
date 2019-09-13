@@ -7,17 +7,14 @@ namespace CranBerry
     public partial class QnA : System.Web.UI.Page {
 		protected void Page_Load(object sender, EventArgs e) {
 
-            
-            
-            
 
-            var User = Request.Cookies["UserID"].Value;
+            var User = "123";
             MySqlConnection con = new MySqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["CranBerry"].ConnectionString);
             con.Open();
             object obj;
             // Connect to Database
             MySqlCommand cmmd = new MySqlCommand("Select * from ban_list where UserID = @UserID", con);
-            Response.Redirect("/");
+     
             cmmd.CommandType = CommandType.Text;
             cmmd.Parameters.AddWithValue("@UserID", User);
             obj = cmmd.ExecuteScalar();

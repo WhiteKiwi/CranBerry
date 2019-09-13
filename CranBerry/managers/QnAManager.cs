@@ -55,7 +55,7 @@ namespace CranBerry.Managers {
 
 				List<Models.Question> questions = new List<Models.Question>();
 
-				string sql = "SELECT * FROM questions ORDER BY Id DESC LIMIT 9;";
+				string sql = "SELECT * FROM questions ORDER BY Question_At DESC LIMIT 9;";
 				MySqlCommand cmd = new MySqlCommand(sql, conn);
 				var rdr = cmd.ExecuteReader();
 				while (rdr.Read()) {

@@ -16,16 +16,16 @@ namespace CranBerry.master
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            var rand = new Random(DateTime.Now.Millisecond);
+            //var rand = new Random(DateTime.Now.Millisecond);
 
-            HttpCookie cookie = Request.Cookies["UserID"];
-            if (cookie == null)
-            {
-                cookie = new HttpCookie("UserID");
-                cookie.Value = rand.Next().ToString() + " / " + rand.Next().ToString();
-                cookie.Expires = DateTime.Now.AddYears(5);
-                Response.Cookies.Add(cookie);
-            }
+            //HttpCookie cookie = Request.Cookies["UserID"];
+            //if (cookie == null)
+            //{
+            //    cookie = new HttpCookie("UserID");
+            //    cookie.Value = rand.Next().ToString() + " / " + rand.Next().ToString();
+            //    cookie.Expires = DateTime.Now.AddYears(5);
+            //    Response.Cookies.Add(cookie);
+            //}
 
         }
     }
